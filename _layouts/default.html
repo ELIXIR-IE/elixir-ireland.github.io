@@ -34,12 +34,12 @@
     <script src="/assets/js/ui.js"></script>
 
     <!-- Page specific scripts -->
-    {% if page.url contains '/events/' %}
+    {% if page.url contains '/events/' or page.url == '/' or page.url == '/index.html' %}
     <script src="/assets/js/events_items.js"></script>
     <script src="/assets/js/events.js"></script>
     {% endif %}
 
-    {% if page.url contains '/news/' %}
+    {% if page.url contains '/news/' or page.url == '/' or page.url == '/index.html' %}
     <script src="/assets/js/news_items.js"></script>
     <script src="/assets/js/news.js"></script>
     {% endif %}
@@ -50,11 +50,6 @@
 
     {% if page.url contains '/vibe/' %}
     <script src="/assets/js/vibe.js"></script>
-    {% endif %}
-
-    {% if page.url contains '/events/' %}
-    <script src="/assets/js/events_items.js"></script>
-    <script src="/assets/js/events.js"></script>
     {% endif %}
 
     {% if page.url == '/' or page.url == '/index.html' %}
