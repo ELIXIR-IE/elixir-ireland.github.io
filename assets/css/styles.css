@@ -634,14 +634,27 @@ main {
   background: transparent !important;
   color: #f47d21;
   border: 2px solid #f47d21;
+  padding: 10px 20px;
+  /* Match card-link padding */
+  border-radius: 4px;
+  /* Match card-link radius */
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  /* Match card-link size */
+  transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
-  background: #f47d21;
-  color: white !important;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(244, 125, 33, 0.3);
+  background-color: #f47d21 !important;
+  color: #ffffff !important;
+  border-color: #f47d21;
+  transform: translateY(-2px);
   text-decoration: none;
+  box-shadow: none;
+  /* Remove extra shadow to match card-link simple style, or keep if desired */
 }
 
 /* Card Image Styles */
@@ -649,13 +662,13 @@ main {
   width: 100%;
   height: 200px;
   /* Fixed height for consistency */
-  object-fit: cover;
-  /* Cover container logic */
+  object-fit: contain;
+  /* Contain logic ensures whole image is seen */
   border-radius: 4px;
   /* Slight radius */
   margin-bottom: 1em;
-  background-color: #f0f0f0;
-  /* Placeholder color */
+  background-color: #ffffff;
+  /* White background for cleaner look */
 }
 
 /* Ensure buttons in cards wrap properly */
@@ -2697,10 +2710,11 @@ section {
   background: #ffffff;
   border: 2px solid #e0e0e0;
   color: #023452;
-  padding: 12px 30px;
+  padding: 10px 24px;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 25px;
+  border-radius: 6px;
+  /* Match site standard */
   font-weight: 600;
   font-size: 1rem;
 }
@@ -2866,14 +2880,7 @@ section {
   margin-bottom: 1.5rem;
 }
 
-.card-link {
-  display: inline-block;
-  font-weight: 600;
-  color: #f47920;
-  text-decoration: none;
-  margin-top: auto;
-  transition: color 0.3s ease;
-}
+
 
 .card-link:hover {
   color: #e06810;
