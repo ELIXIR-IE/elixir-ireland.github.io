@@ -1,68 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Events - ELIXIR Ireland</title>
-    <meta
-      name="description"
-      content="ELIXIR Ireland is the Irish node of the international organisation ELIXIR, which promotes the sharing of resources and expertise in computational biology."
-    />
-    <link
-      rel="shortcut icon"
-      href="https://elixir-europe.org/sites/all/themes/elixir/images/favicons/favicon.ico"
-      type="image/vnd.microsoft.icon"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/events.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
+---
+layout: default
+title: Events - ELIXIR Ireland
+description: Upcoming and past events, workshops, and training sessions organized by ELIXIR Ireland.
+---
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>Events & Training</h1>
+    <p class="lead">Join us for workshops, training sessions, and community events</p>
+  </div>
+</section>
 
-  <body>
-    <!-- HEADER -->
-    <div id="header-placeholder"></div>
+<section class="content-section">
+  <div class="container">
+    <!-- Filter Buttons -->
+    <div class="events-filter">
+      <button class="filter-btn active" data-filter="all">All Events</button>
+      <button class="filter-btn" data-filter="upcoming">Upcoming Events</button>
+      <button class="filter-btn" data-filter="past">Past Events</button>
+    </div>
 
-    <!-- MAIN CONTENT AREA -->
-    <main>
-      <section class="page-hero">
-        <div class="page-hero-content">
-          <h1>Events & Training</h1>
-          <p class="lead">Join us for workshops, training sessions, and community events</p>
-        </div>
-      </section>
+    <!-- Events Container -->
+    <div id="events-container" class="card-container">
+      <!-- Event items will be injected here by JavaScript -->
+    </div>
 
-      <section class="content-section">
-        <div class="container">
-          <!-- Filter Buttons -->
-          <div class="events-filter">
-            <button class="filter-btn active" data-filter="all">All Events</button>
-            <button class="filter-btn" data-filter="upcoming">Upcoming Events</button>
-            <button class="filter-btn" data-filter="past">Past Events</button>
-          </div>
-
-          <!-- Events Container -->
-          <div id="events-container" class="card-container">
-            <!-- Event items will be injected here by JavaScript -->
-          </div>
-
-          <!-- Pagination -->
-          <div id="events-pagination-container" class="pagination">
-            <!-- Pagination controls will be injected here by JavaScript -->
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- FOOTER -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Load scripts in correct order -->
-    <script src="/assets/js/ei.js"></script>
-    <script src="/assets/js/events_items.js"></script>
-    <script src="/assets/js/events.js"></script>
-    <script src="/assets/js/navigation.js"></script>
-  </body>
-</html>
+    <!-- Pagination -->
+    <div id="events-pagination-container" class="pagination">
+      <!-- Pagination controls will be injected here by JavaScript -->
+    </div>
+  </div>
+</section>

@@ -1,58 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>News - ELIXIR Ireland</title>
-    <meta
-      name="description"
-      content="Latest news and updates from ELIXIR Ireland, the Irish node of the international organisation ELIXIR."
-    />
-    <link
-      rel="shortcut icon"
-      href="https://elixir-europe.org/sites/all/themes/elixir/images/favicons/favicon.ico"
-      type="image/vnd.microsoft.icon"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/news.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
+---
+layout: default
+title: News - ELIXIR Ireland
+description: Latest news and updates from ELIXIR Ireland, the Irish node of the international organisation ELIXIR.
+---
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>News & Updates</h1>
+    <p class="lead">Stay informed about the latest developments in ELIXIR Ireland</p>
+  </div>
+</section>
 
-  <body>
-    <!-- HEADER -->
-    <div id="header-placeholder"></div>
-
-    <!-- MAIN CONTENT AREA -->
-    <main>
-      <section class="page-hero">
-        <div class="page-hero-content">
-          <h1>News & Updates</h1>
-          <p class="lead">Stay informed about the latest developments in ELIXIR Ireland</p>
-        </div>
-      </section>
-
-      <section class="content-section">
-        <div class="container">
-          <div id="news-container" class="card-container">
-            <!-- News items will be injected here by JavaScript -->
-          </div>
-          <div id="pagination-container" class="pagination">
-            <!-- Pagination controls will be injected here by JavaScript -->
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- FOOTER -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Load scripts in correct order -->
-    <script src="/assets/js/ei.js"></script>
-    <script src="/assets/js/news_items.js"></script>
-    <script src="/assets/js/event_and_news.js"></script>
-    <script src="/assets/js/navigation.js"></script>
-  </body>
-</html>
+<section class="content-section">
+  <div class="container">
+    <div id="news-container" class="card-container">
+      <!-- News items will be injected here by JavaScript -->
+    </div>
+    <div id="pagination-container" class="pagination">
+      <!-- Pagination controls will be injected here by JavaScript -->
+    </div>
+  </div>
+</section>

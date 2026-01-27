@@ -1,309 +1,291 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Services - ELIXIR Ireland</title>
-    <meta
-      name="description"
-      content="ELIXIR Ireland services for computational biology including compute, tools, interoperability, training and data resources."
-    />
-    <link
-      rel="shortcut icon"
-      href="https://elixir-europe.org/sites/all/themes/elixir/images/favicons/favicon.ico"
-      type="image/vnd.microsoft.icon"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/services.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
+---
+layout: default
+title: Services - ELIXIR Ireland
+description: ELIXIR Ireland is the Irish node of the international organisation ELIXIR, which promotes the sharing of resources and expertise in computational biology.
+---
+<!-- Hero Section -->
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>Our Services</h1>
+    <p class="lead">
+      ELIXIR Ireland provides services and resources for the Irish life science research community
+    </p>
+  </div>
+</section>
 
-  <body>
-    <!-- HEADER -->
-    <div id="header-placeholder"></div>
+<!-- ELIXIR Europe Services Section -->
+<section class="content-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="icon-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M2 12h20"></path>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+      </div>
+      <h2>ELIXIR Europe Services</h2>
+    </div>
+    <div class="section-content">
+      <a href="https://elixir-europe.org/services" target="_blank" class="elixir-europe-box">
+        <h3>Explore European-wide Services</h3>
+        <p>
+          ELIXIR Europe provides a comprehensive range of services across its network of 23 member states.
+          Access the full catalogue of European-wide services, tools, databases, and resources available to researchers
+          throughout the ELIXIR network.
+        </p>
+        <span class="btn btn-primary">Visit ELIXIR Europe Services →</span>
+      </a>
+    </div>
+  </div>
+</section>
 
-    <!-- MAIN CONTENT AREA -->
-    <main>
-      <!-- Hero Section -->
-      <section class="page-hero">
-        <div class="page-hero-content">
-          <h1>Our Services</h1>
-          <p class="lead">
-            ELIXIR Ireland provides services and resources for the Irish life science research community
-          </p>
-        </div>
-      </section>
+<!-- ELIXIR Ireland Services Section -->
+<section class="content-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="icon-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+      </div>
+      <h2>ELIXIR Ireland Services</h2>
+    </div>
+    <div class="section-content">
+      <p>
+        Explore our suite of services organized by category. Click on each category to view available services and
+        resources
+        provided by ELIXIR Ireland to support computational biology research across the country.
+      </p>
 
-      <!-- ELIXIR Europe Services Section -->
-      <section class="content-section">
-        <div class="container">
-          <div class="section-header">
-            <div class="icon-circle">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M2 12h20"></path>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      <!-- Compute Services -->
+      <div class="service-category">
+        <div class="category-header" onclick="toggleCategory('compute')">
+          <h3>
+            <span class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
               </svg>
-            </div>
-            <h2>ELIXIR Europe Services</h2>
-          </div>
-          <div class="section-content">
-            <a href="https://elixir-europe.org/services" target="_blank" class="elixir-europe-box">
-              <h3>Explore European-wide Services</h3>
-              <p>
-                ELIXIR Europe provides a comprehensive range of services across its network of 23 member states. 
-                Access the full catalogue of European-wide services, tools, databases, and resources available to researchers 
-                throughout the ELIXIR network.
-              </p>
-              <span class="btn btn-primary">Visit ELIXIR Europe Services →</span>
+            </span>
+            Compute Services
+          </h3>
+          <span class="expand-icon" id="compute-icon">▼</span>
+        </div>
+        <div class="category-content" id="compute-content">
+          <div class="service-item">
+            <h4>ICHEC - Irish Centre for High-End Computing</h4>
+            <p>
+              Ireland's national centre for high-performance computing (HPC) provides computational infrastructure
+              for large-scale bioinformatics analyses, genomic data processing, and computational modeling.
+              ICHEC offers access to advanced HPC systems, expert support, and training for researchers across
+              life sciences and other disciplines.
+            </p>
+            <a href="https://www.ichec.ie/" target="_blank" class="service-item-link">
+              Visit ICHEC
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
             </a>
           </div>
         </div>
-      </section>
+      </div>
 
-      <!-- ELIXIR Ireland Services Section -->
-      <section class="content-section">
-        <div class="container">
-          <div class="section-header">
-            <div class="icon-circle">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      <!-- Tools Services -->
+      <div class="service-category">
+        <div class="category-header" onclick="toggleCategory('tools')">
+          <h3>
+            <span class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                </path>
               </svg>
-            </div>
-            <h2>ELIXIR Ireland Services</h2>
-          </div>
-          <div class="section-content">
+            </span>
+            Tools
+          </h3>
+          <span class="expand-icon" id="tools-icon">▼</span>
+        </div>
+        <div class="category-content" id="tools-content">
+          <div class="service-item">
+            <h4>CancerGD.org</h4>
             <p>
-              Explore our suite of services organized by category. Click on each category to view available services and resources 
-              provided by ELIXIR Ireland to support computational biology research across the country.
+              A resource for analyzing and interpreting genetic dependencies in cancer.
+              This tool provides comprehensive insights into cancer genomics and gene-disease relationships.
             </p>
+            <a href="https://cancergd.org/" target="_blank" class="service-item-link">
+              Visit CancerGD.org
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
 
-            <!-- Compute Services -->
-            <div class="service-category">
-              <div class="category-header" onclick="toggleCategory('compute')">
-                <h3>
-                  <span class="category-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                      <line x1="8" y1="21" x2="16" y2="21"></line>
-                      <line x1="12" y1="17" x2="12" y2="21"></line>
-                    </svg>
-                  </span>
-                  Compute Services
-                </h3>
-                <span class="expand-icon" id="compute-icon">▼</span>
-              </div>
-              <div class="category-content" id="compute-content">
-                <div class="service-item">
-                  <h4>ICHEC - Irish Centre for High-End Computing</h4>
-                  <p>
-                    Ireland's national centre for high-performance computing (HPC) provides computational infrastructure 
-                    for large-scale bioinformatics analyses, genomic data processing, and computational modeling. 
-                    ICHEC offers access to advanced HPC systems, expert support, and training for researchers across 
-                    life sciences and other disciplines.
-                  </p>
-                  <a href="https://www.ichec.ie/" target="_blank" class="service-item-link">
-                    Visit ICHEC
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
+          <div class="service-item">
+            <h4>CellMix</h4>
+            <p>
+              An R package that incorporates most state-of-the-art deconvolution methods into an intuitive
+              and extendible framework, providing a single entry point to explore, assess and disentangle
+              gene expression data from heterogeneous samples.
+            </p>
+            <a href="http://web.cbio.uct.ac.za/~renaud/CRAN/web/CellMix/" target="_blank" class="service-item-link">
+              Visit CellMix
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
 
-            <!-- Tools Services -->
-            <div class="service-category">
-              <div class="category-header" onclick="toggleCategory('tools')">
-                <h3>
-                  <span class="category-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                    </svg>
-                  </span>
-                  Tools
-                </h3>
-                <span class="expand-icon" id="tools-icon">▼</span>
-              </div>
-              <div class="category-content" id="tools-content">
-                <div class="service-item">
-                  <h4>CancerGD.org</h4>
-                  <p>
-                    A resource for analyzing and interpreting genetic dependencies in cancer. 
-                    This tool provides comprehensive insights into cancer genomics and gene-disease relationships.
-                  </p>
-                  <a href="https://cancergd.org/" target="_blank" class="service-item-link">
-                    Visit CancerGD.org
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a>
-                </div>
+          <div class="service-item">
+            <h4>Clustal Omega</h4>
+            <p>
+              Multiple Sequence Alignment package available via online server. Developed in collaboration
+              with research groups in Germany, the UK and France, Clustal Omega is a fast and scalable
+              tool for aligning biological sequences.
+            </p>
+            <a href="http://www.clustal.org/omega/" target="_blank" class="service-item-link">
+              Visit Clustal Omega
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
 
-                <div class="service-item">
-                  <h4>CellMix</h4>
-                  <p>
-                    An R package that incorporates most state-of-the-art deconvolution methods into an intuitive 
-                    and extendible framework, providing a single entry point to explore, assess and disentangle 
-                    gene expression data from heterogeneous samples.
-                  </p>
-                  <a href="http://web.cbio.uct.ac.za/~renaud/CRAN/web/CellMix/" target="_blank" class="service-item-link">
-                    Visit CellMix
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a>
-                </div>
-
-                <div class="service-item">
-                  <h4>Clustal Omega</h4>
-                  <p>
-                    Multiple Sequence Alignment package available via online server. Developed in collaboration 
-                    with research groups in Germany, the UK and France, Clustal Omega is a fast and scalable 
-                    tool for aligning biological sequences.
-                  </p>
-                  <a href="http://www.clustal.org/omega/" target="_blank" class="service-item-link">
-                    Visit Clustal Omega
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a>
-                </div>
-
-                <div class="service-item">
-                  <h4>LymAnalyzer</h4>
-                  <p>
-                    A Java tool for profiling short-read sequences from T cell receptors and immunoglobulins. 
-                    LymAnalyzer provides specialized analysis capabilities for immunogenomics research and 
-                    adaptive immune repertoire studies.
-                  </p>
-                  <a href="https://sourceforge.net/projects/lymanalyzer/" target="_blank" class="service-item-link">
-                    Visit LymAnalyzer
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Interoperability Services -->
-            <div class="service-category">
-              <div class="category-header" onclick="toggleCategory('interoperability')">
-                <h3>
-                  <span class="category-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                    </svg>
-                  </span>
-                  Interoperability
-                </h3>
-                <span class="expand-icon" id="interoperability-icon">▼</span>
-              </div>
-              <div class="category-content" id="interoperability-content">
-                <div class="service-item">
-                  <h4>Interoperability Services</h4>
-                  <p>
-                    <em>Coming Soon</em>
-                    <br><br>
-                    ELIXIR Ireland is developing interoperability services including standards, protocols, 
-                    and APIs to enable seamless data exchange and integration across bioinformatics platforms 
-                    and research infrastructures.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Training Services -->
-            <div class="service-category">
-              <div class="category-header" onclick="toggleCategory('training')">
-                <h3>
-                  <span class="category-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                    </svg>
-                  </span>
-                  Training
-                </h3>
-                <span class="expand-icon" id="training-icon">▼</span>
-              </div>
-              <div class="category-content" id="training-content">
-                <div class="service-item">
-                  <h4>TeSS - ELIXIR's Training Portal</h4>
-                  <p>
-                    Access comprehensive training materials, courses, and workshops in bioinformatics and 
-                    computational biology through ELIXIR's Training eSupport System (TeSS). TeSS provides 
-                    a centralized platform for discovering and accessing training resources across the ELIXIR network.
-                    <br><br>
-                    <em>Note: ELIXIR Ireland training collection coming soon.</em>
-                  </p>
-                  <a href="https://tess.elixir-europe.org/materials" target="_blank" class="service-item-link">
-                    Visit TeSS Training Materials
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Data Services -->
-            <div class="service-category">
-              <div class="category-header" onclick="toggleCategory('data')">
-                <h3>
-                  <span class="category-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                      <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                    </svg>
-                  </span>
-                  Data
-                </h3>
-                <span class="expand-icon" id="data-icon">▼</span>
-              </div>
-              <div class="category-content" id="data-content">
-                <div class="service-item">
-                  <h4>RiboSeq.org</h4>
-                  <p>
-                    A comprehensive database and genome browser for ribosome profiling (ribo-seq) data. 
-                    Developed at UCC, this resource provides access to ribosome profiling datasets, 
-                    translation visualization tools, and integrated analysis of translation across multiple organisms. 
-                    Essential for researchers studying protein synthesis, translation regulation, and gene expression.
-                  </p>
-                  <a href="https://riboseq.org/" target="_blank" class="service-item-link">
-                    Visit RiboSeq.org
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
+          <div class="service-item">
+            <h4>LymAnalyzer</h4>
+            <p>
+              A Java tool for profiling short-read sequences from T cell receptors and immunoglobulins.
+              LymAnalyzer provides specialized analysis capabilities for immunogenomics research and
+              adaptive immune repertoire studies.
+            </p>
+            <a href="https://sourceforge.net/projects/lymanalyzer/" target="_blank" class="service-item-link">
+              Visit LymAnalyzer
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
 
-    <!-- FOOTER -->
-    <div id="footer-placeholder"></div>
+      <!-- Interoperability Services -->
+      <div class="service-category">
+        <div class="category-header" onclick="toggleCategory('interoperability')">
+          <h3>
+            <span class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </span>
+            Interoperability
+          </h3>
+          <span class="expand-icon" id="interoperability-icon">▼</span>
+        </div>
+        <div class="category-content" id="interoperability-content">
+          <div class="service-item">
+            <h4>Interoperability Services</h4>
+            <p>
+              <em>Coming Soon</em>
+              <br><br>
+              ELIXIR Ireland is developing interoperability services including standards, protocols,
+              and APIs to enable seamless data exchange and integration across bioinformatics platforms
+              and research infrastructures.
+            </p>
+          </div>
+        </div>
+      </div>
 
-    <!-- Load scripts in correct order -->
-    <script src="/assets/js/ei.js"></script>
-    <script src="/assets/js/services.js"></script>
-    <script src="/assets/js/navigation.js"></script>
-  </body>
-</html>
+      <!-- Training Services -->
+      <div class="service-category">
+        <div class="category-header" onclick="toggleCategory('training')">
+          <h3>
+            <span class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </span>
+            Training
+          </h3>
+          <span class="expand-icon" id="training-icon">▼</span>
+        </div>
+        <div class="category-content" id="training-content">
+          <div class="service-item">
+            <h4>TeSS - ELIXIR's Training Portal</h4>
+            <p>
+              Access comprehensive training materials, courses, and workshops in bioinformatics and
+              computational biology through ELIXIR's Training eSupport System (TeSS). TeSS provides
+              a centralized platform for discovering and accessing training resources across the ELIXIR network.
+              <br><br>
+              <em>Note: ELIXIR Ireland training collection coming soon.</em>
+            </p>
+            <a href="https://tess.elixir-europe.org/materials" target="_blank" class="service-item-link">
+              Visit TeSS Training Materials
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Services -->
+      <div class="service-category">
+        <div class="category-header" onclick="toggleCategory('data')">
+          <h3>
+            <span class="category-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </span>
+            Data
+          </h3>
+          <span class="expand-icon" id="data-icon">▼</span>
+        </div>
+        <div class="category-content" id="data-content">
+          <div class="service-item">
+            <h4>RiboSeq.org</h4>
+            <p>
+              A comprehensive database and genome browser for ribosome profiling (ribo-seq) data.
+              Developed at UCC, this resource provides access to ribosome profiling datasets,
+              translation visualization tools, and integrated analysis of translation across multiple organisms.
+              Essential for researchers studying protein synthesis, translation regulation, and gene expression.
+            </p>
+            <a href="https://riboseq.org/" target="_blank" class="service-item-link">
+              Visit RiboSeq.org
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

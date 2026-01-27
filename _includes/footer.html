@@ -1,117 +1,165 @@
 <footer class="main-footer">
+  <style>
+    /* Layout: three columns horizontally, wrap on very small screens */
+    .main-footer {
+      background: #023452; /* keep dark background if not already set */
+      color: #fff;
+      padding: 30px 0;
+      border-top: 2px solid #f47920;
+    }
+    .main-footer .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+      flex-wrap: wrap; /* allows stacking only on very narrow screens */
+    }
+    .main-footer .footer-column {
+      flex: 0 0 32%; /* three columns across */
+      min-width: 200px; /* prevents premature wrapping */
+      text-align: left;
+    }
+    .main-footer h3 {
+      color: #fff;
+      margin-top: 0;
+    }
+    .main-footer .footer-links {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .main-footer .footer-links,
+    .main-footer .footer-links li,
+    .main-footer .footer-links a,
+    .main-footer .footer-bottom p {
+      color: #fff;
+    }
+    .main-footer .footer-links a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .main-footer .footer-links a:hover {
+      text-decoration: underline;
+    }
+    .main-footer .footer-bottom {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .main-footer hr {
+      border: 0;
+      border-top: 1px solid #fff;
+      margin: 20px 0;
+    }
+    /* Ensure font-awesome icons are white */
+    .main-footer i {
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      .main-footer .footer-column {
+        flex: 0 0 100%;
+      }
+    }
+  </style>
+
   <div class="container">
     <div class="footer-content">
       <div class="footer-column">
-        <h3>ABOUT</h3>
+        <h3>About</h3>
         <ul class="footer-links">
           <li>
-            <a href="https://elixiruknode.org/what-we-do/" target="_blank" rel="noopener">
-              <i class="fas fa-globe"></i>
-              <span>ELIXIR Europe</span>
+            <a href="https://elixir-europe.org/" target="_blank" rel="noopener">
+              🌍 ELIXIR Europe
             </a>
           </li>
           <li>
-            <a href="{{ '/about' | relative_url }}">
-              <i class="fas fa-flag"></i>
-              <span>ELIXIR Ireland</span>
+            <a href="/about/">
+              🇮🇪 ELIXIR Ireland
             </a>
           </li>
           <li>
-            <a href="{{ '/leadership' | relative_url }}">
-              <i class="fas fa-user-tie"></i>
-              <span>Leadership</span>
+            <a href="/about/#leadership">
+              🧑‍💼 Leadership
             </a>
           </li>
           <li>
-            <a href="{{ '/team' | relative_url }}">
-              <i class="fas fa-users"></i>
-              <span>Team</span>
+            <a href="/about/#team">
+              👥 Team
             </a>
           </li>
           <li>
-            <a href="{{ '/member-institutes' | relative_url }}">
-              <i class="fas fa-building"></i>
-              <span>Member Institutes</span>
+            <a href="/about/#member-institutes">
+              🏢 Member Institutes
             </a>
           </li>
         </ul>
       </div>
       
       <div class="footer-column">
-        <h3>WHAT WE DO</h3>
+        <h3>What we do</h3>
         <ul class="footer-links">
           <li>
-            <a href="{{ '/services' | relative_url }}">
-              <i class="fas fa-cogs"></i>
-              <span>Services</span>
+            <a href="/what-we-do/#services">
+              ⚙️ Services
             </a>
           </li>
           <li>
-            <a href="{{ '/projects' | relative_url }}">
-              <i class="fas fa-project-diagram"></i>
-              <span>Projects</span>
+            <a href="/what-we-do/#projects">
+              🏗️ Projects
             </a>
           </li>
           <li>
-            <a href="{{ '/training' | relative_url }}">
-              <i class="fas fa-graduation-cap"></i>
-              <span>Training</span>
+            <a href="/what-we-do/#training">
+              🎓 Training
             </a>
           </li>
           <li>
-            <a href="{{ '/travel-grants' | relative_url }}">
-              <i class="fas fa-plane"></i>
-              <span>Travel Grants</span>
+            <a href="/what-we-do/#research-data-software-management">
+              📊 Research Data & Software Management
             </a>
           </li>
           <li>
-            <a href="{{ '/knowledge-exchange' | relative_url }}">
-              <i class="fas fa-exchange-alt"></i>
-              <span>Knowledge Exchange</span>
+            <a href="/what-we-do/#international-working-groups">
+              🌍 International Working Groups
             </a>
           </li>
         </ul>
       </div>
       
       <div class="footer-column">
-        <h3>CONNECT</h3>
+        <h3>Connect</h3>
         <ul class="footer-links">
           <li>
-            <a href="{{ '/news' | relative_url }}">
-              <i class="fas fa-newspaper"></i>
-              <span>News</span>
+            <a href="/news/">
+              📰 News
             </a>
           </li>
           <li>
-            <a href="{{ '/events' | relative_url }}">
-              <i class="fas fa-calendar-alt"></i>
-              <span>Events</span>
+            <a href="/events/">
+              🗓️ Events
             </a>
           </li>
           <li>
-            <a href="{{ '/contact' | relative_url }}">
-              <i class="fas fa-envelope"></i>
-              <span>Contact Us</span>
+            <a href="mailto:elixir@ul.ie">
+              📧 Contact Us
             </a>
           </li>
           <li>
-            <a href="{{ '/join' | relative_url }}">
-              <i class="fas fa-handshake"></i>
-              <span>Join ELIXIR Ireland</span>
+            <a href="/participate/">
+              👋 Join ELIXIR Ireland
             </a>
           </li>
           <li>
-            <a href="{{ '/mailing-lists' | relative_url }}">
-              <i class="fas fa-mail-bulk"></i>
-              <span>Join Mailing Lists</span>
+            <a href="/participate/">
+              ✉️ Join Mailing Lists
             </a>
           </li>
         </ul>
       </div>
     </div>
     
+    <hr>
+    
     <div class="footer-bottom">
-      <p>Copyright &copy; {% if site.time %}{{ site.time | date: '%Y' }}{% else %}{{ 'now' | date: '%Y' }}{% endif %} ELIXIR Ireland</p>
+      <p>&copy; 2025 ELIXIR Ireland. All rights reserved. </p>
     </div>
   </div>
 </footer>

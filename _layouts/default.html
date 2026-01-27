@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>{% if page.title %}{{ page.title }}{% else %}ELIXIR Ireland{% endif %}</title>
+    <meta name="description"
+        content="{% if page.description %}{{ page.description }}{% else %}ELIXIR Ireland is the Irish node of the international organisation ELIXIR, which promotes the sharing of resources and expertise in computational biology.{% endif %}" />
+    <link rel="shortcut icon" href="https://elixir-europe.org/sites/all/themes/elixir/images/favicons/favicon.ico"
+        type="image/vnd.microsoft.icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
+    {% if page.css_file %}
+    <link rel="stylesheet" type="text/css" href="{{ page.css_file }}" />
+    {% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    {% include header.html %}
+
+    <!-- MAIN CONTENT AREA -->
+    <main>
+        {{ content }}
+    </main>
+
+    <!-- FOOTER -->
+    {% include footer.html %}
+
+    <!-- Load scripts in correct order -->
+    <script src="/assets/js/ei.js"></script>
+    <script src="/assets/js/ui.js"></script>
+
+    <!-- Page specific scripts -->
+    {% if page.url contains '/events/' %}
+    <script src="/assets/js/events_items.js"></script>
+    <script src="/assets/js/events.js"></script>
+    {% endif %}
+
+    {% if page.url contains '/news/' %}
+    <script src="/assets/js/news_items.js"></script>
+    <script src="/assets/js/news.js"></script>
+    {% endif %}
+
+    {% if page.url contains '/services/' %}
+    <script src="/assets/js/services.js"></script>
+    {% endif %}
+
+    {% if page.url contains '/vibe/' %}
+    <script src="/assets/js/vibe.js"></script>
+    {% endif %}
+
+    {% if page.url contains '/events/' %}
+    <script src="/assets/js/events_items.js"></script>
+    <script src="/assets/js/events.js"></script>
+    {% endif %}
+
+    {% if page.url == '/' or page.url == '/index.html' %}
+    <script src="/assets/js/home.js"></script>
+    {% endif %}
+
+    <script src="/assets/js/navigation.js"></script>
+</body>
+
+</html>

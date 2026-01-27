@@ -1,5 +1,5 @@
 // Core initialization for ELIXIR Ireland website
-(function() {
+(function () {
   'use strict';
 
   // Global flag to prevent multiple initializations
@@ -8,25 +8,7 @@
   }
   window.ELIXIR_INITIALIZED = true;
 
-  // Load header and footer
-  function loadHeaderFooter() {
-    // Load header
-    fetch('/includes/header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header-placeholder').innerHTML = data;
-        setActiveNavLink();
-      })
-      .catch(error => console.error('Error loading header:', error));
 
-    // Load footer
-    fetch('/includes/footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer-placeholder').innerHTML = data;
-      })
-      .catch(error => console.error('Error loading footer:', error));
-  }
 
   // Set active navigation item based on current page
   function setActiveNavLink() {
@@ -35,9 +17,9 @@
 
     navLinks.forEach((link) => {
       const linkPage = link.getAttribute("href");
-      if (linkPage === currentPage || 
-          (currentPage === "" && linkPage === "home.html") || 
-          (currentPage === "index.html" && linkPage === "home.html")) {
+      if (linkPage === currentPage ||
+        (currentPage === "" && linkPage === "home.html") ||
+        (currentPage === "index.html" && linkPage === "home.html")) {
         link.classList.add("active");
       } else {
         link.classList.remove("active");
@@ -47,9 +29,9 @@
 
   // Initialize on DOM ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadHeaderFooter);
+    document.addEventListener('DOMContentLoaded', setActiveNavLink);
   } else {
-    loadHeaderFooter();
+    setActiveNavLink();
   }
 
   // Export utility function

@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>VIBE – The Irish Bioinformatics Network</title>
+    <meta
+      name="description"
+      content="VIBE is a grassroots, bottom-up community network representing bioinformatics researchers, data scientists, and computational biologists across Ireland."
+    />
+    <link
+      rel="shortcut icon"
+      href="https://elixir-europe.org/sites/all/themes/elixir/images/favicons/favicon.ico"
+      type="image/vnd.microsoft.icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/services.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/events.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/assets/js/navigation.js" defer></script>
+    <style>
+        .vibe-logo-container {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .vibe-logo-container img {
+            max-width: 250px;
+            height: auto;
+        }
+        .strategic-context {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+        .strategic-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .strategic-graphic {
+            flex: 1;
+            min-width: 300px;
+            background: #f0f4f8;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e1e8ed;
+        }
+        .strategic-graphic h3 {
+            color: #023452;
+            margin-top: 0;
+        }
+        .pi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .pi-grid.collapsed {
+            max-height: 600px;
+            overflow: hidden;
+            position: relative;
+        }
+        .pi-grid.collapsed::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+            pointer-events: none;
+        }
+        .pi-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-top: 4px solid #f47920;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .pi-avatar {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #f0f4f8;
+        }
+        .pi-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .pi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+        }
+        .pi-card h3 {
+            margin-top: 0;
+            color: #023452;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .pi-card .institution {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.8rem;
+        }
+        .pi-card .focus {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            color: #444;
+            flex-grow: 1;
+        }
+        .pi-links {
+            display: flex;
+            gap: 15px;
+            margin-top: auto;
+            justify-content: center;
+        }
+        .pi-links a {
+            color: #023452;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        .pi-links a:hover {
+            color: #f47920;
+        }
+        .join-directory {
+            background: linear-gradient(135deg, #023452 0%, #034a73 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-top: 4rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(2, 52, 82, 0.2);
+        }
+        .join-directory h3 {
+            color: white;
+            margin-top: 0;
+        }
+        .join-directory a {
+            color: #f47920;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .join-directory a:hover {
+            text-decoration: underline;
+            color: #ff9e5e;
+        }
+        .event-highlight {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            border-left: 5px solid #f47920;
+        }
+        .cta-box {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 2rem;
+            border: 1px solid #e9ecef;
+            text-align: center;
+        }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <div id="header-placeholder"></div>
+
+    <!-- MAIN CONTENT AREA -->
+    <main>
+      <!-- Hero Section -->
+      <section class="page-hero" id="top">
+        <div class="page-hero-content">
+          <h1>VIBE – The All Ireland Bioinformatics Network</h1>
+        </div>
+      </section>
+
+      <!-- About VIBE -->
+      <section class="content-section">
+        <div class="container">
+            <div class="vibe-logo-container">
+                <img src="/assets/images/vibe-ie_logo.png" alt="VIBE Logo" style="max-width: 300px;">
+            </div>
+            
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <h2 style="color: #023452; margin-bottom: 1rem;">The Virtual Institute of Bioinformatics and Evolution</h2>
+                <h3 style="color: #666; font-weight: 400; margin-top: 0;">Uniting the bioinformatics community across the island of Ireland.</h3>
+            </div>
+
+            <div class="row">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <p>VIBE is a bottom-up community network representing bioinformatics researchers, data scientists, and computational biologists across Ireland. Since its inception, VIBE has served as the primary forum for networking, collaboration, and the exchange of ideas in the Irish life sciences data domain.</p>
+                    
+                    <div style="background: #f0f7fb; padding: 1.5rem; border-radius: 8px; margin-top: 2rem; border-left: 4px solid #023452;">
+                        <h4 style="margin-top: 0; color: #023452;">Governance</h4>
+                        <p>We operate under a shared set of principles to ensure transparency and community-led decision-making. The VIBE Constitution outlines our purpose, membership structure, and operating procedures.</p>
+                        <a href="https://zenodo.org/records/17850120" target="_blank" class="btn btn-primary" style="display: inline-block; margin-top: 0.5rem;">View the VIBE Constitution on Zenodo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- Strategic Context -->
+      <section class="content-section" style="background-color: #fff;">
+        <div class="container">
+            <div class="section-header">
+                <div class="icon-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="18" cy="5" r="3"></circle>
+                    <circle cx="6" cy="12" r="3"></circle>
+                    <circle cx="18" cy="19" r="3"></circle>
+                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                  </svg>
+                </div>
+                <h2>Strategic Context: VIBE & ELIXIR</h2>
+            </div>
+            
+            <div class="strategic-context">
+                <div class="strategic-text">
+                    <h3>The All-Island Connection</h3>
+                    <p>VIBE operates as an All-Island network, bridging the gap between researchers in the Republic of Ireland and Northern Ireland. This unique position allows us to foster deep collaboration between:</p>
+                    
+                    <ul style="margin-bottom: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;"><strong>ELIXIR Ireland:</strong> Covering member institutes in the Republic of Ireland.</li>
+                        <li><strong>ELIXIR UK:</strong> Covering member institutes across the United Kingdom, including Northern Ireland.</li>
+                    </ul>
+                    
+                    <h3>Why this matters</h3>
+                    <p>VIBE provides the established and cohesive All Ireland community that can work in tandem via national ELIXIR Nodes to leverage European scale opportunities, both within and beyond the ELIXIR Europe framework.</p>
+                </div>
+                <div class="strategic-graphic" style="background: transparent; border: none; padding: 0;">
+                    <img src="/assets/images/vibe-island.png" alt="VIBE All-Island Network Map" style="max-width: 50%; height: auto; display: block; margin: 0 auto;">
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- Annual Events -->
+      <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="icon-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </div>
+                <h2>Annual Events</h2>
+            </div>
+
+            <!-- Upcoming Event -->
+            <div class="event-highlight">
+                <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                    <div style="flex: 2;">
+                        <span class="event-status-badge upcoming" style="margin-bottom: 1rem; display: inline-block;">Upcoming Event</span>
+                        <h2 style="color: #023452; margin-top: 0;">VIBE 2025</h2>
+                        <p><strong><i class="far fa-calendar"></i> Date:</strong> December 8, 2025</p>
+                        <p><strong><i class="fas fa-map-marker-alt"></i> Location:</strong> Trinity College Dublin, Dublin, Ireland</p>
+                        <p>The 2025 edition brings together the brightest minds in Irish bioinformatics for a day of presentations, poster sessions, and networking.</p>
+                        <a href="https://www.gen.tcd.ie/vibe/" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">View Event & Register</a>
+                    </div>
+                    <div style="flex: 1; text-align: center;">
+                        <img src="/assets/images/vibe25.png" alt="VIBE 2025" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Archive -->
+            
+            <div id="vibe-events-archive">
+                <!-- VIBE 2024 -->
+                <div class="service-category">
+                    <div class="category-header" onclick="toggleVibeYear('vibe2024')">
+                        <h3>VIBE 2024 (Joint VIBE-ICBG Meeting)</h3>
+                        <div class="expand-icon" id="vibe2024-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="category-content" id="vibe2024-content">
+                        <p><strong>Date:</strong> December 5–6, 2024</p>
+                        <p><strong>Location:</strong> University of Galway</p>
+                        <p><strong>Host:</strong> Dr. Pilib Ó Broin (University of Galway)</p>
+                        <p><strong>Keynotes:</strong> Karen Miga (UCSC), Davide Cirillo (Barcelona Supercomputing Centre), Elizabeth Bik.</p>
+                    </div>
+                </div>
+
+                <!-- VIBE 2023 -->
+                <div class="service-category">
+                    <div class="category-header" onclick="toggleVibeYear('vibe2023')">
+                        <h3>VIBE 2023</h3>
+                        <div class="expand-icon" id="vibe2023-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="category-content" id="vibe2023-content">
+                        <p><strong>Date:</strong> May 26, 2023</p>
+                        <p><strong>Location:</strong> Riddel Hall, Queen's University Belfast</p>
+                        <p><strong>Host:</strong> Dr. Ian Overton (Queen's University Belfast)</p>
+                        <p><strong>Keynotes:</strong> Prof. Aedín Culhane (University of Limerick) & Dr. Evangelia Petsalaki (EMBL-EBI).</p>
+                    </div>
+                </div>
+
+                <!-- VIBE 2022 -->
+                <div class="service-category">
+                    <div class="category-header" onclick="toggleVibeYear('vibe2022')">
+                        <h3>VIBE 2022</h3>
+                        <div class="expand-icon" id="vibe2022-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="category-content" id="vibe2022-content">
+                        <p><strong>Date:</strong> June 24, 2022</p>
+                        <p><strong>Location:</strong> University of Limerick</p>
+                        <p><strong>Hosts:</strong> Dr. Aedin Culhane & Dr. Virag Sharma</p>
+                        <p><strong>Keynote:</strong> Prof. Des Higgins (UCD) - "37 years of Multiple Sequence Alignments"</p>
+                    </div>
+                </div>
+
+                <!-- VIBE 2019 -->
+                <div class="service-category">
+                    <div class="category-header" onclick="toggleVibeYear('vibe2019')">
+                        <h3>VIBE 2019</h3>
+                        <div class="expand-icon" id="vibe2019-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="category-content" id="vibe2019-content">
+                        <p><strong>Date:</strong> March 22, 2019</p>
+                        <p><strong>Location:</strong> UCD Conway Institute, Dublin</p>
+                        <p><strong>Host:</strong> Prof. Des Higgins</p>
+                        <p><strong>Keynotes:</strong> Prof. Lars Jermiin (UCD) & Dr. Chris Creevey (QUB).</p>
+                    </div>
+                </div>
+
+                <!-- VIBE 2014 -->
+                <div class="service-category">
+                    <div class="category-header" onclick="toggleVibeYear('vibe2014')">
+                        <h3>VIBE 2014</h3>
+                        <div class="expand-icon" id="vibe2014-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="category-content" id="vibe2014-content">
+                        <p><strong>Date:</strong> May 9, 2014</p>
+                        <p><strong>Location:</strong> Dargan Centre, Institute of Technology Carlow</p>
+                        <p><strong>Host:</strong> Dr. Andrew Lloyd</p>
+                        <p><strong>Keynote:</strong> Dr. Dan Milborne (Teagasc) - "A whistle stop tour of the potato genome sequence".</p>
+                    </div>
+                </div>
+
+                <!-- VIBE 2013 -->
+                <div class="service-category">
+                    <div class="category-header" onclick="toggleVibeYear('vibe2013')">
+                        <h3>VIBE 2013</h3>
+                        <div class="expand-icon" id="vibe2013-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="category-content" id="vibe2013-content">
+                        <p><strong>Date:</strong> November 15, 2013</p>
+                        <p><strong>Location:</strong> NUI Galway (Arts Millennium Building)</p>
+                        <p><strong>Hosts:</strong> Dr. Tim Downing & Prof. Cathal Seoighe</p>
+                        <p><strong>Keynote:</strong> Prof. John Greally (Albert Einstein College of Medicine, Yeshiva University).</p>
+                    </div>
+                </div>
+
+                <!-- VIBE 2008 -->
+                <div class="service-category">
+                    <div class="category-header" onclick="toggleVibeYear('vibe2008')">
+                        <h3>VIBE 2008</h3>
+                        <div class="expand-icon" id="vibe2008-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="category-content" id="vibe2008-content">
+                        <p><strong>Date:</strong> September 5, 2008</p>
+                        <p><strong>Keynote:</strong> Prof. Martin Embley (University of Newcastle, UK) - "Origin and evolution of eukaryotic genomes and organelles".</p>
+                    </div>
+                </div>
+
+                <!-- VIBE 2005 -->
+                <div class="service-category">
+                    <div class="category-header" onclick="toggleVibeYear('vibe2005')">
+                        <h3>VIBE 2005 (Biannual Research Day)</h3>
+                        <div class="expand-icon" id="vibe2005-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="category-content" id="vibe2005-content">
+                        <p><strong>Date:</strong> February 17, 2005</p>
+                        <p><strong>Location:</strong> Dublin City University (DCU)</p>
+                        <p><strong>Host:</strong> Mary O'Connell (School of Biotechnology)</p>
+                        <p><strong>Keynote:</strong> Prof. John Conery (University of Oregon).</p>
+                    </div>
+                </div>
+
+                <!-- VIBE 2002 -->
+                <div class="service-category">
+                    <div class="category-header" onclick="toggleVibeYear('vibe2002')">
+                        <h3>VIBE 2002 (Inaugural Meeting)</h3>
+                        <div class="expand-icon" id="vibe2002-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="category-content" id="vibe2002-content">
+                        <p><strong>Date:</strong> April 25–26, 2002</p>
+                        <p><strong>Location:</strong> University College Cork (UCC)</p>
+                        <p><strong>Notable Sessions:</strong> Genome Evolution (Ken Wolfe), Phylogenies (James McInerney), Multiple Alignments (Des Higgins).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- Subscribe to VIBE Mailing List -->
+      <section class="content-section" style="background-color: #fff;">
+        <div class="container">
+            <div class="section-header">
+                <div class="icon-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                  </svg>
+                </div>
+                <h2>Subscribe to VIBE Mailing List</h2>
+            </div>
+
+            <div style="text-align: left;">
+                <p style="margin-bottom: 1.5rem;">Stay up to date with job postings, funding calls, and event announcements by joining the community mailing list hosted by HEAnet. This is the primary communication channel for bioinformaticians in Ireland.</p>
+                
+                <p><strong>To subscribe via email:</strong></p>
+                <p>Send an email to <a href="mailto:LISTSERV@LISTSERV.HEANET.IE">LISTSERV@LISTSERV.HEANET.IE</a> with the following body:</p>
+                
+                <div style="background: #f8f9fa; padding: 1rem; border-radius: 4px; border-left: 4px solid #023452; margin-bottom: 1rem; font-family: monospace;">
+                    SUBSCRIBE BIOINFORMATICS Your Full Name
+                </div>
+                
+                <a href="https://listserv.heanet.ie/cgi-bin/wa?A0=BIOINFORMATICS" target="_blank" class="btn btn-primary">Visit HEAnet Listserv Page</a>
+            </div>
+        </div>
+      </section>
+
+      <!-- Principal Investigators & Research Groups -->
+      <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="icon-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4.5 3h15"></path>
+                    <path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3"></path>
+                    <path d="M6 14h12"></path>
+                  </svg>
+                </div>
+                <h2>Principal Investigators & Research Groups</h2>
+            </div>
+            
+            
+<div class="pi-section-controls" style="text-align: center; margin-bottom: 2rem;">
+    <button id="toggle-pi-grid" class="btn btn-primary" onclick="togglePiGrid()">Show All Principal Investigators</button>
+</div>
+<div id="pi-grid-container" class="pi-grid collapsed">
+
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <img src="/assets/images/aedin.jpeg" alt="Aedin Culhane" >
+        </div>
+        <h3>Prof. Aedin Culhane</h3>
+        <h4>Professor of Cancer Genomics, Director Limerick Digital Cancer Research Centre</h4>
+        <p class="affiliation">University of Limerick</p>
+        <div class="pi-links">
+            
+            <a href="https://www.ul.ie/limerick-dcrc/prof-aedin-culhane" target="_blank" class="pi-link" title="Lab Website">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+            </a>
+            <a href="https://orcid.org/0000-0002-1395-9734" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+            <a href="mailto:aedin.culhane@ul.ie" class="pi-link" title="Email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Prof. Amy Jayne (AJ) McKnight</h3>
+        <h4>Professor of Molecular Epidemiology and Public Health; Director of Postgraduate Research</h4>
+        <p class="affiliation">Queens University Belfast</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0002-7482-709X" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Prof. Andrew Simpkin</h3>
+        <h4>Professor in Statistics</h4>
+        <p class="affiliation">University of Galway</p>
+        <div class="pi-links">
+            
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Dr. Anthony Redmond</h3>
+        <h4>Assistant Professor (Royal Society - Research Ireland University Research Fellow & Ad Astra Fellow)</h4>
+        <p class="affiliation">University College Dublin</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0002-7895-2410" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Prof. Aoife McLysaght</h3>
+        <h4>Chair of Evolutionary Genetics</h4>
+        <p class="affiliation">Trinity College Dublin</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0003-2552-6220" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Prof. Brendan Loftus</h3>
+        <h4>Professor of comparative genomics</h4>
+        <p class="affiliation">University College Dublin</p>
+        <div class="pi-links">
+            
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <img src="/assets/images/cathal-seoighe.jpg" alt="Cathal Seoighe" >
+        </div>
+        <h3>Prof. Cathal Seoighe</h3>
+        <h4>Professor of Bioinformatics</h4>
+        <p class="affiliation">University of Galway</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0003-0496-4029" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Prof. Chris Creevey</h3>
+        <h4>Professor of Computational Biology</h4>
+        <p class="affiliation">Queens University Belfast</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0001-7183-1555" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Prof. Cliona O'Farrelly</h3>
+        <h4>Professor of Comparative Immunology</h4>
+        <p class="affiliation">Trinity College Dublin</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0002-0616-2874" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <img src="/assets/images/colm.jpeg" alt="Colm Ryan" >
+        </div>
+        <h3>Dr. Colm Ryan</h3>
+        <h4>Associate Professor in Bioinformatics</h4>
+        <p class="affiliation">University College Dublin</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0003-2750-9854" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Dr. Darrin Hulsey</h3>
+        <h4>Assistant Professor of Developmental Biology</h4>
+        <p class="affiliation">University College Dublin</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0002-9653-6728" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Prof. David Fitzpatrick</h3>
+        <h4>Professor of Genome Evolution</h4>
+        <p class="affiliation">Maynooth University</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0001-7345-6998" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <img src="/assets/images/denis.jpeg" alt="Denis Shields" >
+        </div>
+        <h3>Prof. Denis Shields</h3>
+        <h4>Professor of Clinical Bioinformatics</h4>
+        <p class="affiliation">University College Dublin</p>
+        <div class="pi-links">
+            
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Prof. Emma Teeling</h3>
+        <h4>Professor of Zoology</h4>
+        <p class="affiliation">University College Dublin</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0002-3309-1346" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Dr. Francesca Bottacini</h3>
+        <h4>Lecturer in Bioinformatics and Genomics</h4>
+        <p class="affiliation">Munster Technological University</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0002-0142-2956" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <img src="/assets/images/Gianpiero-Cavalleri-2-2.jpg" alt="Gianpiero Cavalleri" >
+        </div>
+        <h3>Prof. Gianpiero Cavalleri</h3>
+        <h4>Professor of Human Genetics</h4>
+        <p class="affiliation">RCSI</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0002-9802-0506" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Dr. Graham Hughes</h3>
+        <h4>Assistant Professor</h4>
+        <p class="affiliation">University College Dublin</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0003-3088-345X" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Dr. Guerrino Macori</h3>
+        <h4>Assistant Professor</h4>
+        <p class="affiliation">University College Dublin</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0001-5835-8409" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Dr. Haixuan Yang</h3>
+        <h4>Lecturer in Statistical Bioinformatics</h4>
+        <p class="affiliation">University of Galway</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0002-8724-4192" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Dr. Karen Siu Ting</h3>
+        <h4>Lecturer in Computational Biology</h4>
+        <p class="affiliation">Queens University Belfast</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0003-3698-1755" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Prof. Ken Wolfe</h3>
+        <h4>Professor of Genome Evolution</h4>
+        <p class="affiliation">University College Dublin</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0003-4992-4979" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <img src="/assets/images/LSJermiin.jpg" alt="Lars Jermiin" >
+        </div>
+        <h3>Dr. Lars Jermiin</h3>
+        <h4>Assistant Professor in Evolutionary Bioinformatics</h4>
+        <p class="affiliation">University of Galway</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0002-9619-3809" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <img src="/assets/images/laura.png" alt="Laura Whelan" >
+        </div>
+        <h3>Dr. Laura Whelan</h3>
+        <h4>Lecturer in Human Genetics and Genomics</h4>
+        <p class="affiliation">RCSI</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0002-0537-4349" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Prof. Marcus Claesson</h3>
+        <h4>Associate Professor of Bioinformatics</h4>
+        <p class="affiliation">University College Cork</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0002-5712-0623" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Dr. Máire Ní Leathlobhair</h3>
+        <h4>Assistant Professor of Biological Data Analytics</h4>
+        <p class="affiliation">Trinity College Dublin</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0002-8523-4935" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Prof. Orla O'Sullivan</h3>
+        <h4>Senior Reseaerch Microbiome data analysis</h4>
+        <p class="affiliation">Teagasc</p>
+        <div class="pi-links">
+            
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <img src="/assets/images/pasha.jpg" alt="Pavel (Pasha) Baranov" >
+        </div>
+        <h3>Prof. Pavel (Pasha) Baranov</h3>
+        <h4>Professor of Biomolecular Informatcis</h4>
+        <p class="affiliation">University College Cork</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0001-9017-0270" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <img src="/assets/images/pilib.jpeg" alt="Pilib Ó Broin" style="object-position: center top;">
+        </div>
+        <h3>Dr. Pilib Ó Broin</h3>
+        <h4>Associate Professor in Bioinformatics</h4>
+        <p class="affiliation">University of Galway</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0002-6702-8564" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Prof. Rory Johnson</h3>
+        <h4>Associate Professor</h4>
+        <p class="affiliation">University College Dublin</p>
+        <div class="pi-links">
+            
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Dr. Ross Murphy</h3>
+        <h4>Lecturer in Health Data Science</h4>
+        <p class="affiliation">Ulster University</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0001-8583-8635" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Dr. Sebastian Schmidt</h3>
+        <h4>Lecturer in Microbiome and Health</h4>
+        <p class="affiliation">University College Cork</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0001-8587-4177" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Dr. Simon Furney</h3>
+        <h4>Senior Lecturer in Genomic Medicine</h4>
+        <p class="affiliation">RCSI</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0002-8920-6800" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Dr. Stafford Vigors</h3>
+        <h4>Assistant Professor of Animal Science</h4>
+        <p class="affiliation">University College Dublin</p>
+        <div class="pi-links">
+            
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Dr. Steven Watterson</h3>
+        <h4>Lecturer in Computational Biology</h4>
+        <p class="affiliation">Ulster University</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0002-2750-6410" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Dr. Therese Murphy</h3>
+        <h4>Lecturer in Molecular Diagnostics and Bioinformatics</h4>
+        <p class="affiliation">Technological University Dublin</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0002-7647-2798" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="pi-card">
+        <div class="pi-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M12 14c-5 0-9 3-9 8h18c0-5-4-8-9-8z"></path></svg>
+        </div>
+        <h3>Dr. William Duddy</h3>
+        <h4>Senior Lecturer in Stratified Medicine (Bioinformatics)</h4>
+        <p class="affiliation">Ulster University</p>
+        <div class="pi-links">
+            
+            <a href="https://orcid.org/0000-0003-2239-9094" target="_blank" class="pi-link" title="ORCID">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.306v7.444h2.297c3.325 0 4.088-1.769 4.088-3.722 0-1.966-.74-3.722-3.997-3.722h-2.388z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+            
+            <!-- Get Listed / Update Info -->
+            <div class="join-directory">
+                <h3>Join the VIBE PI Directory</h3>
+                <p>Are you a Principal Investigator or Group Leader in Bioinformatics on the island of Ireland? We want to feature your lab.</p>
+                <p>To be added to this page, please email: <a href="mailto:elixir@ul.ie" style="color: #f47920;"><i class="fas fa-envelope"></i> elixir@ul.ie</a></p>
+                <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; display: inline-block; text-align: left; margin-top: 1rem;">
+                    <p style="margin: 0; font-size: 0.9rem;"><strong>Please include:</strong></p>
+                    <ul style="margin: 0.5rem 0 0 1.5rem; font-size: 0.9rem;">
+                        <li>PI Name & Title</li>
+                        <li>Profile Photo (optional)</li>
+                        <li>Affiliation/Institution</li>
+                        <li>Lab Website URL</li>
+                        <li>ORCID iD</li>
+                        <li>Primary Research Keywords (Max 3)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load scripts in correct order -->
+    <script src="/assets/js/ei.js"></script>
+    <script src="/assets/js/vibe.js"></script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>
