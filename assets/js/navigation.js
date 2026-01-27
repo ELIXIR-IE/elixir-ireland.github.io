@@ -162,56 +162,61 @@
   /**
    * Load page-specific scripts
    */
-  function loadPageScripts(html) {
+  /**
+   * Load page-specific scripts sequentially
+   * This is critical for scripts that depend on each other (e.g. home.js depends on news_items.js)
+   */
+  async function loadPageScripts(html) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
     const scripts = doc.querySelectorAll('body script[src]');
 
-    const loadPromises = [];
+    // Convert NodeList to Array for iteration
+    const scriptsArray = Array.from(scripts);
 
-    scripts.forEach(scriptTag => {
+    for (const scriptTag of scriptsArray) {
       const src = scriptTag.getAttribute('src');
-      if (!src) return;
+      if (!src) continue;
 
       // Skip core scripts that are always loaded
       if (src.includes('ei.js') || src.includes('navigation.js') || src.includes('ui.js')) {
-        return;
+        continue;
       }
 
       // Check if script is already loaded
       const scriptId = `script-${src.replace(/[^a-zA-Z0-9]/g, '-')}`;
       if (document.getElementById(scriptId)) {
         console.log(`Script already loaded: ${src}`);
-        // If it's a page specific script, we might want to reload it or re-trigger it?
-        // For now we assume if it's loaded, it's fine.
-        // However, some scripts might need re-execution.
-        // But simply reloading the script tag often works for simple scripts.
-        return;
+        continue;
       }
 
-      const loadPromise = new Promise((resolve, reject) => {
-        const newScript = document.createElement('script');
-        newScript.id = scriptId;
-        newScript.src = src;
-        newScript.onload = () => {
-          console.log(`✓ Loaded script: ${src}`);
-          resolve();
-        };
-        newScript.onerror = () => {
-          console.error(`✗ Failed to load script: ${src}`);
-          reject();
-        };
-        document.body.appendChild(newScript);
-      });
+      try {
+        await new Promise((resolve, reject) => {
+          const newScript = document.createElement('script');
+          newScript.id = scriptId;
+          newScript.src = src;
+          // Important: set async to false to maintain execution order for dynamically inserted scripts
+          newScript.async = false;
 
-      loadPromises.push(loadPromise);
-    });
-
-    if (loadPromises.length === 0) {
-      console.log('No new scripts to load');
+          newScript.onload = () => {
+            console.log(`✓ Loaded script: ${src}`);
+            resolve();
+          };
+          newScript.onerror = () => {
+            console.error(`✗ Failed to load script: ${src}`);
+            // We resolve anyway to allow subsequent scripts to try loading
+            resolve();
+          };
+          document.body.appendChild(newScript);
+        });
+      } catch (err) {
+        console.error(err);
+      }
     }
 
-    return Promise.all(loadPromises);
+    if (scriptsArray.length === 0) {
+      console.log('No new scripts to load');
+    }
   }
 
   /**
@@ -268,6 +273,9 @@
   /**
    * Load page content via AJAX
    */
+  /**
+   * Load page content via AJAX
+   */
   function loadPage(href, addToHistory = true) {
     const url = new URL(href, window.location.origin);
     const cacheKey = url.pathname;
@@ -298,6 +306,7 @@
     // Serve from cache
     if (contentCache[cacheKey]) {
       if (myToken !== currentNavToken) return;
+      console.log(`Serving from cache: ${cacheKey}`);
       replaceMainContent(contentCache[cacheKey]);
       window.scrollTo(0, 0);
 
@@ -320,49 +329,63 @@
     // Show loading indicator
     document.body.classList.add('loading');
 
+    // Watchdog timer to force reload if stuck
+    const watchdog = setTimeout(() => {
+      if (myToken === currentNavToken && document.body.classList.contains('loading')) {
+        console.warn('Navigation timed out, forcing reload');
+        window.location.href = fullPath;
+      }
+    }, 5000);
+
     // Fetch with abort support
     fetch(fullPath, { signal: currentAbortController.signal })
       .then(response => {
         if (!response.ok) throw new Error('Page not found');
         return response.text();
       })
-      .then(html => {
+      .then(async (html) => {
         document.body.classList.remove('loading');
+        clearTimeout(watchdog);
+
         if (myToken !== currentNavToken) return;
 
-        // Load styles first, then scripts, then initialize
-        return loadPageStyles(html)
-          .then(() => {
-            // Force reflow after CSS loads
-            document.body.offsetHeight;
-            return loadPageScripts(html);
-          })
-          .then(() => {
-            const content = extractContent(html);
-            if (content) {
-              contentCache[cacheKey] = content;
-              replaceMainContent(content);
-              updatePageTitle(html);
-              window.scrollTo(0, 0);
+        // Load styles first (parallel is fine for styles usually, but sequential is safer for FOUC)
+        await loadPageStyles(html);
 
-              // Wait for CSS to be fully applied and DOM to settle
-              requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                  // Final reflow to ensure everything is rendered
-                  document.body.offsetHeight;
-                  initializePage(cacheKey);
-                  // Notify that navigation is complete
-                  window.dispatchEvent(new Event('navigationComplete'));
-                });
-              });
-            } else {
-              // Fallback if content extraction fails
-              window.location.href = fullPath;
-            }
+        // Force reflow after CSS loads
+        document.body.offsetHeight;
+
+        // Load scripts sequentially
+        await loadPageScripts(html);
+
+        // Extract content
+        const content = extractContent(html);
+
+        if (content && content.trim().length > 0) {
+          contentCache[cacheKey] = content;
+          replaceMainContent(content);
+          updatePageTitle(html);
+          window.scrollTo(0, 0);
+
+          // Wait for CSS to be fully applied and DOM to settle
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              // Final reflow to ensure everything is rendered
+              document.body.offsetHeight;
+              initializePage(cacheKey);
+              // Notify that navigation is complete
+              window.dispatchEvent(new Event('navigationComplete'));
+            });
           });
+        } else {
+          // Fallback if content extraction fails or is empty
+          console.error("Extracted content was empty, reloading...");
+          window.location.href = fullPath;
+        }
       })
       .catch(err => {
         document.body.classList.remove('loading');
+        clearTimeout(watchdog);
         if (err && err.name === 'AbortError') return;
         console.error('Error loading page:', err);
         window.location.href = fullPath;
