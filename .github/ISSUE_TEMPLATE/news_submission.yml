@@ -1,0 +1,49 @@
+name: 📰 Submit News Item
+description: Submit a new news item for the ELIXIR Ireland website.
+title: "[News]: <Title of the news item>"
+labels: ["content:news"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting a news item! Please fill out the details below.
+        We will review and convert this into a website update.
+
+  - type: input
+    id: title
+    attributes:
+      label: News Title
+      description: The headline for the news item.
+      placeholder: E.g., ELIXIR Ireland Launches New Service
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      description: The date of the news (YYYY-MM-DD).
+      placeholder: 2025-01-28
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: A short paragraph describing the news (1-2 sentences).
+    validations:
+      required: true
+  
+  - type: input
+    id: link
+    attributes:
+      label: Link URL
+      description: External link to the full story or resource (optional).
+      placeholder: https://...
+
+  - type: input
+    id: image_url
+    attributes:
+      label: Image
+      description: Drag and drop an image here or paste a URL. If you don't have one, we will use a default.

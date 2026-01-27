@@ -194,7 +194,8 @@
         await new Promise((resolve, reject) => {
           const newScript = document.createElement('script');
           newScript.id = scriptId;
-          newScript.src = src;
+          // Add cache-busting to ensure fresh scripts are loaded
+          newScript.src = src + (src.includes('?') ? '&' : '?') + '_=' + Date.now();
           // Important: set async to false to maintain execution order for dynamically inserted scripts
           newScript.async = false;
 

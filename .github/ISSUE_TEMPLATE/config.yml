@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🐛 Report a Bug
+    url: https://github.com/codemeleon/elixir-ireland.github.io/issues/new
+    about: Report a bug or error on the website.
+  - name: 💡 Suggest an Improvement
+    url: https://github.com/codemeleon/elixir-ireland.github.io/issues/new
+    about: Suggest an idea or improvement.

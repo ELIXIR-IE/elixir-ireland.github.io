@@ -1,0 +1,65 @@
+name: 🗓️ Submit Event
+description: Submit a new event for the ELIXIR Ireland website.
+title: "[Event]: <Title of the event>"
+labels: ["content:event"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting an event! Please fill out the details below.
+        We will review and convert this into a website update.
+
+  - type: input
+    id: title
+    attributes:
+      label: Event Title
+      description: The name of the event.
+      placeholder: E.g., Introduction to Omics Workshop
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      description: The date of the event (YYYY-MM-DD).
+      placeholder: 2025-06-15
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Where is the event happening?
+      placeholder: E.g., UCD, Dublin OR Online
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: A short description of the event.
+    validations:
+      required: true
+  
+  - type: input
+    id: info_link
+    attributes:
+      label: Information Link
+      description: URL for more information.
+      placeholder: https://...
+
+  - type: input
+    id: reg_link
+    attributes:
+      label: Registration Link
+      description: URL for registration (if different from info link).
+      placeholder: https://...
+
+  - type: input
+    id: image_url
+    attributes:
+      label: Image
+      description: Drag and drop an image here or paste a URL.
