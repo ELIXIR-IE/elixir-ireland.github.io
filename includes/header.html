@@ -1,108 +1,108 @@
 <header class="main-header">
   <div class="header-container">
     <div class="header-logo">
-      <a href="home.html">
-        <img src="images/ELIXIR-IE_logo.png" alt="ELIXIR Ireland Logo" />
+      <a href="/">
+        <img src="/assets/images/ELIXIR-IE_logo.png" alt="ELIXIR Ireland Logo" />
       </a>
     </div>
-    
+
     <!-- Burger Menu Button -->
     <button class="burger-menu" aria-label="Toggle navigation" aria-expanded="false">
       <span class="burger-line"></span>
       <span class="burger-line"></span>
       <span class="burger-line"></span>
     </button>
-    
+
     <nav class="header-nav">
       <ul class="nav-list">
-        <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="what-we-do.html" class="nav-link">Our work</a></li>
-        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-        <li class="nav-item"><a href="vibe.html" class="nav-link">VIBE</a></li>
-        <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
-        <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
-        <li class="nav-item"><a href="participate.html" class="nav-link">Participate</a></li>
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="/what-we-do/" class="nav-link">Our work</a></li>
+        <li class="nav-item"><a href="/services/" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="/vibe/" class="nav-link">VIBE</a></li>
+        <li class="nav-item"><a href="/news/" class="nav-link">News</a></li>
+        <li class="nav-item"><a href="/events/" class="nav-link">Events</a></li>
+        <li class="nav-item"><a href="/participate/" class="nav-link">Participate</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
 <script>
-// Burger menu toggle functionality
-(function() {
-  'use strict';
-  
-  function initBurgerMenu() {
-    const burger = document.querySelector('.burger-menu');
-    const nav = document.querySelector('.header-nav');
-    const navList = document.querySelector('.nav-list');
-    
-    if (!burger || !nav) return;
-    
-    burger.addEventListener('click', function() {
-      const isExpanded = this.getAttribute('aria-expanded') === 'true';
-      
-      this.setAttribute('aria-expanded', !isExpanded);
-      this.classList.toggle('active');
-      nav.classList.toggle('active');
-      navList.classList.toggle('active');
-      
-      // Prevent body scroll when menu is open on mobile
-      if (!isExpanded) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = '';
-      }
-    });
-    
-    // Close menu when clicking on a nav link
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        burger.classList.remove('active');
-        nav.classList.remove('active');
-        navList.classList.remove('active');
-        burger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+  // Burger menu toggle functionality
+  (function () {
+    'use strict';
+
+    function initBurgerMenu() {
+      const burger = document.querySelector('.burger-menu');
+      const nav = document.querySelector('.header-nav');
+      const navList = document.querySelector('.nav-list');
+
+      if (!burger || !nav) return;
+
+      burger.addEventListener('click', function () {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+        this.setAttribute('aria-expanded', !isExpanded);
+        this.classList.toggle('active');
+        nav.classList.toggle('active');
+        navList.classList.toggle('active');
+
+        // Prevent body scroll when menu is open on mobile
+        if (!isExpanded) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = '';
+        }
       });
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-      if (!burger.contains(event.target) && !nav.contains(event.target)) {
-        burger.classList.remove('active');
-        nav.classList.remove('active');
-        navList.classList.remove('active');
-        burger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
-    });
-    
-    // Handle window resize
-    let resizeTimer;
-    window.addEventListener('resize', function() {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function() {
-        if (window.innerWidth > 1024) {
+
+      // Close menu when clicking on a nav link
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+          burger.classList.remove('active');
+          nav.classList.remove('active');
+          navList.classList.remove('active');
+          burger.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function (event) {
+        if (!burger.contains(event.target) && !nav.contains(event.target)) {
           burger.classList.remove('active');
           nav.classList.remove('active');
           navList.classList.remove('active');
           burger.setAttribute('aria-expanded', 'false');
           document.body.style.overflow = '';
         }
-      }, 250);
-    });
-  }
-  
-  // Initialize when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initBurgerMenu);
-  } else {
-    initBurgerMenu();
-  }
-  
-  // Re-initialize after navigation (for AJAX page loads)
-  window.addEventListener('navigationComplete', initBurgerMenu);
-})();
+      });
+
+      // Handle window resize
+      let resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+          if (window.innerWidth > 1024) {
+            burger.classList.remove('active');
+            nav.classList.remove('active');
+            navList.classList.remove('active');
+            burger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+          }
+        }, 250);
+      });
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initBurgerMenu);
+    } else {
+      initBurgerMenu();
+    }
+
+    // Re-initialize after navigation (for AJAX page loads)
+    window.addEventListener('navigationComplete', initBurgerMenu);
+  })();
 </script>

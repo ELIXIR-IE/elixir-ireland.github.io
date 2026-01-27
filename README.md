@@ -41,6 +41,12 @@ cd elixir-ireland.github.io
 bundle install
 ```
 
+## Directory Structure
+The website has been restructured to follow standard practices:
+- **`assets/`**: Contains `css`, `js`, `images`, and `fonts`.
+- **Pages**: Each page resides in its own directory (e.g., `about/index.html`) for clean URLs.
+- **`index.html`**: The main entry point (formerly `home.html`).
+
 ## Local Development
 
 ### Run the Site Locally
@@ -61,11 +67,10 @@ bundle exec jekyll serve --livereload
 
 ### Content Updates
 
-- **Pages**: Edit files in the root directory or relevant subdirectories
-- **Posts**: Add/edit files in `_posts/` directory
+- **Pages**: Edit `index.html` files in the relevant page subdirectories.
+- **Assets**: Edit files in the `assets/` directory.
 - **Configuration**: Edit `_config.yml`
-- **Styles**: Modify CSS files or relevant directories
-- **Images**: Add to relevant directories
+- **Posts**: Add/edit files in `_posts/` directory
 
 ## Deployment
 
