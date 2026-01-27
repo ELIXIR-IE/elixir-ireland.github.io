@@ -2,12 +2,11 @@
  * Dynamic Navigation System - Clean Implementation
  * Loads page content without reloading header/footer
  */
-(function() {
+(function () {
   'use strict';
 
   // Configuration
   const contentCache = {};
-  let headerFooterLoaded = false;
   let currentNavToken = 0;
   let currentAbortController = null;
   let currentPath = null;
@@ -35,28 +34,10 @@
   function extractContent(html) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
-    
-    const headerPlaceholder = doc.querySelector('#header-placeholder');
-    const footerPlaceholder = doc.querySelector('#footer-placeholder');
-    
-    if (headerPlaceholder && footerPlaceholder) {
-      let content = '';
-      let currentNode = headerPlaceholder.nextSibling;
-      
-      while (currentNode && currentNode !== footerPlaceholder) {
-        if (currentNode.nodeType === Node.ELEMENT_NODE) {
-          content += currentNode.outerHTML;
-        } else if (currentNode.nodeType === Node.TEXT_NODE && currentNode.textContent.trim()) {
-          content += currentNode.textContent;
-        }
-        currentNode = currentNode.nextSibling;
-      }
-      
-      return content;
-    }
-    
+
+    // With Jekyll layouts, content is always in <main>
     const main = doc.querySelector('main');
-    return main ? main.outerHTML : null;
+    return main ? main.innerHTML : null;
   }
 
   /**
@@ -79,10 +60,10 @@
 
     document.querySelectorAll('nav a').forEach(link => {
       const linkPath = new URL(link.href, window.location.origin).pathname;
-      
-      if (linkPath === targetPath || 
-          (linkPath === '/' && targetPath.startsWith('/index.html')) ||
-          (linkPath.endsWith('/home.html') && (targetPath === '/' || targetPath.endsWith('/index.html')))) {
+
+      if (linkPath === targetPath ||
+        (linkPath === '/' && targetPath.startsWith('/index.html')) ||
+        (linkPath.endsWith('/home.html') && (targetPath === '/' || targetPath.endsWith('/index.html')))) {
         link.classList.add('active');
       } else {
         link.classList.remove('active');
@@ -97,9 +78,9 @@
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
     const newStyles = doc.querySelectorAll('head link[rel="stylesheet"]');
-    
+
     const loadPromises = [];
-    
+
     newStyles.forEach(styleLink => {
       const href = styleLink.getAttribute('href');
       if (href) {
@@ -130,7 +111,7 @@
           console.log(`♻️ Reloading stylesheet: ${href}`);
           const parent = existingLink.parentNode;
           parent.removeChild(existingLink);
-          
+
           const reloadPromise = new Promise((resolve) => {
             requestAnimationFrame(() => {
               const newLink = document.createElement('link');
@@ -153,7 +134,7 @@
         }
       }
     });
-    
+
     // Also handle inline styles from the page
     const inlineStyles = doc.querySelectorAll('head style');
     inlineStyles.forEach(styleTag => {
@@ -165,7 +146,7 @@
       inlineStyleIds.add(styleId);
       console.log(`✓ Added inline stylesheet: ${styleId}`);
     });
-    
+
     if (loadPromises.length === 0) {
       console.log('No new stylesheets to load, forcing reflow');
       // Force multiple reflows even if no new styles loaded
@@ -174,10 +155,10 @@
       // Force a style recalculation
       window.getComputedStyle(document.body).getPropertyValue('color');
     }
-    
+
     return Promise.all(loadPromises);
   }
-  
+
   /**
    * Load page-specific scripts
    */
@@ -185,25 +166,29 @@
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
     const scripts = doc.querySelectorAll('body script[src]');
-    
+
     const loadPromises = [];
-    
+
     scripts.forEach(scriptTag => {
       const src = scriptTag.getAttribute('src');
       if (!src) return;
-      
+
       // Skip core scripts that are always loaded
-      if (src.includes('ei.js') || src.includes('navigation.js')) {
+      if (src.includes('ei.js') || src.includes('navigation.js') || src.includes('ui.js')) {
         return;
       }
-      
+
       // Check if script is already loaded
       const scriptId = `script-${src.replace(/[^a-zA-Z0-9]/g, '-')}`;
       if (document.getElementById(scriptId)) {
         console.log(`Script already loaded: ${src}`);
+        // If it's a page specific script, we might want to reload it or re-trigger it?
+        // For now we assume if it's loaded, it's fine.
+        // However, some scripts might need re-execution.
+        // But simply reloading the script tag often works for simple scripts.
         return;
       }
-      
+
       const loadPromise = new Promise((resolve, reject) => {
         const newScript = document.createElement('script');
         newScript.id = scriptId;
@@ -218,47 +203,39 @@
         };
         document.body.appendChild(newScript);
       });
-      
+
       loadPromises.push(loadPromise);
     });
-    
+
     if (loadPromises.length === 0) {
       console.log('No new scripts to load');
     }
-    
+
     return Promise.all(loadPromises);
   }
 
   /**
-   * Replace the main content between header and footer
+   * Replace the main content
    */
   function replaceMainContent(content) {
-    const headerPlaceholder = document.querySelector('#header-placeholder');
-    const footerPlaceholder = document.querySelector('#footer-placeholder');
-    
-    if (headerPlaceholder && footerPlaceholder) {
-      let currentNode = headerPlaceholder.nextSibling;
-      const nodesToRemove = [];
-      
-      while (currentNode && currentNode !== footerPlaceholder) {
-        nodesToRemove.push(currentNode);
-        currentNode = currentNode.nextSibling;
-      }
-      
-      nodesToRemove.forEach(node => node.remove());
-      footerPlaceholder.insertAdjacentHTML('beforebegin', content);
-      
+    const mainElement = document.querySelector('main');
+
+    if (mainElement) {
+      mainElement.innerHTML = content;
+
       // Multiple forced reflows to ensure DOM updates and CSS are applied
       document.body.offsetHeight;
       void document.body.offsetWidth;
-      
+
       // Force image decode for better rendering
       const images = document.querySelectorAll('main img');
       images.forEach(img => {
         if (img.complete && img.decode) {
-          img.decode().catch(() => {});
+          img.decode().catch(() => { });
         }
       });
+    } else {
+      console.error('Main element not found in current page.');
     }
   }
 
@@ -267,59 +244,24 @@
    */
   function initializePage(pathname) {
     console.log('Initializing page:', pathname);
-    
+
     // Initialize based on page type
-    if (pathname.includes('news.html')) {
-      if (typeof window.resetNews === 'function') {
-        window.resetNews();
-      }
-      if (typeof window.initializeNews === 'function') {
-        console.log('Calling initializeNews');
-        window.initializeNews();
-      } else {
-        console.warn('initializeNews function not found');
-      }
-    } else if (pathname.includes('events.html')) {
-      if (typeof window.resetEvents === 'function') {
-        window.resetEvents();
-      }
-      if (typeof window.initializeEvents === 'function') {
-        console.log('Calling initializeEvents');
-        window.initializeEvents();
-      } else {
-        console.warn('initializeEvents function not found');
-      }
-    } else if (pathname.includes('services.html')) {
-      if (typeof window.resetServices === 'function') {
-        window.resetServices();
-      }
-      if (typeof window.initializeServices === 'function') {
-        console.log('Calling initializeServices');
-        window.initializeServices();
-      } else {
-        console.warn('initializeServices function not found');
-      }
-    } else if (pathname.includes('vibe.html')) {
-      if (typeof window.resetVibe === 'function') {
-        window.resetVibe();
-      }
-      if (typeof window.initializeVibe === 'function') {
-        console.log('Calling initializeVibe');
-        window.initializeVibe();
-      } else {
-        console.warn('initializeVibe function not found');
-      }
-    } else if (pathname.includes('home.html') || pathname === '/' || pathname.endsWith('/index.html')) {
-      // Home page dynamic content
-      if (typeof window.resetHome === 'function') {
-        window.resetHome();
-      }
-      if (typeof window.initializeHome === 'function') {
-        console.log('Calling initializeHome');
-        window.initializeHome();
-      } else {
-        console.warn('initializeHome function not found');
-      }
+    if (pathname.includes('/news/')) {
+      if (typeof window.resetNews === 'function') window.resetNews();
+      if (typeof window.initializeNews === 'function') window.initializeNews();
+    } else if (pathname.includes('/events/')) {
+      if (typeof window.resetEvents === 'function') window.resetEvents();
+      if (typeof window.initializeEvents === 'function') window.initializeEvents();
+    } else if (pathname.includes('/services/')) {
+      if (typeof window.resetServices === 'function') window.resetServices();
+      if (typeof window.initializeServices === 'function') window.initializeServices();
+    } else if (pathname.includes('/vibe/')) {
+      if (typeof window.resetVibe === 'function') window.resetVibe();
+      if (typeof window.initializeVibe === 'function') window.initializeVibe();
+    } else if (pathname === '/' || pathname.endsWith('/index.html') || pathname.endsWith('/home.html')) {
+      // Home page
+      if (typeof window.resetHome === 'function') window.resetHome();
+      if (typeof window.initializeHome === 'function') window.initializeHome();
     }
   }
 
@@ -343,7 +285,7 @@
     // Increment token and abort any in-flight request
     const myToken = ++currentNavToken;
     if (currentAbortController) {
-      try { currentAbortController.abort(); } catch (_) {}
+      try { currentAbortController.abort(); } catch (_) { }
     }
     currentAbortController = new AbortController();
 
@@ -358,10 +300,10 @@
       if (myToken !== currentNavToken) return;
       replaceMainContent(contentCache[cacheKey]);
       window.scrollTo(0, 0);
-      
+
       // Force reflow and wait for images to load
       document.body.offsetHeight;
-      
+
       // Even when serving from cache, wait for DOM to settle and CSS to apply
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
@@ -402,7 +344,7 @@
               replaceMainContent(content);
               updatePageTitle(html);
               window.scrollTo(0, 0);
-              
+
               // Wait for CSS to be fully applied and DOM to settle
               requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
@@ -414,6 +356,7 @@
                 });
               });
             } else {
+              // Fallback if content extraction fails
               window.location.href = fullPath;
             }
           });
@@ -442,15 +385,37 @@
     if (url.origin !== window.location.origin) return;
     if (link.hasAttribute('data-no-ajax')) return;
 
+    // Ignore links to assets or non-html resources roughly
+    if (url.pathname.match(/\.(pdf|zip|jpg|png|gif|svg)$/i)) return;
+
     e.preventDefault();
     loadPage(url.href, true);
   }
 
   /**
-   * Initialize navigation event listeners
+   * Initialize navigation system
    */
-  function initializeNavigation() {
+  function initialize() {
+    console.log('Initializing navigation system');
     document.addEventListener('click', handleLinkClick);
+
+    // Initial state setup
+    const fullPath = window.location.pathname + window.location.search + window.location.hash;
+    currentPath = fullPath;
+
+    updateActiveNav(window.location.pathname);
+
+    // Cache current content
+    const content = extractContent(document.documentElement.outerHTML);
+    if (content) {
+      contentCache[window.location.pathname] = content;
+    }
+
+    // Initialize current page
+    initializePage(window.location.pathname);
+
+    // Notify listeners
+    window.dispatchEvent(new Event('navigationComplete'));
   }
 
   /**
@@ -465,55 +430,11 @@
   });
 
   /**
-   * Wait for header/footer to be loaded, then initialize
-   */
-  function waitForHeaderFooter() {
-    const checkInterval = setInterval(() => {
-      const header = document.querySelector('#header-placeholder > *');
-      const footer = document.querySelector('#footer-placeholder > *');
-      if (header && footer) {
-        clearInterval(checkInterval);
-        headerFooterLoaded = true;
-        initializeNavigation();
-        
-        // Dispatch event to notify burger menu can initialize
-        window.dispatchEvent(new Event('navigationComplete'));
-        
-        updateActiveNav(window.location.pathname);
-
-        const fullPath = window.location.pathname + window.location.search + window.location.hash;
-        currentPath = fullPath;
-        history.replaceState({ page: fullPath, cacheKey: window.location.pathname }, '', fullPath);
-
-        // Cache current page content
-        const content = extractContent(document.documentElement.outerHTML);
-        if (content) {
-          contentCache[window.location.pathname] = content;
-        }
-        
-        // Initialize current page
-        initializePage(window.location.pathname);
-      }
-    }, 50);
-
-    setTimeout(() => {
-      clearInterval(checkInterval);
-      if (!headerFooterLoaded) {
-        console.warn('Header/footer not loaded, navigation system may not work properly');
-        initializeNavigation();
-        const fullPath = window.location.pathname + window.location.search + window.location.hash;
-        currentPath = fullPath;
-        history.replaceState({ page: fullPath, cacheKey: window.location.pathname }, '', fullPath);
-      }
-    }, 5000);
-  }
-
-  /**
    * Initialize on page load
    */
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', waitForHeaderFooter);
+    document.addEventListener('DOMContentLoaded', initialize);
   } else {
-    waitForHeaderFooter();
+    initialize();
   }
 })();
