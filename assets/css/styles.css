@@ -2579,6 +2579,8 @@ section {
   flex-direction: column;
   border: 2px solid transparent;
   position: relative;
+  height: 100%;
+  /* Ensure card fills grid height */
 }
 
 .card:hover {
@@ -2659,7 +2661,8 @@ section {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
-  margin-top: auto;
+  align-items: center;
+  /* Prevent buttons from stretching vertically */
 }
 
 .card-link {
@@ -2825,91 +2828,8 @@ section {
   }
 }
 
-/* Styles for news cards, inspired by "What we do" page cards */
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
+/* News styling uses shared .card architecture defined above */
 
-.card {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  border: 2px solid transparent;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-color: #f47920;
-}
-
-
-
-.card-content {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #023452;
-}
-
-.card-date {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
-.card-text {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
-  flex-grow: 1;
-  margin-bottom: 1.5rem;
-}
-
-
-
-.card-link:hover {
-  color: #e06810;
-  text-decoration: none;
-}
-
-/* Modern Pagination Styles */
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 3rem;
-  padding: 1rem 0;
-}
-
-.pagination button {
-  background: #ffffff;
-  border: 2px solid #e0e0e0;
-  color: #023452;
-  padding: 10px 18px;
-  margin: 0;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  min-width: 45px;
-}
 
 .pagination button:hover:not(:disabled) {
   background-color: #f47920;
