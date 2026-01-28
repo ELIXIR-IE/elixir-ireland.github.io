@@ -2909,7 +2909,7 @@ section {
 }
 
 .category-content.expanded {
-  max-height: 1000px;
+  max-height: 10000px;
   padding: 25px 30px;
   border-top: 2px solid #f47920;
 }
