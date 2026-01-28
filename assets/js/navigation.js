@@ -298,35 +298,6 @@
     }
     currentAbortController = new AbortController();
 
-    if (addToHistory) {
-      history.pushState({ page: fullPath, cacheKey }, '', fullPath);
-    }
-
-    updateActiveNav(cacheKey);
-
-    // Serve from cache
-    if (contentCache[cacheKey]) {
-      if (myToken !== currentNavToken) return;
-      console.log(`Serving from cache: ${cacheKey}`);
-      replaceMainContent(contentCache[cacheKey]);
-      window.scrollTo(0, 0);
-
-      // Force reflow and wait for images to load
-      document.body.offsetHeight;
-
-      // Even when serving from cache, wait for DOM to settle and CSS to apply
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          // Additional reflow to ensure CSS is applied
-          document.body.offsetHeight;
-          initializePage(cacheKey);
-          // Notify that navigation is complete
-          window.dispatchEvent(new Event('navigationComplete'));
-        });
-      });
-      return;
-    }
-
     // Show loading indicator
     document.body.classList.add('loading');
 
@@ -345,19 +316,27 @@
         return response.text();
       })
       .then(async (html) => {
+        // Only update history if fetch succeeded and we haven't been aborted
+        if (myToken !== currentNavToken) return;
+
+        if (addToHistory) {
+          history.pushState({ page: fullPath, cacheKey }, '', fullPath);
+          updateActiveNav(cacheKey);
+        }
+
         document.body.classList.remove('loading');
         clearTimeout(watchdog);
 
-        if (myToken !== currentNavToken) return;
-
-        // Load styles first (parallel is fine for styles usually, but sequential is safer for FOUC)
-        await loadPageStyles(html);
+        // Load styles first (with 2s timeout per style to prevent hanging)
+        const styleTimeout = new Promise(resolve => setTimeout(resolve, 2000));
+        await Promise.race([loadPageStyles(html), styleTimeout]);
 
         // Force reflow after CSS loads
         document.body.offsetHeight;
 
-        // Load scripts sequentially
-        await loadPageScripts(html);
+        // Load scripts sequentially (with 2s timeout per script)
+        const scriptTimeout = new Promise(resolve => setTimeout(resolve, 2000));
+        await Promise.race([loadPageScripts(html), scriptTimeout]);
 
         // Extract content
         const content = extractContent(html);
