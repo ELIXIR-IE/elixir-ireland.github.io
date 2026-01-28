@@ -1,5 +1,32 @@
 const eventsItems = [
   {
+    title: "ECCB 2026",
+    date: "2026-08-31",
+    location: "Geneva, Switzerland",
+    summary: "The 25th European Conference on Computational Biology exploring the intersection of Biodiversity, AI and Health through workshops, tutorials, and highlight talks.",
+    image: "/assets/images/eccb2026.png",
+    link: "https://eccb2026.org/",
+    registrationLink: "https://eccb2026.org/"
+  },
+  {
+    title: "EuroBioC 2026",
+    date: "2026-06-03",
+    location: "Turku, Finland",
+    summary: "The European Bioconductor meeting gathering developers and data scientists to showcase cutting-edge software developments and emerging technologies in computational biology.",
+    image: "/assets/images/eurobioc2026.png",
+    link: "https://eurobioc2026.bioconductor.org/",
+    registrationLink: "https://eurobioc2026.bioconductor.org/"
+  },
+  {
+    title: "SSI CW26",
+    date: "2026-04-28",
+    location: "Belfast, United Kingdom",
+    summary: "A hybrid unconference dedicated to strengthening the research software community through interactive workshops, dynamic discussions, and a collaborative Hack Day.",
+    image: "/assets/images/ssicw26.png",
+    link: "https://www.software.ac.uk/workshop/collaborations-workshop-2026-cw26",
+    registrationLink: "https://www.software.ac.uk/workshop/collaborations-workshop-2026-cw26"
+  },
+  {
     title: "All-Island Forum on Cancer Data 2026",
     date: "2026-01-26",
     location: "Queen's University Belfast",
