@@ -16,6 +16,12 @@ description: This is a long description that
   has been split across lines.
 ```
 
+**Validation Utility**:
+I have created a script at `scripts/validate_front_matter.py`. Run this script whenever you modify HTML files to ensure YAML front matter remains valid:
+```bash
+python3 scripts/validate_front_matter.py
+```
+
 ## 2. Formatting & Style
 -   **Cursor Behavior**: Cards that are not links (e.g., Team Member cards) should NOT have `cursor: pointer`. Only the specific interactive elements (like email icons) inside them should have the pointer cursor.
 -   **Image Styling**: Use `object-position` to ensure faces are not cropped in circular avatars (e.g., Pilib Ó Broin).

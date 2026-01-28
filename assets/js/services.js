@@ -1,11 +1,11 @@
 // Services page logic with singleton pattern
-(function() {
+(function () {
   'use strict';
 
   // Prevent multiple initializations
   let servicesInitialized = false;
 
-  window.initializeServices = function() {
+  window.initializeServices = function () {
     // Check if already initialized
     if (servicesInitialized) {
       console.log("Services already initialized, skipping");
@@ -23,10 +23,21 @@
     console.log("Initializing services page");
 
     // Define toggle function
-    window.toggleCategory = function(categoryId) {
+    window.toggleCategory = function (categoryId) {
       const content = document.getElementById(categoryId + '-content');
       const icon = document.getElementById(categoryId + '-icon');
-      
+
+      const isExpanding = content && !content.classList.contains('expanded');
+
+      if (isExpanding) {
+        // Close all other expanded sections
+        const allContents = document.querySelectorAll('.category-content.expanded');
+        const allIcons = document.querySelectorAll('.expand-icon.expanded');
+
+        allContents.forEach(c => c.classList.remove('expanded'));
+        allIcons.forEach(i => i.classList.remove('expanded'));
+      }
+
       if (content && icon) {
         content.classList.toggle('expanded');
         icon.classList.toggle('expanded');
@@ -35,7 +46,7 @@
   };
 
   // Reset function for navigation system
-  window.resetServices = function() {
+  window.resetServices = function () {
     servicesInitialized = false;
   };
 
