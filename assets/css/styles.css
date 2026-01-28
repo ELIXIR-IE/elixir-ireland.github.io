@@ -1440,81 +1440,7 @@ section {
   margin-top: 40px;
 }
 
-.leader-card {
-  background: white;
-  border: 2px solid #e9ecef;
-  border-radius: 12px;
-  padding: 40px;
-  text-align: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
 
-.leader-card:hover {
-  border-color: #f47d21;
-  box-shadow: 0 12px 32px rgba(244, 125, 33, 0.15);
-  transform: translateY(-5px);
-}
-
-.leader-avatar {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 25px;
-  background: linear-gradient(135deg, #ffffff 0%, #e9ecef 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #adb5bd;
-  border: 3px solid #dee2e6;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.leader-card:hover .leader-avatar {
-  border-color: #f47d21;
-  transform: scale(1.05);
-}
-
-.leader-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Adjust Pilib's image position to show more of the top of his head */
-.leader-avatar img[alt="Pilib Ó Broin"] {
-  object-position: center 20%;
-}
-
-.leader-card h3 {
-  font-size: 1rem;
-  color: #f47d21;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 0 0 10px 0;
-  font-weight: 600;
-}
-
-.leader-card h4 {
-  font-size: 1.5rem;
-  color: #2c3e50;
-  margin: 0 0 8px 0;
-  font-weight: 700;
-}
-
-.leader-card .affiliation {
-  color: #6c757d;
-  font-size: 1rem;
-  margin: 0 0 20px 0;
-  font-weight: 500;
-}
-
-.leader-card>p:last-of-type {
-  color: #495057;
-  line-height: 1.6;
-  margin: 0 0 20px 0;
-}
 
 /* Team Grid */
 .team-grid {
@@ -1531,7 +1457,6 @@ section {
   padding: 30px;
   text-align: center;
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 
 .team-card:hover {
@@ -1638,7 +1563,6 @@ section {
   border: 2px solid #e9ecef;
   border-radius: 12px;
   transition: all 0.3s ease;
-  cursor: pointer;
   text-decoration: none;
   color: inherit;
 }
