@@ -1496,6 +1496,11 @@ section {
   left: 0;
 }
 
+/* Adjust Pilib's image position for team card */
+.team-avatar img[alt="Pilib Ó Broin"] {
+  object-position: center 20%;
+}
+
 .team-card h4 {
   font-size: 1.2rem;
   color: #2c3e50;
