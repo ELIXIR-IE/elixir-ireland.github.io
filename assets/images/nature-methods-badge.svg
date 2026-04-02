@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Nature Methods badge</title>
+  <desc id="desc">A simple branded badge for a Nature Methods news item.</desc>
+  <rect width="1200" height="630" fill="#111111" rx="24" />
+  <rect x="0" y="598" width="1200" height="32" fill="#f47d21" />
+  <text x="90" y="275" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="700">nature methods</text>
+  <text x="92" y="360" fill="#d9d9d9" font-family="Arial, Helvetica, sans-serif" font-size="34">Open and Sustainable AI</text>
+  <text x="92" y="410" fill="#d9d9d9" font-family="Arial, Helvetica, sans-serif" font-size="34">ELIXIR Ireland News</text>
+</svg>
