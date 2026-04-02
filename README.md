@@ -128,7 +128,7 @@ GitHub issue forms are available to help log content and site updates consistent
 
 - **News submission form**: use the repository issue template for a news card or short linked update.
 - **Event submission form**: use the repository issue template for an event card with the key metadata needed for the events page.
-- **General website issues**: use the general website issue template or open a blank issue for bugs, broken links, design problems, or improvement requests.
+- **General website issues**: use the general website issue template for bugs, broken links, design problems, or improvement requests.
 
 For **full news stories**, editorial help, or anything beyond a short news card with a read-more link to another source, please contact:
 
