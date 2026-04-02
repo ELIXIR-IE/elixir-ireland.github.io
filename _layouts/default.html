@@ -34,14 +34,15 @@
     <script src="/assets/js/ui.js"></script>
 
     <!-- Page specific scripts -->
+    {% assign asset_bust = site.time | date: '%s' %}
     {% if page.url contains '/events/' or page.url == '/' or page.url == '/index.html' %}
-    <script src="/assets/js/events_items.js?v=2"></script>
-    <script src="/assets/js/events.js?v=2"></script>
+    <script src="/assets/js/events_items.js?v={{ asset_bust }}"></script>
+    <script src="/assets/js/events.js?v={{ asset_bust }}"></script>
     {% endif %}
 
     {% if page.url contains '/news/' or page.url == '/' or page.url == '/index.html' %}
-    <script src="/assets/js/news_items.js?v=3"></script>
-    <script src="/assets/js/news.js?v=2"></script>
+    <script src="/assets/js/news_items.js?v={{ asset_bust }}"></script>
+    <script src="/assets/js/news.js?v={{ asset_bust }}"></script>
     {% endif %}
 
     {% if page.url contains '/services/' %}

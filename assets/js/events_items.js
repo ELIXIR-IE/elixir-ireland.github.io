@@ -9,6 +9,15 @@ const eventsItems = [
     registrationLink: "https://eccb2026.org/"
   },
   {
+    title: "Medical Image Understanding and Analysis (MIUA) 2026",
+    date: "2026-07-20",
+    location: "University College Dublin, Dublin, Ireland",
+    summary: "International conference on medical image analysis and biomedicine at UCD, 20–22 July 2026. Full paper deadline extended to 16 April 2026.",
+    image: "/assets/images/UCD_med_image_conference_2026.png",
+    link: "https://www.ucd.ie/medicine/miua2026/",
+    registrationLink: "https://www.ucd.ie/medicine/miua2026/attend/registration/#d.en.873179"
+  },
+  {
     title: "EuroBioC 2026",
     date: "2026-06-03",
     location: "Turku, Finland",
