@@ -14,6 +14,13 @@ const newsItems = [
     link: "/news/ucd-open-sustainable-ai-nature-methods/"
   },
   {
+    title: "ELIXIR Ireland: VIBE 2025 Event Report",
+    date: "2025-12-19",
+    summary: "The official report from the VIBE 2025 annual meeting — held at Trinity College Dublin on 8 December 2025 to mark the network's 25th anniversary — is now available on Zenodo. Highlights include a ministerial address from Minister James Lawless, a national strategy workshop on Irish life science data infrastructure, and the launch of the new VIBE webpage hosted by ELIXIR Ireland.",
+    image: "/assets/images/vibe25logo.png",
+    link: "https://zenodo.org/records/17982176"
+  },
+  {
     title: "Survey: Landscaping Irish Life Science Data Research Infrastructure Needs",
     date: "2025-11-18",
     summary: "ELIXIR Ireland and VIBE are conducting a national landscape analysis of Irish life science data needs which will be shared back to DFHERIS. Your input is vital and will help shape the strategic roadmap for Ireland's life science data research infrastructure ecosystem. Deadline by 19th December, 2025",

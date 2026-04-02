@@ -16,6 +16,21 @@
   const inlineStyleIds = new Set();
 
   /**
+   * Scroll to a hash target element, or to top if no hash
+   */
+  function scrollToHash(hash) {
+    if (hash && hash.length > 1) {
+      const id = decodeURIComponent(hash.substring(1));
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+    }
+    window.scrollTo(0, 0);
+  }
+
+  /**
    * Clean up old inline styles
    */
   function cleanupInlineStyles() {
@@ -346,7 +361,12 @@
           contentCache[cacheKey] = content;
           replaceMainContent(content);
           updatePageTitle(html);
-          window.scrollTo(0, 0);
+
+          // Scroll to hash anchor if present, otherwise top
+          const navHash = url.hash;
+          if (!navHash) {
+            window.scrollTo(0, 0);
+          }
 
           // Wait for CSS to be fully applied and DOM to settle
           requestAnimationFrame(() => {
@@ -354,6 +374,10 @@
               // Final reflow to ensure everything is rendered
               document.body.offsetHeight;
               initializePage(cacheKey);
+              // Scroll to hash target after DOM is ready
+              if (navHash) {
+                scrollToHash(navHash);
+              }
               // Notify that navigation is complete
               window.dispatchEvent(new Event('navigationComplete'));
             });
@@ -391,6 +415,14 @@
 
     // Ignore links to assets or non-html resources roughly
     if (url.pathname.match(/\.(pdf|zip|jpg|png|gif|svg)$/i)) return;
+
+    // Same-page hash navigation — just scroll, no reload
+    if (url.pathname === window.location.pathname && url.hash) {
+      e.preventDefault();
+      history.pushState(null, '', url.pathname + url.hash);
+      scrollToHash(url.hash);
+      return;
+    }
 
     e.preventDefault();
     loadPage(url.href, true);
