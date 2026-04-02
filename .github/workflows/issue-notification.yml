@@ -7,6 +7,8 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Send email notification
         uses: dawidd6/action-send-mail@v3
