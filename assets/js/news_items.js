@@ -1,5 +1,12 @@
 const newsItems = [
   {
+    title: "Bioconductor in Africa: Ethiopia's First In-Person Course",
+    date: "2025-11-24",
+    summary: "Dr Maria Doyle (University of Limerick) co-organised and taught Ethiopia's inaugural Bioconductor workshop in Addis Ababa, 25–29 August 2025 — 26 participants selected from 170+ applicants, with 100% recommending the course.",
+    image: "/assets/images/bioconductor-ethiopia-2025.jpeg",
+    link: "/news/bioconductor-ethiopia-course/"
+  },
+  {
     title: "ELIXIR Ireland and ELIXIR-UK webinars showcase AI and health data collaboration",
     date: "2026-04-02",
     summary: "Recent ELIXIR-UK webinars featured ELIXIR Ireland speakers Gavin Farrell and Prof. Aedín Culhane, highlighting open and sustainable AI, federated cancer data, and strong cross-Node knowledge exchange.",
