@@ -2881,13 +2881,27 @@ section {
 }
 
 .expand-icon {
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #f47920;
   color: #f47920;
+  background: rgba(244, 121, 32, 0.08);
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.category-header:hover .expand-icon {
+  background: rgba(244, 121, 32, 0.2);
+  border-color: #ff9f50;
 }
 
 .expand-icon.expanded {
   transform: rotate(180deg);
+  background: rgba(244, 121, 32, 0.18);
 }
 
 .category-content {

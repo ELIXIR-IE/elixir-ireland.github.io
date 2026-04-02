@@ -105,34 +105,50 @@ css_file: /assets/css/vibe.css
         </div>
 
         <!-- Upcoming Event -->
+        <!-- VIBE 2026 card — reserved, unhide and populate when details are confirmed -->
+        <!--
         <div class="event-highlight">
             <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
                 <div style="flex: 2;">
                     <span class="event-status-badge upcoming"
                         style="margin-bottom: 1rem; display: inline-block;">Upcoming Event</span>
-                    <h2 style="color: #023452; margin-top: 0;">VIBE 2025</h2>
-                    <p><strong><i class="far fa-calendar"></i> Date:</strong> December 8, 2025</p>
-                    <p><strong><i class="fas fa-map-marker-alt"></i> Location:</strong> Trinity College Dublin, Dublin,
-                        Ireland</p>
-                    <p>The 2025 edition brings together the brightest minds in Irish bioinformatics for a day of
-                        presentations, poster sessions, and networking.</p>
-                    <a href="https://www.gen.tcd.ie/vibe/" target="_blank" class="btn btn-primary"
+                    <h2 style="color: #023452; margin-top: 0;">VIBE 2026</h2>
+                    <p><strong><i class="far fa-calendar"></i> Date:</strong> TBC</p>
+                    <p><strong><i class="fas fa-map-marker-alt"></i> Location:</strong> TBC</p>
+                    <p>Details for the 2026 VIBE meeting will be announced here.</p>
+                    <a href="#" target="_blank" class="btn btn-primary"
                         style="margin-top: 1rem;">View Event & Register</a>
                 </div>
                 <div style="flex: 1; text-align: center;">
-                    <img src="/assets/images/vibe25.png" alt="VIBE 2025"
+                    <img src="/assets/images/vibe25.png" alt="VIBE 2026"
                         style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                 </div>
             </div>
         </div>
+        -->
 
         <!-- Event Archive -->
         <div id="vibe-events-archive">
+            <!-- VIBE 2025 -->
+            <div class="service-category">
+                <div class="category-header" onclick="toggleVibeYear('vibe2025')">
+                    <h3>VIBE 2025</h3>
+                    <div class="expand-icon" id="vibe2025-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                </div>
+                <div class="category-content" id="vibe2025-content">
+                    <p><strong>Date:</strong> December 8, 2025</p>
+                    <p><strong>Location:</strong> Trinity College Dublin, Dublin, Ireland</p>
+                    <p>The 2025 edition brought together the bioinformatics community across Ireland for a day of
+                        presentations, poster sessions, and networking.</p>
+                    <a href="https://www.gen.tcd.ie/vibe/" target="_blank">Event website</a>
+                </div>
+            </div>
+
             <!-- VIBE 2024 -->
             <div class="service-category">
                 <div class="category-header" onclick="toggleVibeYear('vibe2024')">
                     <h3>VIBE 2024 (Joint VIBE-ICBG Meeting)</h3>
-                    <div class="expand-icon" id="vibe2024-icon"><i class="fas fa-chevron-down"></i></div>
+                    <div class="expand-icon" id="vibe2024-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="category-content" id="vibe2024-content">
                     <p><strong>Date:</strong> December 5–6, 2024</p>
@@ -147,7 +163,7 @@ css_file: /assets/css/vibe.css
             <div class="service-category">
                 <div class="category-header" onclick="toggleVibeYear('vibe2023')">
                     <h3>VIBE 2023</h3>
-                    <div class="expand-icon" id="vibe2023-icon"><i class="fas fa-chevron-down"></i></div>
+                    <div class="expand-icon" id="vibe2023-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="category-content" id="vibe2023-content">
                     <p><strong>Date:</strong> May 26, 2023</p>
@@ -162,7 +178,7 @@ css_file: /assets/css/vibe.css
             <div class="service-category">
                 <div class="category-header" onclick="toggleVibeYear('vibe2022')">
                     <h3>VIBE 2022</h3>
-                    <div class="expand-icon" id="vibe2022-icon"><i class="fas fa-chevron-down"></i></div>
+                    <div class="expand-icon" id="vibe2022-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="category-content" id="vibe2022-content">
                     <p><strong>Date:</strong> June 24, 2022</p>
@@ -177,7 +193,7 @@ css_file: /assets/css/vibe.css
             <div class="service-category">
                 <div class="category-header" onclick="toggleVibeYear('vibe2019')">
                     <h3>VIBE 2019</h3>
-                    <div class="expand-icon" id="vibe2019-icon"><i class="fas fa-chevron-down"></i></div>
+                    <div class="expand-icon" id="vibe2019-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="category-content" id="vibe2019-content">
                     <p><strong>Date:</strong> March 22, 2019</p>
@@ -191,7 +207,7 @@ css_file: /assets/css/vibe.css
             <div class="service-category">
                 <div class="category-header" onclick="toggleVibeYear('vibe2014')">
                     <h3>VIBE 2014</h3>
-                    <div class="expand-icon" id="vibe2014-icon"><i class="fas fa-chevron-down"></i></div>
+                    <div class="expand-icon" id="vibe2014-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="category-content" id="vibe2014-content">
                     <p><strong>Date:</strong> May 9, 2014</p>
@@ -206,7 +222,7 @@ css_file: /assets/css/vibe.css
             <div class="service-category">
                 <div class="category-header" onclick="toggleVibeYear('vibe2013')">
                     <h3>VIBE 2013</h3>
-                    <div class="expand-icon" id="vibe2013-icon"><i class="fas fa-chevron-down"></i></div>
+                    <div class="expand-icon" id="vibe2013-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="category-content" id="vibe2013-content">
                     <p><strong>Date:</strong> November 15, 2013</p>
@@ -221,7 +237,7 @@ css_file: /assets/css/vibe.css
             <div class="service-category">
                 <div class="category-header" onclick="toggleVibeYear('vibe2008')">
                     <h3>VIBE 2008</h3>
-                    <div class="expand-icon" id="vibe2008-icon"><i class="fas fa-chevron-down"></i></div>
+                    <div class="expand-icon" id="vibe2008-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="category-content" id="vibe2008-content">
                     <p><strong>Date:</strong> September 5, 2008</p>
@@ -234,7 +250,7 @@ css_file: /assets/css/vibe.css
             <div class="service-category">
                 <div class="category-header" onclick="toggleVibeYear('vibe2005')">
                     <h3>VIBE 2005 (Biannual Research Day)</h3>
-                    <div class="expand-icon" id="vibe2005-icon"><i class="fas fa-chevron-down"></i></div>
+                    <div class="expand-icon" id="vibe2005-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="category-content" id="vibe2005-content">
                     <p><strong>Date:</strong> February 17, 2005</p>
@@ -248,7 +264,7 @@ css_file: /assets/css/vibe.css
             <div class="service-category">
                 <div class="category-header" onclick="toggleVibeYear('vibe2002')">
                     <h3>VIBE 2002 (Inaugural Meeting)</h3>
-                    <div class="expand-icon" id="vibe2002-icon"><i class="fas fa-chevron-down"></i></div>
+                    <div class="expand-icon" id="vibe2002-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="category-content" id="vibe2002-content">
                     <p><strong>Date:</strong> April 25–26, 2002</p>
