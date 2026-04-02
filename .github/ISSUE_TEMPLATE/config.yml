@@ -1,8 +1,11 @@
-blank_issues_enabled: false
+blank_issues_enabled: true
 contact_links:
-  - name: 🐛 Report a Bug
-    url: https://github.com/codemeleon/elixir-ireland.github.io/issues/new
-    about: Report a bug or error on the website.
-  - name: 💡 Suggest an Improvement
-    url: https://github.com/codemeleon/elixir-ireland.github.io/issues/new
-    about: Suggest an idea or improvement.
+  - name: 📰 Submit a news item
+    url: https://github.com/ELIXIR-IE/elixir-ireland.github.io/issues/new?template=news_submission.yml
+    about: Request a news card or short linked update for the website.
+  - name: 🗓️ Submit an event
+    url: https://github.com/ELIXIR-IE/elixir-ireland.github.io/issues/new?template=event_submission.yml
+    about: Request an event card for the Events page.
+  - name: ✉️ Full news story support
+    url: mailto:elixir@ul.ie?cc=gavin.farrell@ul.ie&subject=ELIXIR%20Ireland%20news%20story%20request
+    about: Contact the team for fuller news stories, editorial help, or richer internal pages beyond a short card and read-more link.

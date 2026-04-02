@@ -31,7 +31,7 @@ gem install bundler
 ### 3. Clone the Repository
 
 ```bash
-git clone https://github.com/elixir-ireland/elixir-ireland.github.io.git
+git clone https://github.com/ELIXIR-IE/elixir-ireland.github.io.git
 cd elixir-ireland.github.io
 ```
 
@@ -122,9 +122,28 @@ bundle exec jekyll clean
 bundle exec jekyll serve
 ```
 
+## Submitting News, Events, and Website Issues
+
+GitHub issue forms are available to help log content and site updates consistently:
+
+- **News submission form**: use the repository issue template for a news card or short linked update.
+- **Event submission form**: use the repository issue template for an event card with the key metadata needed for the events page.
+- **General website issues**: use the general website issue template or open a blank issue for bugs, broken links, design problems, or improvement requests.
+
+For **full news stories**, editorial help, or anything beyond a short news card with a read-more link to another source, please contact:
+
+- `elixir@ul.ie`
+- `gavin.farrell@ul.ie`
+
+Repository links:
+
+- News form: `https://github.com/ELIXIR-IE/elixir-ireland.github.io/issues/new?template=news_submission.yml`
+- Event form: `https://github.com/ELIXIR-IE/elixir-ireland.github.io/issues/new?template=event_submission.yml`
+- General issues: `https://github.com/ELIXIR-IE/elixir-ireland.github.io/issues/new/choose`
+
 ## Issue Reports and Suggestions
 
-If you have identified an issue or have any suggestions to improve the site, please [open an issue](https://github.com/elixir-ireland/elixir-ireland.github.io/issues/new) or [create a pull request](https://github.com/elixir-ireland/elixir-ireland.github.io/pulls).
+If you have identified an issue or have any suggestions to improve the site, please [open an issue](https://github.com/ELIXIR-IE/elixir-ireland.github.io/issues/new/choose) or [create a pull request](https://github.com/ELIXIR-IE/elixir-ireland.github.io/pulls).
 
 ## License
 This project is maintained by ELIXIR Ireland.

@@ -1,0 +1,55 @@
+name: 🛠️ General Website Issue
+description: Report a bug, broken link, content problem, or request an improvement for the ELIXIR Ireland website.
+title: "[Issue]: "
+labels: ["triage"]
+body:
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Issue type
+      options:
+        - Bug or broken behaviour
+        - Broken link
+        - Content correction
+        - Design or layout issue
+        - Improvement request
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: page_url
+    attributes:
+      label: Relevant page URL
+      description: Paste the page URL if the issue relates to a specific page.
+      placeholder: https://elixir-ireland.ie/news/
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Short summary
+      description: Briefly describe the problem or request.
+      placeholder: The news card link is broken on the News page.
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Include steps to reproduce, expected behaviour, or the exact content change needed.
+    validations:
+      required: true
+
+  - type: textarea
+    id: supporting_info
+    attributes:
+      label: Supporting information
+      description: Add screenshots, references, or any additional context.
+
+  - type: input
+    id: contact_email
+    attributes:
+      label: Contact email
+      description: Optional, if follow-up is needed.
+      placeholder: name@institution.ie

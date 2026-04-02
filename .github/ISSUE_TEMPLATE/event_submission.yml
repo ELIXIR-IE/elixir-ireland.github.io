@@ -1,65 +1,120 @@
 name: 🗓️ Submit Event
-description: Submit a new event for the ELIXIR Ireland website.
-title: "[Event]: <Title of the event>"
+description: Submit an event card for the ELIXIR Ireland website.
+title: "[Event]: "
 labels: ["content:event"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for submitting an event! Please fill out the details below.
-        We will review and convert this into a website update.
+        Thanks for submitting an event.
+
+        Use this form to request an **event card** on the ELIXIR Ireland website.
+
+        Please provide the key metadata below so the card can be added quickly and accurately.
 
   - type: input
     id: title
     attributes:
-      label: Event Title
-      description: The name of the event.
-      placeholder: E.g., Introduction to Omics Workshop
+      label: Event title
+      description: The public event name.
+      placeholder: Medical Image Understanding and Analysis (MIUA) 2026
     validations:
       required: true
 
   - type: input
-    id: date
+    id: start_date
     attributes:
-      label: Date
-      description: The date of the event (YYYY-MM-DD).
-      placeholder: 2025-06-15
+      label: Start date
+      description: Use format YYYY-MM-DD.
+      placeholder: "2026-07-20"
     validations:
       required: true
+
+  - type: input
+    id: end_date
+    attributes:
+      label: End date
+      description: Optional if the event spans multiple days.
+      placeholder: "2026-07-22"
 
   - type: input
     id: location
     attributes:
       label: Location
-      description: Where is the event happening?
-      placeholder: E.g., UCD, Dublin OR Online
+      description: Venue, city, or Online.
+      placeholder: University College Dublin, Dublin, Ireland
+    validations:
+      required: true
+
+  - type: input
+    id: organiser
+    attributes:
+      label: Organiser or host
+      description: Institution, programme, or organising group.
+      placeholder: University College Dublin
+
+  - type: dropdown
+    id: event_type
+    attributes:
+      label: Event type
+      options:
+        - Conference
+        - Workshop
+        - Training course
+        - Webinar
+        - Community event
+        - Meeting or symposium
+        - Other
     validations:
       required: true
 
   - type: textarea
     id: summary
     attributes:
-      label: Summary
-      description: A short description of the event.
+      label: Card summary
+      description: Provide a concise 1–2 sentence description for the event card.
+      placeholder: International conference on medical image analysis and biomedicine hosted at UCD, 20–22 July 2026.
     validations:
       required: true
-  
+
   - type: input
     id: info_link
     attributes:
-      label: Information Link
-      description: URL for more information.
+      label: Information link
+      description: Main event webpage.
       placeholder: https://...
+    validations:
+      required: true
 
   - type: input
     id: reg_link
     attributes:
-      label: Registration Link
-      description: URL for registration (if different from info link).
+      label: Registration link
+      description: Registration URL, if different from the main information page.
       placeholder: https://...
 
   - type: input
     id: image_url
     attributes:
-      label: Image
-      description: Drag and drop an image here or paste a URL.
+      label: Image or logo
+      description: Paste an image URL or note the logo/image to use.
+      placeholder: https://... or 'Use institution logo'
+
+  - type: input
+    id: contact_email
+    attributes:
+      label: Contact email
+      description: Optional, if we need to confirm details.
+      placeholder: name@institution.ie
+
+  - type: textarea
+    id: deadlines
+    attributes:
+      label: Important dates or deadlines
+      description: Optional submission deadlines, registration deadlines, or agenda notes.
+
+  - type: textarea
+    id: extra_notes
+    attributes:
+      label: Additional notes
+      description: Any extra wording or context for the listing.
