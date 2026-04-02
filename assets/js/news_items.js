@@ -1,5 +1,12 @@
 const newsItems = [
   {
+    title: "ELIXIR Ireland and ELIXIR-UK webinars showcase AI and health data collaboration",
+    date: "2026-04-02",
+    summary: "Recent ELIXIR-UK webinars featured ELIXIR Ireland speakers Gavin Farrell and Prof. Aedín Culhane, highlighting open and sustainable AI, federated cancer data, and strong cross-Node knowledge exchange.",
+    image: "/assets/images/elixir-ie-uk-webinars.svg",
+    link: "/news/elixir-ireland-uk-webinars-collaboration/"
+  },
+  {
     title: "UCD co-authors contribute to Nature Methods paper on Open and Sustainable AI",
     date: "2026-04-02",
     summary: "Denis Shields and Raúl Fernández-Díaz (UCD, ELIXIR Ireland) are co-authors on a new Nature Methods paper offering pan-European guidance on open and sustainable AI, with contributions from more than 10 ELIXIR nodes.",
