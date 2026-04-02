@@ -7,8 +7,20 @@
     <meta name="description"
         content="{% if page.description %}{{ page.description }}{% else %}ELIXIR Ireland is the Irish node of the international organisation ELIXIR, which promotes the sharing of resources and expertise in computational biology.{% endif %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="https://elixir-europe.org/sites/all/themes/elixir/images/favicons/favicon.ico"
-        type="image/vnd.microsoft.icon" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+
+    <!-- Open Graph / social and search result preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ELIXIR Ireland" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}ELIXIR Ireland{% endif %}" />
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}ELIXIR Ireland is the Irish node of the international organisation ELIXIR, which promotes the sharing of resources and expertise in computational biology.{% endif %}" />
+    <meta property="og:image" content="https://elixir-ireland.ie/assets/images/ELIXIR-IE_logo.png" />
+    <meta property="og:url" content="https://elixir-ireland.ie{{ page.url }}" />
 
     <!-- Critical inline CSS to prevent FOUC (Flash of Unstyled Content) -->
     <style>
