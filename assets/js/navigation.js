@@ -227,11 +227,12 @@
     const mainElement = document.querySelector('main');
 
     if (mainElement) {
+      // Add navigated class for SPA fade-in animation
+      mainElement.classList.add('navigated');
       mainElement.innerHTML = content;
 
-      // Multiple forced reflows to ensure DOM updates and CSS are applied
+      // Force reflow to apply changes
       document.body.offsetHeight;
-      void document.body.offsetWidth;
 
       // Force image decode for better rendering
       const images = document.querySelectorAll('main img');

@@ -21,15 +21,7 @@ body {
   min-height: 100vh;
 }
 
-/* General Body & Typography */
-body {
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  margin: 0;
-  color: #333333;
-  background-color: #ffffff;
-  line-height: 1.6;
-  min-height: 100vh;
-}
+/* General Body & Typography (base rule above) */
 
 .container {
   max-width: 1200px;
@@ -113,20 +105,18 @@ body.loading::before {
   }
 }
 
-/* Smooth content transitions */
-main {
-  animation: fadeIn 0.3s ease-in-out;
+/* Smooth content transitions (SPA navigation only, not initial load) */
+main.navigated {
+  animation: fadeIn 0.2s ease-in-out;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 

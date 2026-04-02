@@ -6,15 +6,27 @@
     <title>{% if page.title %}{{ page.title }}{% else %}ELIXIR Ireland{% endif %}</title>
     <meta name="description"
         content="{% if page.description %}{{ page.description }}{% else %}ELIXIR Ireland is the Irish node of the international organisation ELIXIR, which promotes the sharing of resources and expertise in computational biology.{% endif %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="https://elixir-europe.org/sites/all/themes/elixir/images/favicons/favicon.ico"
         type="image/vnd.microsoft.icon" />
+
+    <!-- Critical inline CSS to prevent FOUC (Flash of Unstyled Content) -->
+    <style>
+        html { background-color: #023452; }
+        body { opacity: 0; background-color: #ffffff; margin: 0; }
+        body.ready { opacity: 1; transition: opacity 0.15s ease-in; }
+    </style>
+
+    <!-- Preload primary font to reduce layout shift -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css?v=10" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css?v=11" />
     {% if page.css_file %}
     <link rel="stylesheet" type="text/css" href="{{ page.css_file }}" />
     {% endif %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
@@ -57,7 +69,14 @@
     <script src="/assets/js/home.js"></script>
     {% endif %}
 
-    <script src="/assets/js/navigation.js?v=2"></script>
+    <script src="/assets/js/navigation.js?v=3"></script>
+
+    <!-- Reveal page once all styles/scripts are ready -->
+    <script>
+        if (!document.body.classList.contains('ready')) {
+            document.body.classList.add('ready');
+        }
+    </script>
 </body>
 
 </html>
