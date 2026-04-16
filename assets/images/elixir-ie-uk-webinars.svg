@@ -43,6 +43,5 @@
   <text x="600" y="392" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700" fill="#023452">Expert webinars</text>
   <text x="600" y="438" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#4a4a4a">Open &amp; Sustainable AI • Federated Cancer Data</text>
 
-  <rect x="210" y="485" width="780" height="72" rx="18" fill="#ffffff" stroke="#e6ecf2" stroke-width="2" />
-  <text x="600" y="531" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600" fill="#023452">Ireland–UK collaboration in ELIXIR’s orange and blue palette</text>
+
 </svg>
