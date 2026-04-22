@@ -15,6 +15,14 @@
   const loadedScripts = new Set();
   const inlineStyleIds = new Set();
 
+  // Base paths (no query string) of stylesheets present on initial page load.
+  // These must NEVER be removed or re-added during SPA navigation.
+  let coreStylesheetPaths = new Set();
+
+  // Page-specific stylesheets injected by SPA navigation (not present on initial load).
+  // Map of basePath -> <link> element, so we can remove them when navigating away.
+  const pageSpecificStylesheets = new Map();
+
   /**
    * Scroll to a hash target element, or to top if no hash
    */
@@ -87,89 +95,87 @@
   }
 
   /**
-   * Load page-specific stylesheets
+   * Load page-specific stylesheets.
+   *
+   * Core rule: stylesheets present on initial page load (coreStylesheetPaths)
+   * are NEVER removed or re-added. Removing them — even briefly — causes a
+   * white flash because the browser drops all styles while the new <link>
+   * loads asynchronously (even from cache, onload is deferred).
+   *
+   * Only genuinely page-specific sheets (e.g. vibe.css, added only on certain
+   * pages) are injected/removed as the visitor navigates.
    */
   function loadPageStyles(html) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
     const newStyles = doc.querySelectorAll('head link[rel="stylesheet"]');
 
+    // Build set of base paths the incoming page needs
+    const neededBasePaths = new Set();
+    newStyles.forEach(styleLink => {
+      const href = styleLink.getAttribute('href');
+      if (href) neededBasePaths.add(href.split('?')[0]);
+    });
+
+    // Remove any page-specific stylesheets not needed by the new page
+    pageSpecificStylesheets.forEach((linkEl, basePath) => {
+      if (!neededBasePaths.has(basePath)) {
+        linkEl.remove();
+        pageSpecificStylesheets.delete(basePath);
+        console.log(`♻ Removed page-specific stylesheet: ${basePath}`);
+      }
+    });
+
     const loadPromises = [];
 
     newStyles.forEach(styleLink => {
       const href = styleLink.getAttribute('href');
-      if (href) {
-        const existingLink = document.querySelector(`link[href="${href}"]`);
-        if (!existingLink) {
-          const loadPromise = new Promise((resolve, reject) => {
-            const newLink = document.createElement('link');
-            newLink.rel = 'stylesheet';
-            newLink.type = 'text/css';
-            // Add cache-busting timestamp to force fresh load
-            newLink.href = href + (href.includes('?') ? '&' : '?') + '_=' + Date.now();
-            newLink.onload = () => {
-              console.log(`✓ Loaded stylesheet: ${href}`);
-              // Force multiple reflows to ensure CSS is applied
-              document.body.offsetHeight;
-              void document.body.offsetWidth;
-              resolve();
-            };
-            newLink.onerror = () => {
-              console.error(`✗ Failed to load stylesheet: ${href}`);
-              reject();
-            };
-            document.head.appendChild(newLink);
-          });
-          loadPromises.push(loadPromise);
-        } else {
-          // CSS already loaded, force complete reload by removing and re-adding
-          console.log(`♻️ Reloading stylesheet: ${href}`);
-          const parent = existingLink.parentNode;
-          parent.removeChild(existingLink);
+      if (!href) return;
 
-          const reloadPromise = new Promise((resolve) => {
-            requestAnimationFrame(() => {
-              const newLink = document.createElement('link');
-              newLink.rel = 'stylesheet';
-              newLink.type = 'text/css';
-              newLink.href = href + (href.includes('?') ? '&' : '?') + '_=' + Date.now();
-              newLink.onload = () => {
-                console.log(`✓ Reloaded stylesheet: ${href}`);
-                // Force reflow after re-enabling
-                document.body.offsetHeight;
-                void document.body.offsetWidth;
-                // Force style recalculation
-                window.getComputedStyle(document.body).getPropertyValue('color');
-                resolve();
-              };
-              parent.appendChild(newLink);
-            });
-          });
-          loadPromises.push(reloadPromise);
-        }
+      const basePath = href.split('?')[0];
+
+      // Core stylesheet — already in DOM, must not be touched
+      if (coreStylesheetPaths.has(basePath)) {
+        return;
+      }
+
+      // Page-specific stylesheet — add it if not already present
+      if (!pageSpecificStylesheets.has(basePath)) {
+        const loadPromise = new Promise((resolve) => {
+          const newLink = document.createElement('link');
+          newLink.rel = 'stylesheet';
+          newLink.type = 'text/css';
+          newLink.href = href;
+          newLink.onload = () => {
+            console.log(`✓ Loaded page-specific stylesheet: ${basePath}`);
+            resolve();
+          };
+          newLink.onerror = () => {
+            console.warn(`✗ Failed to load stylesheet: ${basePath}`);
+            resolve(); // resolve anyway so navigation isn't blocked
+          };
+          document.head.appendChild(newLink);
+          pageSpecificStylesheets.set(basePath, newLink);
+        });
+        loadPromises.push(loadPromise);
       }
     });
 
-    // Also handle inline styles from the page
+    // Handle inline <style> blocks from the fetched page head.
+    // Skip the FOUC-prevention style (body opacity:0 / body.ready) — it is
+    // already in the DOM from the initial load and must not be duplicated.
     const inlineStyles = doc.querySelectorAll('head style');
     inlineStyles.forEach(styleTag => {
+      if (styleTag.textContent.includes('opacity') && styleTag.textContent.includes('body')) {
+        return; // skip FOUC-prevention style
+      }
       const styleId = `inline-style-${Math.random().toString(36).substr(2, 9)}`;
       const newStyle = document.createElement('style');
       newStyle.id = styleId;
       newStyle.textContent = styleTag.textContent;
       document.head.appendChild(newStyle);
       inlineStyleIds.add(styleId);
-      console.log(`✓ Added inline stylesheet: ${styleId}`);
     });
-
-    if (loadPromises.length === 0) {
-      console.log('No new stylesheets to load, forcing reflow');
-      // Force multiple reflows even if no new styles loaded
-      document.body.offsetHeight;
-      void document.body.offsetWidth;
-      // Force a style recalculation
-      window.getComputedStyle(document.body).getPropertyValue('color');
-    }
 
     return Promise.all(loadPromises);
   }
@@ -433,6 +439,17 @@
    */
   function initialize() {
     console.log('Initializing navigation system');
+
+    // Snapshot all stylesheets currently in the DOM — these are the "core"
+    // sheets (loaded by the Jekyll layout). They must never be removed during
+    // SPA navigation or the page will flash white.
+    document.querySelectorAll('head link[rel="stylesheet"]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href) {
+        coreStylesheetPaths.add(href.split('?')[0]);
+      }
+    });
+
     document.addEventListener('click', handleLinkClick);
 
     // Initial state setup
