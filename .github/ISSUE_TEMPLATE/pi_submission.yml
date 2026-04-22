@@ -1,0 +1,125 @@
+name: 🧬 Request to Join PI / Research Group Directory
+description: Request to be listed as a PI or research group leader in the VIBE community directory on the ELIXIR Ireland website.
+title: "[PI Directory]: "
+labels: ["content:vibe-pi"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your interest in joining the VIBE PI & Research Groups directory on the ELIXIR Ireland website.
+
+        Each entry appears as a card with the following structure — please fill in the fields below so we can build yours accurately. Fields marked **required** appear directly on the published card.
+
+        ```
+        ┌──────────────────────────────────┐
+        │  [Profile photo — circular crop] │
+        │  Full name (H3)                  │
+        │  Role / position title (H4)      │
+        │  Institution                     │
+        │  [🌐] [ORCID] [✉]               │
+        └──────────────────────────────────┘
+        ```
+
+        Once received, the ELIXIR Ireland team will review and add you. Questions? Email **elixir@ul.ie**.
+
+  - type: markdown
+    attributes:
+      value: "## Card display fields"
+
+  - type: input
+    id: full_name
+    attributes:
+      label: "Card field: Full name (with title)"
+      description: Exactly as you would like it displayed on the card (e.g. Dr., Prof., etc.).
+      placeholder: "Dr. Jane Smith"
+    validations:
+      required: true
+
+  - type: input
+    id: position
+    attributes:
+      label: "Card field: Role / position title"
+      description: Shown directly under your name on the card — your current job title or academic position.
+      placeholder: "Associate Professor in Bioinformatics"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: institution
+    attributes:
+      label: "Card field: Institution / organisation"
+      description: Shown on the card and used for the filter bar. Select your primary institution.
+      options:
+        - Dublin City University (DCU)
+        - Maynooth University
+        - Munster Technological University (MTU)
+        - Queens University Belfast (QUB)
+        - RCSI University of Medicine and Health Sciences
+        - Teagasc
+        - Technological University Dublin (TU Dublin)
+        - Trinity College Dublin (TCD)
+        - Ulster University
+        - University College Cork (UCC)
+        - University College Dublin (UCD)
+        - University of Galway
+        - University of Limerick (UL)
+        - Other (specify in additional notes below)
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "## Card link icons (optional but recommended)"
+
+  - type: input
+    id: orcid
+    attributes:
+      label: "Card field: ORCID iD"
+      description: Your ORCID profile URL — displayed as an ORCID icon link on the card. See https://orcid.org if you do not have one.
+      placeholder: "https://orcid.org/0000-0000-0000-0000"
+
+  - type: input
+    id: lab_website
+    attributes:
+      label: "Card field: Lab or personal website URL"
+      description: Displayed as a globe icon link on the card.
+      placeholder: "https://www.example.ie/lab"
+
+  - type: input
+    id: email_public
+    attributes:
+      label: "Card field: Public contact email"
+      description: Displayed as an email icon link on the card. Leave blank if you prefer not to show an email publicly.
+      placeholder: "j.smith@university.ie"
+
+  - type: markdown
+    attributes:
+      value: "## Profile photo"
+
+  - type: input
+    id: photo
+    attributes:
+      label: "Card field: Profile photo"
+      description: |
+        Shown as a circular cropped avatar on the card. Provide a URL to a publicly accessible photo (e.g. your institutional staff page photo), or email a headshot to elixir@ul.ie with the subject line matching this issue title. Minimum recommended size: 300×300 px.
+      placeholder: "https://www.university.ie/staff/photo.jpg"
+
+  - type: markdown
+    attributes:
+      value: "## Submission contact (not public)"
+
+  - type: input
+    id: email_contact
+    attributes:
+      label: Contact email (for verification only — not published)
+      description: Used by the ELIXIR Ireland team to verify your submission and follow up if needed.
+      placeholder: "j.smith@university.ie"
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Anything else you would like to include (e.g. specify institution if you selected 'Other', preferred photo crop position, etc.).
+

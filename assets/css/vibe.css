@@ -35,20 +35,122 @@
     gap: 1.5rem;
     margin-top: 2rem;
 }
-.pi-grid.collapsed {
-    max-height: 600px;
-    overflow: hidden;
-    position: relative;
+/* Filter bar */
+.pi-section-controls {
+    margin-bottom: 1.5rem;
 }
-.pi-grid.collapsed::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
-    pointer-events: none;
+.pi-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+}
+/* Separator between All and institution buttons */
+.pi-filter-sep {
+    display: inline-block;
+    width: 1px;
+    height: 1.4rem;
+    background: #c5ced7;
+    margin: 0 0.25rem;
+    flex-shrink: 0;
+    align-self: center;
+}
+/* Base institution filter pill */
+.pi-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.85rem;
+    border: 1.5px solid #9baab8;
+    border-radius: 20px;
+    background: transparent;
+    color: #445566;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+    line-height: 1;
+}
+.pi-filter-btn:hover {
+    background: #023452;
+    border-color: #023452;
+    color: #ffffff;
+}
+.pi-filter-btn:hover .pi-filter-count {
+    background: rgba(255,255,255,0.22);
+    color: #ffffff;
+}
+.pi-filter-btn.active {
+    background: #f47920;
+    border-color: #f47920;
+    color: #ffffff;
+}
+.pi-filter-btn.active .pi-filter-count {
+    background: rgba(255,255,255,0.25);
+    color: #ffffff;
+}
+/* "All" button — solid dark blue, visually distinct */
+.pi-filter-btn--all {
+    background: #023452;
+    border-color: #023452;
+    color: #ffffff;
+    font-size: 0.9rem;
+    padding: 0.45rem 1.1rem;
+}
+.pi-filter-btn--all:hover {
+    background: #034a73;
+    border-color: #034a73;
+    color: #ffffff;
+}
+.pi-filter-btn--all .pi-filter-count {
+    background: rgba(255,255,255,0.18);
+    color: #ffffff;
+}
+.pi-filter-btn--all.active {
+    background: #f47920;
+    border-color: #f47920;
+    color: #ffffff;
+}
+.pi-filter-count {
+    display: inline-block;
+    background: rgba(0,0,0,0.08);
+    border-radius: 10px;
+    padding: 0.1rem 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    min-width: 1.4rem;
+    text-align: center;
+}
+/* Browse hint shown before any interaction */
+.pi-browse-hint {
+    color: #555;
+    font-size: 0.92rem;
+    margin: 0.5rem 0 0;
+    padding: 0.6rem 0.9rem;
+    background: #f0f4f8;
+    border-left: 3px solid #023452;
+    border-radius: 0 6px 6px 0;
+    display: inline-block;
+}
+.pi-count-label {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0.4rem 0 0;
+    min-height: 1.3em;
+}
+/* Hidden cards and fade-in on reveal */
+.pi-card.pi-hidden {
+    display: none;
+}
+@keyframes piFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.pi-card:not(.pi-hidden) {
+    animation: piFadeIn 0.22s ease both;
 }
 .pi-card {
     background: white;
@@ -125,14 +227,25 @@
     color: white;
     margin-top: 0;
 }
-.join-directory a {
+.join-directory a:not(.btn) {
     color: #f47920;
     font-weight: bold;
     text-decoration: none;
 }
-.join-directory a:hover {
+.join-directory a:not(.btn):hover {
     text-decoration: underline;
     color: #ff9e5e;
+}
+/* Ensure btn-primary inside dark banner stays readable */
+.join-directory .btn-primary {
+    color: #ffffff !important;
+    background-color: #f47920;
+    border-color: #f47920;
+}
+.join-directory .btn-primary:hover {
+    color: #ffffff !important;
+    background-color: #d96a15;
+    border-color: #d96a15;
 }
 .event-highlight {
     background: #fff;

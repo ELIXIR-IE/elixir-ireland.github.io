@@ -2,7 +2,7 @@
 layout: default
 title: VIBE – The Irish Bioinformatics Network
 description: VIBE is a grassroots, bottom-up community network representing bioinformatics researchers, data scientists, and computational biologists across Ireland.
-css_file: /assets/css/vibe.css
+css_file: /assets/css/vibe.css?v=2
 ---
 <!-- Hero Section -->
 <section class="page-hero" id="top">
@@ -328,12 +328,19 @@ css_file: /assets/css/vibe.css
         </div>
 
 
-        <div class="pi-section-controls" style="text-align: center; margin-bottom: 2rem;">
-            <button id="toggle-pi-grid" class="btn btn-primary" onclick="togglePiGrid()">Show All Principal
-                Investigators</button>
+        <div class="pi-section-controls">
+            <div id="pi-filter-bar" class="pi-filter-bar" role="group" aria-label="Filter researchers by institution"></div>
+            <p id="pi-browse-hint" class="pi-browse-hint">Select an institution above to browse the VIBE community, or click <strong>All</strong> to view all researchers.</p>
+            <p class="pi-count-label"><span id="pi-visible-count"></span></p>
         </div>
-        <div id="pi-grid-container" class="pi-grid collapsed">
+        <div id="pi-grid-container" class="pi-grid">
             {% include vibe_pis.html %}
+        </div>
+
+        <div class="join-directory" style="margin-top: 2.5rem;">
+            <h3>Are you part of the VIBE community?</h3>
+            <p>If you are a principal investigator or group leader working in bioinformatics, computational biology, or life science data science on the island of Ireland, you can request to be listed in the community directory.</p>
+            <a href="https://github.com/ELIXIR-IE/elixir-ireland.github.io/issues/new?template=pi_submission.yml" target="_blank" rel="noopener" class="btn btn-primary" style="display: inline-block; margin-top: 0.5rem;">Request to join the directory</a>
         </div>
     </div>
 </section>
