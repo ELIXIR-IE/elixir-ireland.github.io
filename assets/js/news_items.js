@@ -2,7 +2,7 @@ const newsItems = [
   {
     title: "Irish Life Science Data Infrastructure Survey — Q4 2025 Results Published",
     date: "2026-04-21",
-    summary: "ELIXIR Ireland and VIBE publish the results of the Q4 2025 national landscape survey, capturing responses from 99 researchers representing ~515 individuals across 12 critical areas of Irish life science data infrastructure capacity.",
+    summary: "ELIXIR Ireland and VIBE publish the results of the Q4 2025 national landscape survey, capturing responses from 99 researchers representing ~515 individuals across 8 critical areas of Irish life science data infrastructure capacity.",
     image: "/assets/images/survey-results-2025.svg",
     link: "/news/irish-life-science-data-infrastructure-survey/"
   },
