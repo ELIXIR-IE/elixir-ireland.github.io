@@ -1,5 +1,12 @@
 const newsItems = [
   {
+    title: "Irish Life Science Data Infrastructure Survey — Q4 2025 Results Published",
+    date: "2026-04-21",
+    summary: "ELIXIR Ireland and VIBE publish the results of the Q4 2025 national landscape survey, capturing responses from 99 researchers representing ~515 individuals across 12 critical areas of Irish life science data infrastructure capacity.",
+    image: "/assets/images/survey-results-2025.svg",
+    link: "/news/irish-life-science-data-infrastructure-survey/"
+  },
+  {
     title: "Bioconductor in Africa: Ethiopia's First In-Person Course",
     date: "2025-11-24",
     summary: "Dr Maria Doyle (University of Limerick) co-organised and taught Ethiopia's inaugural Bioconductor workshop in Addis Ababa, 25–29 August 2025 — 26 participants selected from 170+ applicants, with 100% recommending the course.",
