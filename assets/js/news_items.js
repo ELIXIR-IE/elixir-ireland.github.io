@@ -1,5 +1,12 @@
 const newsItems = [
   {
+    title: "Lars Jermiin featured in Dyslexia Ireland profile",
+    date: "2026-05-26",
+    summary: "Lars Jermiin, ELIXIR Ireland Research Data Management Coordinator at the University of Galway, is featured in a powerful profile by Dyslexia Ireland — sharing how dyslexia shaped his journey as a scientist and educator.",
+    image: "/assets/images/LSJermiin.jpg",
+    link: "/news/lars-jermiin-rdm-coordinator/"
+  },
+  {
     title: "Irish Life Science Data Infrastructure Survey — Q4 2025 Results Published",
     date: "2026-04-21",
     summary: "ELIXIR Ireland and VIBE publish the results of the Q4 2025 national landscape survey, capturing responses from 99 researchers representing ~515 individuals across 8 critical areas of Irish life science data infrastructure capacity.",
