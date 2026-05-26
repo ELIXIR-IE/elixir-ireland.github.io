@@ -3008,3 +3008,12 @@ section {
     padding: 20px;
   }
 }
+
+/* ── News / article pages ── */
+/* Base CSS reset removes all margins; restore paragraph spacing within article prose */
+.content-section article p {
+  margin-bottom: 1rem;
+}
+.content-section article p:last-child {
+  margin-bottom: 0;
+}

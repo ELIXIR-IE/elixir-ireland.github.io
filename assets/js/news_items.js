@@ -1,5 +1,19 @@
 const newsItems = [
   {
+    title: "ELIXIR Ireland joins EOSC Gravity grant to write Ireland's EOSC Node Charter",
+    date: "2026-05-26",
+    summary: "A cascading grant from EOSC Gravity has been awarded to a consortium of UL, ICHEC, and ASIERA to draft the formal EOSC Ireland Node Charter. ELIXIR Ireland contributes through the Culhane lab at UL, bringing life science standards and interoperability expertise to the governance document.",
+    image: "/assets/images/eosc-gravity-logo.jpg",
+    link: "/news/elixir-ireland-eosc-gravity-node-charter/"
+  },
+  {
+    title: "ELIXIR Ireland contributes to EOSC Ireland",
+    date: "2026-05-26",
+    summary: "ELIXIR Ireland is participating in EOSC Ireland, the national effort to design an EOSC Node for Ireland, leading WP4 on EOSC Federation interoperability and standards, and contributing to WP5 on sensitive data services.",
+    image: "/assets/images/EOSC-IE-kick-off-group-photo.jpg",
+    link: "/news/elixir-ireland-eosc-ireland/"
+  },
+  {
     title: "Lars Jermiin featured in Dyslexia Ireland profile",
     date: "2026-05-26",
     summary: "Lars Jermiin, ELIXIR Ireland Research Data Management Coordinator at the University of Galway, is featured in a powerful profile by Dyslexia Ireland — sharing how dyslexia shaped his journey as a scientist and educator.",

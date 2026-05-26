@@ -122,19 +122,28 @@ News and events are **NOT Jekyll posts**. They are JavaScript arrays:
 
 To add a news item or event, append to the relevant JS array. Do not create Jekyll post files.
 
-### 5. Card Styling
+### 5. Paragraph Spacing in News Articles
+
+The global CSS reset (`* { margin: 0; padding: 0 }`) removes all default paragraph margins. A rule in `styles.css` restores `margin-bottom: 1rem` for `<p>` elements inside `.content-section article`. This means:
+
+- **Do not** add blank lines between `<p>` tags in article HTML expecting them to create visual spacing — they won't. Spacing comes from CSS `margin-bottom`, not HTML whitespace.
+- **Do not** manually add `style="margin-bottom: 1rem"` to individual `<p>` tags in article prose — the CSS rule already handles this.
+- If you need a paragraph to have no bottom margin (e.g. the last item in a tightly grouped block), add `style="margin-bottom: 0"` explicitly.
+- After editing `styles.css`, increment the `?v=` cache-bust parameter in `_layouts/default.html`.
+
+### 6. Card Styling
 
 - Cards that are **not** links should **not** have `cursor: pointer`
 - Only interactive elements inside cards get pointer cursor
 - Use `object-position` in circular avatar images to prevent face cropping
 
-### 6. Image Handling
+### 7. Image Handling
 
 - All images go in `assets/images/`
 - Optimise images before committing (keep under 500KB where possible)
 - Use descriptive filenames (lowercase, hyphens, no spaces)
 
-### 7. CSS Organisation
+### 8. CSS Organisation
 
 - All global styles are in `assets/css/styles.css` (single file, ~3000 lines)
 - VIBE page-specific styles are in `assets/css/vibe.css`
