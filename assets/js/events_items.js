@@ -4,7 +4,7 @@ const eventsItems = [
     date: "2026-08-31",
     location: "Geneva, Switzerland",
     summary: "The 25th European Conference on Computational Biology exploring the intersection of Biodiversity, AI and Health through workshops, tutorials, and highlight talks.",
-    image: "/assets/images/eccb2026.png",
+    image: "/assets/images/eccb2026.webp",
     link: "https://eccb2026.org/",
     registrationLink: "https://eccb2026.org/"
   },
@@ -13,7 +13,7 @@ const eventsItems = [
     date: "2026-07-20",
     location: "University College Dublin, Dublin, Ireland",
     summary: "International conference on medical image analysis and biomedicine at UCD, 20–22 July 2026. Full paper deadline extended to 16 April 2026.",
-    image: "/assets/images/UCD_med_image_conference_2026.png",
+    image: "/assets/images/UCD_med_image_conference_2026.webp",
     link: "https://www.ucd.ie/medicine/miua2026/",
     registrationLink: "https://www.ucd.ie/medicine/miua2026/attend/registration/#d.en.873179"
   },
@@ -22,7 +22,7 @@ const eventsItems = [
     date: "2026-06-03",
     location: "Turku, Finland",
     summary: "The European Bioconductor meeting gathering developers and data scientists to showcase cutting-edge software developments and emerging technologies in computational biology.",
-    image: "/assets/images/eurobioc2026.png",
+    image: "/assets/images/eurobioc2026.webp",
     link: "https://eurobioc2026.bioconductor.org/",
     registrationLink: "https://eurobioc2026.bioconductor.org/"
   },
@@ -31,7 +31,7 @@ const eventsItems = [
     date: "2026-04-28",
     location: "Belfast, United Kingdom",
     summary: "A hybrid unconference dedicated to strengthening the research software community through interactive workshops, dynamic discussions, and a collaborative Hack Day.",
-    image: "/assets/images/ssicw26.png",
+    image: "/assets/images/ssicw26.webp",
     link: "https://www.software.ac.uk/workshop/collaborations-workshop-2026-cw26",
     registrationLink: "https://www.software.ac.uk/workshop/collaborations-workshop-2026-cw26"
   },
@@ -40,7 +40,7 @@ const eventsItems = [
     date: "2026-01-26",
     location: "Queen's University Belfast",
     summary: "Themed 'From Data to Impact: Roadmap for Cancer Data', this two-day event brings together researchers, clinicians, and data experts to advance collaboration in cancer data innovation.",
-    image: "/assets/images/cancer_form.png",
+    image: "/assets/images/cancer_form.webp",
     link: "https://www.ehealth4cancer.ie/#/forum",
     registrationLink: "https://www.eventbrite.com/e/all-island-forum-on-cancer-data-2026-tickets-1839055778339"
   },
@@ -58,7 +58,7 @@ const eventsItems = [
     date: "2025-12-08",
     location: "Trinity College Dublin",
     summary: "Annual conference bringing together bioinformatics researchers across Ireland, featuring presentations, networking, and an early career researcher event.",
-    image: "/assets/images/vibe25.png",
+    image: "/assets/images/vibe25.webp",
     link: "https://www.gen.tcd.ie/vibe/",
     registrationLink: "https://app.oxfordabstracts.com/register/event/76071"
   },
@@ -67,7 +67,7 @@ const eventsItems = [
     date: "2025-11-26",
     location: "Conway Institute, UCD",
     summary: "Join us for the 3rd AICRIstart Symposium, bringing together PhD students and Postdoctoral Fellows advancing cutting-edge cancer research across Ireland",
-    image: "/assets/images/aicristart_event.jpeg",
+    image: "/assets/images/aicristart_event.webp",
     link: "https://www.eventbrite.com/e/3rd-aicristart-symposium-tickets-1488626615279",
     registrationLink: "https://www.eventbrite.com/e/3rd-aicristart-symposium-tickets-1488626615279"
   }

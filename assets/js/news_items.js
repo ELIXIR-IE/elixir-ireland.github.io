@@ -10,7 +10,7 @@ const newsItems = [
     title: "ELIXIR Ireland contributes to EOSC Ireland",
     date: "2026-05-26",
     summary: "ELIXIR Ireland is participating in EOSC Ireland, the national effort to design an EOSC Node for Ireland, leading WP4 on EOSC Federation interoperability and standards, and contributing to WP5 on sensitive data services.",
-    image: "/assets/images/EOSC-IE-kick-off-group-photo.jpg",
+    image: "/assets/images/EOSC-IE-kick-off-group-photo.webp",
     link: "/news/elixir-ireland-eosc-ireland/"
   },
   {
@@ -31,7 +31,7 @@ const newsItems = [
     title: "Bioconductor in Africa: Ethiopia's First In-Person Course",
     date: "2025-11-24",
     summary: "Dr Maria Doyle (University of Limerick) co-organised and taught Ethiopia's inaugural Bioconductor workshop in Addis Ababa, 25–29 August 2025 — 26 participants selected from 170+ applicants, with 100% recommending the course.",
-    image: "/assets/images/bioconductor-ethiopia-2025.jpeg",
+    image: "/assets/images/bioconductor-ethiopia-2025.webp",
     link: "/news/bioconductor-ethiopia-course/"
   },
   {
@@ -52,7 +52,7 @@ const newsItems = [
     title: "ELIXIR Ireland: VIBE 2025 Event Report",
     date: "2025-12-19",
     summary: "The official report from the VIBE 2025 annual meeting — held at Trinity College Dublin on 8 December 2025 to mark the network's 25th anniversary — is now available on Zenodo. Highlights include a ministerial address from Minister James Lawless, a national strategy workshop on Irish life science data infrastructure, and the launch of the new VIBE webpage hosted by ELIXIR Ireland.",
-    image: "/assets/images/vibe25logo.png",
+    image: "/assets/images/vibe25logo.webp",
     link: "https://zenodo.org/records/17982176"
   },
   {
@@ -66,7 +66,7 @@ const newsItems = [
     title: "ELIXIR Ireland Welcomes New Deputy Heads of Node",
     date: "2025-11-11",
     summary: "ELIXIR Ireland is pleased to welcome two new Deputy Heads of Node: Laura Whelan (RCSI) and Pilib Ó Broin (University of Galway). We look forward to their contributions in supporting the growth and development of ELIXIR Ireland.",
-    image: "/assets/images/deputyhon.png",
+    image: "/assets/images/deputyhon.webp",
     link: "/news/laura-whelan-pilib-o-broin-deputy-heads/"
   },
   {

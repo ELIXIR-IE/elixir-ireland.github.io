@@ -50,16 +50,21 @@
       const endIndex = startIndex + itemsPerPage;
       const paginatedItems = sortedNewsItems.slice(startIndex, endIndex);
 
-      paginatedItems.forEach(item => {
+      paginatedItems.forEach((item, index) => {
         const newsCard = document.createElement('div');
         newsCard.className = 'card';
 
         if (item.image) {
           const cardImage = document.createElement('img');
-          cardImage.className = 'card-image';
+          cardImage.className = 'card-image card-image--loading';
           cardImage.src = item.image;
           cardImage.alt = item.title;
-          cardImage.loading = 'lazy';
+          cardImage.loading = 'eager';
+          cardImage.decoding = 'async';
+          if (index < 3) cardImage.setAttribute('fetchpriority', 'high');
+          cardImage.addEventListener('load', function () {
+            this.classList.remove('card-image--loading');
+          });
           newsCard.appendChild(cardImage);
         }
 

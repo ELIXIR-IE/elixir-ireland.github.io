@@ -651,14 +651,15 @@ main.navigated {
 .card-image {
   width: 100%;
   height: 200px;
-  /* Fixed height for consistency */
   object-fit: contain;
-  /* Contain logic ensures whole image is seen */
   border-radius: 4px;
-  /* Slight radius */
   margin-bottom: 1em;
-  background-color: #ffffff;
-  /* White background for cleaner look */
+  background-color: #e8edf2;
+  transition: opacity 0.25s ease;
+}
+
+.card-image--loading {
+  opacity: 0;
 }
 
 /* Ensure buttons in cards wrap properly */
