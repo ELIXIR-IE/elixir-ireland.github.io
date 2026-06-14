@@ -1,5 +1,12 @@
 const newsItems = [
   {
+    title: "ELIXIR Ireland's Largest Ever Delegation at ELIXIR Europe AHM 2026",
+    date: "2026-06-10",
+    summary: "Seven members of the ELIXIR Ireland team attended the ELIXIR Europe All-Hands Meeting 2026, marking the node's biggest ever delegation with contributions spanning RiboSeq services, AI and multi-omics benchmarking, Bioconductor, and federated genomic data.",
+    image: "/assets/images/AHM263.jpeg",
+    link: "/news/elixir-ireland-ahm-2026/"
+  },
+  {
     title: "ELIXIR Ireland joins EOSC Gravity grant to write Ireland's EOSC Node Charter",
     date: "2026-05-26",
     summary: "A cascading grant from EOSC Gravity has been awarded to a consortium of UL, ICHEC, and ASIERA to draft the formal EOSC Ireland Node Charter. ELIXIR Ireland contributes through the Culhane lab at UL, bringing life science standards and interoperability expertise to the governance document.",
