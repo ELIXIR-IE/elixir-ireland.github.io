@@ -1,5 +1,12 @@
 const newsItems = [
   {
+    title: "ISHG 29th Annual Meeting — Abstract Deadline Extended to 19 June",
+    date: "2026-06-14",
+    summary: "The Irish Society of Human Genetics (ISHG) has extended the abstract submission deadline for its 29th Annual Meeting at RCSI to 11:59pm on Friday 19 June 2026. The meeting takes place on Friday 4 September 2026. Register via Eventbrite; abstracts via Oxford Abstracts.",
+    image: "/assets/images/ishg-2026.svg",
+    link: "https://www.eventbrite.ie/e/ishg-2026-tickets-1985148094389"
+  },
+  {
     title: "ELIXIR Ireland's Largest Ever Delegation at ELIXIR Europe AHM 2026",
     date: "2026-06-10",
     summary: "Seven members of the ELIXIR Ireland team attended the ELIXIR Europe All-Hands Meeting 2026, marking the node's biggest ever delegation with contributions spanning RiboSeq services, AI and multi-omics benchmarking, Bioconductor, and federated genomic data.",

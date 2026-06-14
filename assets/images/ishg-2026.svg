@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="svgtitle svgdesc">
+  <title id="svgtitle">ISHG 29th Annual Meeting 2026</title>
+  <desc id="svgdesc">Event card for the 29th Annual Meeting of the Irish Society of Human Genetics, hosted at RCSI, Dublin, on 4 September 2026.</desc>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#022b45"/>
+      <stop offset="100%" stop-color="#013a5e"/>
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f47920"/>
+      <stop offset="100%" stop-color="#ff9f50"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Top and bottom orange accent stripes -->
+  <rect x="0" y="0" width="1200" height="6" fill="url(#orangeGrad)"/>
+  <rect x="0" y="624" width="1200" height="6" fill="url(#orangeGrad)"/>
+
+  <!-- Right side cell/nucleus motif -->
+  <circle cx="960" cy="300" r="210" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+  <circle cx="960" cy="300" r="155" fill="none" stroke="rgba(244,121,32,0.10)" stroke-width="1.5"/>
+  <circle cx="960" cy="300" r="100" fill="rgba(244,121,32,0.07)" stroke="rgba(244,121,32,0.18)" stroke-width="1.5"/>
+  <circle cx="960" cy="300" r="46" fill="rgba(244,121,32,0.13)"/>
+  <circle cx="960" cy="300" r="16" fill="rgba(244,121,32,0.35)"/>
+
+  <!-- Data point dots on outer ring -->
+  <circle cx="960" cy="90"  r="6" fill="rgba(244,121,32,0.40)"/>
+  <circle cx="1140" cy="210" r="5" fill="rgba(255,255,255,0.20)"/>
+  <circle cx="1150" cy="380" r="7" fill="rgba(244,121,32,0.28)"/>
+  <circle cx="1030" cy="495" r="5" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="800"  cy="485" r="6" fill="rgba(244,121,32,0.22)"/>
+  <circle cx="760"  cy="165" r="5" fill="rgba(255,255,255,0.18)"/>
+
+  <!-- Subtle background circles bottom-left -->
+  <circle cx="80"  cy="560" r="90" fill="rgba(255,255,255,0.022)"/>
+  <circle cx="200" cy="600" r="55" fill="rgba(244,121,32,0.04)"/>
+
+  <!-- Left vertical accent bar -->
+  <rect x="82" y="95" width="5" height="68" rx="2.5" fill="#f47920"/>
+
+  <!-- Main title -->
+  <text x="110" y="182" font-family="Arial, Helvetica, sans-serif" font-size="108" font-weight="800" fill="#ffffff" letter-spacing="-2">ISHG</text>
+
+  <!-- Year label -->
+  <text x="113" y="238" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="300" fill="rgba(255,255,255,0.55)" letter-spacing="6">2026</text>
+
+  <!-- Orange divider -->
+  <rect x="110" y="256" width="300" height="4" rx="2" fill="#f47920"/>
+
+  <!-- Annual meeting line -->
+  <text x="110" y="308" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="600" fill="#ffffff">29th Annual Meeting</text>
+
+  <!-- Society name -->
+  <text x="110" y="350" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="rgba(255,255,255,0.68)">Irish Society of Human Genetics</text>
+
+  <!-- Date pill -->
+  <rect x="110" y="376" width="264" height="44" rx="22" fill="rgba(244,121,32,0.18)" stroke="#f47920" stroke-width="1.5"/>
+  <text x="242" y="403" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" fill="#f47920">4 September 2026</text>
+
+  <!-- Location lines -->
+  <text x="110" y="454" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="rgba(255,255,255,0.52)">Royal College of Surgeons in Ireland</text>
+  <text x="110" y="481" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="rgba(255,255,255,0.36)">Dublin, Ireland</text>
+
+  <!-- Footer wordmark -->
+  <text x="110" y="586" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="rgba(255,255,255,0.30)">elixir-ireland.ie</text>
+</svg>

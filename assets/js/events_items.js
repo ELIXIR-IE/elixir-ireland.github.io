@@ -1,5 +1,14 @@
 const eventsItems = [
   {
+    title: "ISHG 29th Annual Meeting",
+    date: "2026-09-04",
+    location: "Royal College of Surgeons in Ireland, Dublin",
+    summary: "The 29th Annual Meeting of the Irish Society of Human Genetics (ISHG), hosted at RCSI on Friday 4 September 2026. Abstract submission deadline extended to 19 June 2026.",
+    image: "/assets/images/ishg-2026.svg",
+    link: "https://www.eventbrite.ie/e/ishg-2026-tickets-1985148094389",
+    registrationLink: "https://www.eventbrite.ie/e/ishg-2026-tickets-1985148094389"
+  },
+  {
     title: "ECCB 2026",
     date: "2026-08-31",
     location: "Geneva, Switzerland",
