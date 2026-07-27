@@ -1,5 +1,12 @@
 const newsItems = [
   {
+    title: "Queen's University Belfast joins ELIXIR-UK",
+    date: "2026-07-28",
+    summary: "Queen's University Belfast has joined ELIXIR-UK, extending the Node into Northern Ireland and bringing biodata, imaging and high-performance computing expertise across 11 academic units.",
+    image: "/assets/images/qub-joins-elixir-uk.svg",
+    link: "https://elixiruknode.org/news/2026/queens-university-belfast-joins-elixir-uk/"
+  },
+  {
     title: "ISHG 29th Annual Meeting — Abstract Deadline Extended to 19 June",
     date: "2026-06-14",
     summary: "The Irish Society of Human Genetics (ISHG) has extended the abstract submission deadline for its 29th Annual Meeting at RCSI to 11:59pm on Friday 19 June 2026. The meeting takes place on Friday 4 September 2026. Register via Eventbrite; abstracts via Oxford Abstracts.",

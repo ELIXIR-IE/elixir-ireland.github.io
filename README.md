@@ -134,6 +134,35 @@ bundle exec jekyll clean       # Clear build cache
 python3 scripts/validate_front_matter.py   # Check YAML front matter
 ```
 
+## Local Debugging & Container Checks
+
+Once `docker compose up` (or `docker compose up -d --build` to run detached) is running, the container is
+named `elixir-ie_website-jekyll-1` (based on the `elixir-ie_website` project/folder name — Compose derives this
+from the directory, so it may differ if you cloned into a different folder name; check with `docker compose ps`).
+
+```bash
+# Check the container is up and see port mappings
+docker compose ps
+
+# Tail Jekyll's build/serve output (regeneration errors, Liquid errors, etc.)
+docker compose logs -f jekyll
+
+# Confirm the site is actually responding
+curl -I http://localhost:4000/
+
+# Shell into the running container
+docker compose exec jekyll bash
+
+# Rebuild after a Gemfile change, then restart
+docker compose up -d --build
+
+# Stop and remove the container
+docker compose down
+```
+
+If a page isn't updating, check the `docker compose logs -f jekyll` output first — live-reload watches the
+mounted volume, but a Liquid/YAML front-matter error will silently fail the regeneration until fixed.
+
 ## Deployment
 
 Push to `main` → GitHub Pages auto-builds and deploys within minutes.

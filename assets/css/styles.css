@@ -1796,6 +1796,17 @@ section {
   text-align: center;
 }
 
+/* Centers the row when there are fewer logos than grid columns (e.g. 5 incoming institutes vs. the 6-column grid) */
+.member-logos-grid--center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.member-logos-grid--center .member-logo {
+  width: 140px;
+}
+
 .logo-circle {
   width: 100px;
   height: 100px;
@@ -1827,6 +1838,38 @@ section {
   font-weight: 600;
   color: #023452;
   margin: 0;
+}
+
+/* Incoming (pending) member logos */
+.logo-circle--pending {
+  filter: grayscale(100%);
+  opacity: 0.5;
+  border-style: dashed;
+  border-color: #ccc;
+}
+
+.logo-circle--pending:hover {
+  opacity: 0.75;
+  transform: none;
+  border-color: #ccc;
+}
+
+.member-logo--pending p {
+  color: #6c757d;
+}
+
+.pending-badge {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 10px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #7a5b00;
+  background: #fff3cd;
+  border: 1px solid #ffe69c;
+  border-radius: 999px;
 }
 
 /* Responsive Design */
