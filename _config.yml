@@ -29,5 +29,6 @@ exclude:
   - vendor/
   - "*.bak"
   - README.md
+  - AGENTS.md
   - Dockerfile
   - docker-compose.yml

@@ -125,8 +125,20 @@ as done:
 
 ```bash
 docker compose up -d --build     # if not already running
+docker compose logs jekyll --tail 100 | grep -i "exception\|error"   # must be empty
 curl -s http://localhost:4000/assets/js/news_items.js | grep -A6 "the new title"
 ```
+
+**Always check the build log, not just the data file.** GitHub Pages runs
+one Jekyll build for the whole site — a Liquid/YAML error in a completely
+unrelated file (a stray `{% %}` in some other `.md`, broken front matter
+elsewhere) fails the *entire* deploy, and grepping only your own diff
+will never catch that. This has actually happened (an unrelated repo-root
+`.md` broke a production deploy that shipped alongside a news card
+change) — see `AGENTS.md`'s note on Liquid-in-markdown for the specific
+gotcha. A clean `docker compose logs` with no `Liquid Exception` /
+`Error` lines is the real signal the site will build, not just that your
+new entry parses.
 
 Then take a headless screenshot of `/news/` (or `/events/`) and actually
 look at it — confirm the icon renders, text isn't clipped, and the

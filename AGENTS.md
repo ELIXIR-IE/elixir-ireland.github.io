@@ -100,6 +100,19 @@ pushing, since nothing else will catch a mistake.
 Run `python3 scripts/validate_front_matter.py` after touching any page's
 YAML front matter.
 
+**GitHub Pages runs Liquid over every `.md` file, even ones with no front
+matter** (via the `jekyll-optional-front-matter` plugin). A literal
+`{% ... %}` or `{{ ... }}` written as a code example in a repo-root doc
+like this one — even inside backticks — gets parsed as a real Liquid tag
+and can break the *entire site build* with an unclosed-tag error, not
+just fail to render that one file. This already happened once with the
+`{% if %}` example on this page. Either wrap literal Liquid syntax in
+`{% raw %}...{% endraw %}`, or add the file to `_config.yml`'s `exclude:`
+list (as done for `AGENTS.md`, `README.md`) if it's pure repo tooling
+docs with no reason to be a published page. After editing any root-level
+`.md` file, rebuild locally (below) and confirm no `Liquid Exception`
+appears in the output — don't just check the diff looks fine.
+
 ## Recurring tasks with dedicated skills
 
 - Adding/updating a News or Event card: `.claude/skills/news-events-cards/SKILL.md`
