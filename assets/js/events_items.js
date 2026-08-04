@@ -1,5 +1,14 @@
 const eventsItems = [
   {
+    title: "ELIXIR Federated Human Data Community Meeting 2026",
+    date: "2026-10-08",
+    location: "Dublin, Ireland (Hybrid — F2F & virtual)",
+    summary: "The 2026 ELIXIR Federated Human Data (FHD) Community F2F/Hybrid meeting runs 8–9 October 2026 in Dublin. Sessions cover alignment with 1+MG, GDI, Genome of Europe and GA4GH, FEGA node updates, ELIXIR Node readiness for the EHDS, and planning for the ELIXIR Scientific Programme 2029–2033.",
+    image: "/assets/images/fhd-community-meeting-2026.svg",
+    link: "https://elixir-europe.org/events/fhdc-meeting-2026",
+    registrationLink: "https://elixir-europe.org/events/fhdc-meeting-2026"
+  },
+  {
     title: "ISHG 29th Annual Meeting",
     date: "2026-09-04",
     location: "Royal College of Surgeons in Ireland, Dublin",
