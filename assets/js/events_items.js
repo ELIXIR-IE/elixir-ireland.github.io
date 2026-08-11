@@ -1,5 +1,13 @@
 const eventsItems = [
   {
+    title: "All-Island Biobank Symposium",
+    date: "2026-10-23",
+    location: "Queen's University Belfast, Belfast, Northern Ireland",
+    summary: "Biobank Ireland Trust, with Biobanc na Gaillimhe, Trinity/St James Biobank, and Northern Ireland Biobank, host this annual symposium bringing together researchers, clinicians, policymakers, and patient advocates to discuss how biobanks advance healthcare discoveries in cancer and cardiovascular research, and explore patient perspectives on consent and trust.",
+    image: "/assets/images/all-island-biobank-symposium-2026.jpeg",
+    link: "https://www.eventbrite.ie/e/all-island-biobank-symposium-tickets-1989458310361"
+  },
+  {
     title: "ELIXIR Federated Human Data Community Meeting 2026",
     date: "2026-10-08",
     location: "Dublin, Ireland (Hybrid — F2F & virtual)",
