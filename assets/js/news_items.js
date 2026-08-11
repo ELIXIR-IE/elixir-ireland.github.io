@@ -1,5 +1,12 @@
 const newsItems = [
   {
+    title: "New ELIXIR onboarding videos developed through the PeoplePulse Commissioned Service",
+    date: "2026-08-11",
+    summary: "Three new videos introduce ELIXIR Nodes, the ELIXIR-GOBLET Train-the-Trainer programme, and ELIXIR's industry activities as an onboarding resource for newcomers. ELIXIR-IE Training Coordinator Maria Doyle (UL) led production of the Train-the-Trainer video.",
+    image: "/assets/images/MDoyle.jpg",
+    link: "/news/elixir-onboarding-videos-peoplepulse/"
+  },
+  {
     title: "Queen's University Belfast joins ELIXIR-UK",
     date: "2026-07-28",
     summary: "Queen's University Belfast has joined ELIXIR-UK, extending the Node into Northern Ireland and bringing biodata, imaging and high-performance computing expertise across 11 academic units.",
