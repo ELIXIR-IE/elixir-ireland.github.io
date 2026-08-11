@@ -117,7 +117,11 @@ appears in the output — don't just check the diff looks fine.
 
 - Adding/updating a News or Event card: `.claude/skills/news-events-cards/SKILL.md`
 - Adding/updating a VIBE Principal Investigator entry: `.claude/skills/vibe-pi-directory/SKILL.md`
+- Turning a News or Event item into a LinkedIn post (copy + image asset,
+  output to `linkedin_posts/`, not published anywhere by the agent):
+  `.claude/skills/linkedin-post/SKILL.md`
 
 Use these instead of re-deriving the pattern from scratch — they encode
-gotchas (e.g. exact `data-affiliation` string matching for VIBE) that
-aren't obvious from the markup alone.
+gotchas (e.g. exact `data-affiliation` string matching for VIBE, or that
+LinkedIn's composer needs literal Unicode-bold characters since it has no
+markdown) that aren't obvious from the markup alone.

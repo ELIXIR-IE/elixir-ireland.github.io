@@ -159,3 +159,11 @@ order, they don't gate visibility. If the user gives an embargo date in
 the future, add the entry as normal but explicitly flag to them: don't
 merge/deploy until the embargo lifts, since adding it now makes it live
 on push to `main` (GitHub Pages auto-deploys).
+
+## 8. Offer a LinkedIn post
+
+Once a card is added (and, for a dedicated subpage, verified), offer to
+generate a LinkedIn post for it via `.claude/skills/linkedin-post/SKILL.md`
+— it turns the same item into ready-to-paste post copy and a matching
+square image asset under `linkedin_posts/`. Don't run it unprompted; just
+ask.
