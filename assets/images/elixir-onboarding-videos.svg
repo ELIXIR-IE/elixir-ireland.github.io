@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">New ELIXIR onboarding videos</title>
+  <desc id="desc">A blue and orange graphic with a play button representing three new ELIXIR onboarding videos covering Nodes, the Train-the-Trainer programme, and industry activities.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fbff" />
+      <stop offset="100%" stop-color="#fff7f2" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#023452" />
+      <stop offset="100%" stop-color="#0a5f8f" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f47920" />
+      <stop offset="100%" stop-color="#ffae63" />
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#023452" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" rx="24" />
+  <circle cx="110" cy="90" r="80" fill="#f47920" opacity="0.10" />
+  <circle cx="1100" cy="540" r="100" fill="#023452" opacity="0.10" />
+  <circle cx="1060" cy="110" r="48" fill="#f47920" opacity="0.12" />
+
+  <rect x="330" y="56" width="540" height="86" rx="22" fill="url(#blueGrad)" filter="url(#shadow)" />
+  <text x="600" y="99" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#ffffff">ELIXIR Onboarding Videos</text>
+  <text x="600" y="126" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#d8edf9">PeoplePulse Commissioned Service</text>
+
+  <!-- central play button motif -->
+  <circle cx="600" cy="300" r="98" fill="url(#orangeGrad)" filter="url(#shadow)" />
+  <circle cx="600" cy="300" r="98" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.6" />
+  <path d="M566 254 L646 300 L566 346 Z" fill="#ffffff" />
+
+  <!-- three small topic nodes orbiting the play button -->
+  <g font-family="Arial, Helvetica, sans-serif">
+    <circle cx="330" cy="300" r="30" fill="#ffffff" stroke="#023452" stroke-width="6" />
+    <text x="330" y="307" text-anchor="middle" font-size="20" font-weight="700" fill="#023452">N</text>
+    <line x1="360" y1="300" x2="502" y2="300" stroke="#023452" stroke-width="5" stroke-linecap="round" opacity="0.55" />
+
+    <circle cx="870" cy="300" r="30" fill="#ffffff" stroke="#f47920" stroke-width="6" />
+    <text x="870" y="307" text-anchor="middle" font-size="20" font-weight="700" fill="#f47920">I</text>
+    <line x1="698" y1="300" x2="840" y2="300" stroke="#f47920" stroke-width="5" stroke-linecap="round" opacity="0.55" />
+
+    <circle cx="600" cy="470" r="30" fill="#ffffff" stroke="#0a5f8f" stroke-width="6" />
+    <text x="600" y="477" text-anchor="middle" font-size="20" font-weight="700" fill="#0a5f8f">T</text>
+    <line x1="600" y1="398" x2="600" y2="440" stroke="#0a5f8f" stroke-width="5" stroke-linecap="round" opacity="0.55" />
+  </g>
+
+  <text x="600" y="565" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" fill="#023452">Nodes &#8226; Train-the-Trainer &#8226; Industry</text>
+  <text x="600" y="596" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#5a5a5a">An onboarding resource for newcomers to ELIXIR</text>
+</svg>

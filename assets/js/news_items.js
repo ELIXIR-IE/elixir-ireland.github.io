@@ -3,7 +3,7 @@ const newsItems = [
     title: "New ELIXIR onboarding videos developed through the PeoplePulse Commissioned Service",
     date: "2026-08-11",
     summary: "Three new videos introduce ELIXIR Nodes, the ELIXIR-GOBLET Train-the-Trainer programme, and ELIXIR's industry activities as an onboarding resource for newcomers. ELIXIR-IE Training Coordinator Maria Doyle (UL) led production of the Train-the-Trainer video.",
-    image: "/assets/images/MDoyle.jpg",
+    image: "/assets/images/elixir-onboarding-videos.svg",
     link: "/news/elixir-onboarding-videos-peoplepulse/"
   },
   {
