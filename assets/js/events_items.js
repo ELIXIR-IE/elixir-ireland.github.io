@@ -1,5 +1,13 @@
 const eventsItems = [
   {
+    title: "VIBE 2026",
+    date: "2026-12-03",
+    location: "DCU Glasnevin Campus, Dublin, Ireland",
+    summary: "The annual meeting of the Virtual Institute of Bioinformatics and Evolution, hosted by Dublin City University on Thursday 3 December 2026. Abstracts of up to 250 words are invited for talk and poster presentations, closing 3 November 2026. Registration details to follow.",
+    image: "/assets/images/vibe26logo.webp",
+    link: "https://elixir-ie.github.io/vibe-2026/"
+  },
+  {
     title: "All-Island Biobank Symposium",
     date: "2026-10-23",
     location: "Queen's University Belfast, Belfast, Northern Ireland",

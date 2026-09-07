@@ -262,3 +262,117 @@
     border: 1px solid #e9ecef;
     text-align: center;
 }
+
+/* VIBE 2026 upcoming-event highlight card */
+.vibe-upcoming {
+    padding: 2.25rem;
+}
+.vibe-upcoming-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+.vibe-upcoming-intro {
+    flex: 2 1 320px;
+}
+.vibe-upcoming-badge {
+    margin-left: 0;
+    margin-right: 0;
+    align-self: flex-start;
+    margin-bottom: 0.85rem;
+}
+.vibe-upcoming-title {
+    color: #023452;
+    font-size: 2rem;
+    line-height: 1.15;
+    margin: 0 0 0.6rem;
+}
+.vibe-upcoming-standfirst {
+    margin: 0;
+    color: #4a5b6a;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+.vibe-upcoming-logo {
+    flex: 1 1 260px;
+    text-align: center;
+}
+.vibe-upcoming-logo img {
+    max-width: 100%;
+    height: auto;
+}
+.vibe-fact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin: 1.75rem 0;
+}
+.vibe-fact {
+    background: #f7fafc;
+    border: 1px solid #e1e8ed;
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+}
+.vibe-fact dt {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #5a6b7a;
+    margin-bottom: 0.4rem;
+}
+.vibe-fact dt svg {
+    flex-shrink: 0;
+    color: #f47920;
+}
+.vibe-fact dd {
+    margin: 0;
+    color: #023452;
+    font-weight: 600;
+    line-height: 1.45;
+}
+.vibe-upcoming-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+.vibe-upcoming-actions .btn {
+    padding: 12px 26px;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+/* .btn (styles.css:1716) sets a transparent border after .btn-outline
+   (styles.css:623), flattening it. Restore it for this card only. */
+.vibe-upcoming-actions .btn-outline {
+    border: 2px solid #f47d21;
+}
+@media (max-width: 640px) {
+    .vibe-upcoming {
+        padding: 1.5rem;
+    }
+    .vibe-upcoming-head {
+        flex-direction: column-reverse;
+        gap: 1.25rem;
+        align-items: stretch;
+    }
+    /* flex-basis is the cross axis' height once stacked — reset it,
+       or both children inflate into oversized boxes */
+    .vibe-upcoming-intro,
+    .vibe-upcoming-logo {
+        flex: 0 0 auto;
+    }
+    .vibe-upcoming-title {
+        font-size: 1.6rem;
+    }
+    .vibe-fact-grid {
+        grid-template-columns: 1fr;
+    }
+    .vibe-upcoming-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

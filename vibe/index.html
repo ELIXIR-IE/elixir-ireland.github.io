@@ -2,7 +2,7 @@
 layout: default
 title: VIBE – The Irish Bioinformatics Network
 description: VIBE is a grassroots, bottom-up community network representing bioinformatics researchers, data scientists, and computational biologists across Ireland.
-css_file: /assets/css/vibe.css?v=2
+css_file: /assets/css/vibe.css?v=3
 ---
 <!-- Hero Section -->
 <section class="page-hero" id="top">
@@ -105,27 +105,52 @@ css_file: /assets/css/vibe.css?v=2
         </div>
 
         <!-- Upcoming Event -->
-        <!-- VIBE 2026 card — reserved, unhide and populate when details are confirmed -->
-        <!--
-        <div class="event-highlight">
-            <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
-                <div style="flex: 2;">
-                    <span class="event-status-badge upcoming"
-                        style="margin-bottom: 1rem; display: inline-block;">Upcoming Event</span>
-                    <h2 style="color: #023452; margin-top: 0;">VIBE 2026</h2>
-                    <p><strong><i class="far fa-calendar"></i> Date:</strong> TBC</p>
-                    <p><strong><i class="fas fa-map-marker-alt"></i> Location:</strong> TBC</p>
-                    <p>Details for the 2026 VIBE meeting will be announced here.</p>
-                    <a href="#" target="_blank" class="btn btn-primary"
-                        style="margin-top: 1rem;">View Event & Register</a>
+        <div class="event-highlight vibe-upcoming">
+            <div class="vibe-upcoming-head">
+                <div class="vibe-upcoming-intro">
+                    <span class="event-status-badge upcoming vibe-upcoming-badge">Upcoming Event</span>
+                    <h3 class="vibe-upcoming-title">VIBE 2026</h3>
+                    <p class="vibe-upcoming-standfirst">The annual meeting of the Virtual Institute of
+                        Bioinformatics and Evolution, bringing the all-island bioinformatics community together
+                        for a day of talks, poster presentations and networking.</p>
                 </div>
-                <div style="flex: 1; text-align: center;">
-                    <img src="/assets/images/vibe25.png" alt="VIBE 2026"
-                        style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                <div class="vibe-upcoming-logo">
+                    <img src="/assets/images/vibe26logo.png" alt="VIBE 2026" width="1600" height="547"
+                        loading="lazy" decoding="async">
                 </div>
             </div>
+
+            <dl class="vibe-fact-grid">
+                <div class="vibe-fact">
+                    <dt><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> Date</dt>
+                    <dd>Thursday 3 December 2026</dd>
+                </div>
+                <div class="vibe-fact">
+                    <dt><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Venue</dt>
+                    <dd>DCU Glasnevin Campus, Dublin, Ireland</dd>
+                </div>
+                <div class="vibe-fact">
+                    <dt><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"></path><path d="M12 3 2 9h20L12 3z"></path><path d="M5 9v12"></path><path d="M10 9v12"></path><path d="M14 9v12"></path><path d="M19 9v12"></path></svg> Host</dt>
+                    <dd>Dublin City University</dd>
+                </div>
+                <div class="vibe-fact">
+                    <dt><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg> Abstracts</dt>
+                    <dd>250 words, talks &amp; posters — closing 3 November 2026</dd>
+                </div>
+                <div class="vibe-fact">
+                    <dt><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z"></path><line x1="13" y1="6" x2="13" y2="18"></line></svg> Registration</dt>
+                    <dd>Details to follow</dd>
+                </div>
+            </dl>
+
+            <div class="vibe-upcoming-actions">
+                <a href="https://elixir-ie.github.io/vibe-2026/" target="_blank" rel="noopener"
+                    class="btn btn-primary">Conference Website</a>
+                <a href="https://app.oxfordabstracts.com/stages/82886/submitter" target="_blank" rel="noopener"
+                    class="btn btn-outline">Submit an Abstract</a>
+                <a href="mailto:vibe.eire@gmail.com" class="btn btn-outline">Contact the Organising Committee</a>
+            </div>
         </div>
-        -->
 
         <!-- Event Archive -->
         <div id="vibe-events-archive">
