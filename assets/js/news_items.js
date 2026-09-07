@@ -1,5 +1,12 @@
 const newsItems = [
   {
+    title: "EOSC Ireland Service Provider Readiness Survey now open",
+    date: "2026-09-08",
+    summary: "EOSC Ireland is mapping the national research service landscape. If you run an operational research service in Ireland — data, compute, software, storage or training, in any domain — the ~15-minute survey closes Monday 12 October. ELIXIR Ireland leads WP4 on connecting Irish services to the EOSC Federation.",
+    image: "/assets/images/eosc-ie-sp-survey-2026.webp",
+    link: "/news/eosc-ireland-service-provider-survey/"
+  },
+  {
     title: "New ELIXIR onboarding videos developed through the PeoplePulse Commissioned Service",
     date: "2026-08-11",
     summary: "Three new videos introduce ELIXIR Nodes, the ELIXIR-GOBLET Train-the-Trainer programme, and ELIXIR's industry activities as an onboarding resource for newcomers. ELIXIR-IE Training Coordinator Maria Doyle (UL) led production of the Train-the-Trainer video.",

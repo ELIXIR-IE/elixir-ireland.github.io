@@ -16,6 +16,15 @@ const eventsItems = [
     link: "https://www.eventbrite.ie/e/all-island-biobank-symposium-tickets-1989458310361"
   },
   {
+    title: "EOSC Ireland Service Provider Readiness Workshop",
+    date: "2026-10-19",
+    location: "Online via Microsoft Teams",
+    summary: "A free two-hour online workshop introducing EOSC Ireland, service onboarding and federation for Irish research service providers. Most of the session runs as breakout discussions by service type — compute, data, tools, training, standards and metadata — to identify the supports providers would need to onboard. No prior EOSC knowledge needed, and you do not need to have completed the survey to attend.",
+    image: "/assets/images/eosc-ie-sp-workshop-2026.webp",
+    link: "/news/eosc-ireland-service-provider-survey/",
+    registrationLink: "https://forms.gle/pYKEa8oRdTGGkqD49"
+  },
+  {
     title: "ELIXIR Federated Human Data Community Meeting 2026",
     date: "2026-10-08",
     location: "Dublin, Ireland (Hybrid — F2F & virtual)",
