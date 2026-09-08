@@ -1,5 +1,12 @@
 const newsItems = [
   {
+    title: "Building EOSC Ireland: Lessons from European EOSC Nodes",
+    date: "2026-09-07",
+    summary: "A new EOSC Ireland report captures lessons from visits to six established European EOSC Nodes — the EOSC EU Node, EOSC Poland, SURF (Netherlands), EOSC Finland, PaNOSC and LS Connect — covering architecture and AAI, service catalogues, governance, funding and sustainability, sensitive data, and community engagement. ELIXIR Ireland contributed through Gavin Farrell (University of Limerick) and Darach Golden (Trinity College Dublin).",
+    image: "/assets/images/eosc-ie-lessons-european-nodes.svg",
+    link: "https://eosc.ie/lessons-from-european-eosc-nodes/"
+  },
+  {
     title: "EOSC Ireland Service Provider Readiness Survey now open",
     date: "2026-09-08",
     summary: "EOSC Ireland is mapping the national research service landscape. If you run an operational research service in Ireland — data, compute, software, storage or training, in any domain — the ~15-minute survey closes Monday 12 October. ELIXIR Ireland leads WP4 on connecting Irish services to the EOSC Federation.",
