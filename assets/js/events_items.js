@@ -19,15 +19,15 @@ const eventsItems = [
     title: "EOSC Ireland Service Provider Readiness Workshop",
     date: "2026-10-19",
     location: "Online via Microsoft Teams",
-    summary: "A free two-hour online workshop introducing EOSC Ireland, service onboarding and federation for Irish research service providers. Most of the session runs as breakout discussions by service type (compute, data, tools, training, standards and metadata) to identify the supports providers would need to onboard. No prior EOSC knowledge needed, and you do not need to have completed the survey to attend.",
+    summary: "A free two-hour online workshop for Irish research service providers, covering EOSC Ireland, service onboarding and federation. Most of the session runs as breakout discussions by service type. No prior EOSC knowledge needed, and you do not need to have completed the survey to attend.",
     image: "/assets/images/eosc-ie-sp-workshop-2026.webp",
-    link: "/news/eosc-ireland-service-provider-survey/",
+    link: "/events/eosc-ireland-service-provider-workshop/",
     registrationLink: "https://forms.gle/pYKEa8oRdTGGkqD49"
   },
   {
     title: "ELIXIR Federated Human Data Community Meeting 2026",
     date: "2026-10-08",
-    location: "Dublin, Ireland (Hybrid — F2F & virtual)",
+    location: "Dublin, Ireland (Hybrid: F2F & virtual)",
     summary: "The 2026 ELIXIR Federated Human Data (FHD) Community F2F/Hybrid meeting runs 8–9 October 2026 in Dublin. Sessions cover alignment with 1+MG, GDI, Genome of Europe and GA4GH, FEGA node updates, ELIXIR Node readiness for the EHDS, and planning for the ELIXIR Scientific Programme 2029–2033.",
     image: "/assets/images/fhd-community-meeting-2026.svg",
     link: "https://elixir-europe.org/events/fhdc-meeting-2026",

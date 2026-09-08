@@ -85,10 +85,6 @@ it first. Test locally (see "Local dev" below) before pushing.
   something else.
 - Brand colors: navy `#023452`, orange `#f47920` (gradient stops
   `#0a5f8f` / `#ffae63` used in custom SVG card icons).
-- Some older news pages (`news/new-data-resource-launch.html`,
-  `news/training-programme-announcement.html`) are stale placeholder/demo
-  content (they even use `via.placeholder.com` images) — don't treat them
-  as the canonical template for a new news story.
 
 ## Local dev & verification
 
