@@ -11,14 +11,40 @@ description: An in-person EOSC Ireland workshop on Trusted Research Environments
   .eosc-register .btn { padding: 14px 34px; font-size: 1.05rem; }
   /* Online registration is not open yet */
   .eosc-soon { opacity: 0.55; cursor: not-allowed; pointer-events: none; }
+  /* .lead is light, so <strong> alone only reaches regular weight */
+  .page-hero .lead strong { font-weight: 700; }
+
+  /* Key facts */
+  .tre-facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.25rem 0 2rem; }
+  .tre-fact { display: flex; align-items: flex-start; gap: 1rem; background: #f7fafc; border: 1px solid #e1e8ed; border-left: 4px solid #215c2e; border-radius: 12px; padding: 1.25rem 1.4rem; }
+  .tre-fact--wide { grid-column: 1 / -1; }
+  .tre-fact__icon { flex: none; width: 46px; height: 46px; border-radius: 50%; background: rgba(181, 211, 59, 0.28); color: #215c2e; display: flex; align-items: center; justify-content: center; }
+  .tre-fact__icon svg { width: 24px; height: 24px; }
+  .tre-fact__label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #5a6b7a; margin: 0 0 0.3rem; }
+  .tre-fact__value { margin: 0; font-size: 1.15rem; font-weight: 600; color: #023452; line-height: 1.4; }
+  .tre-fact__note { display: block; margin-top: 0.2rem; font-size: 0.95rem; font-weight: 400; color: #5a6b7a; }
+  @media (max-width: 640px) { .tre-facts { grid-template-columns: 1fr; } }
+
+  /* Agenda placeholder */
+  .tre-soon { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; background: #fff6ee; border: 1px solid #fcd9bd; border-left: 4px solid #f47920; border-radius: 12px; padding: 1.1rem 1.4rem; margin: 1rem 0; }
+  .tre-soon__chip { display: inline-flex; align-items: center; gap: 0.45rem; background: #f47920; color: #ffffff; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 0.4rem 0.85rem; border-radius: 999px; }
+  .tre-soon__chip svg { width: 16px; height: 16px; }
+  .tre-soon p { margin: 0; color: #5a3a1f; }
+
+  /* Venue and credits */
+  .tre-address { margin: 0 0 1rem; line-height: 1.7; font-style: normal; color: #023452; font-weight: 600; }
+  .tre-credits { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 2px solid #e9ecef; font-size: 0.92rem; color: #555; line-height: 1.7; }
+  .tre-credits img { display: block; height: 40px; width: auto; margin-bottom: 1rem; }
+  .tre-credits p { margin: 0 0 1rem; }
+  .tre-credits strong { color: #333; }
 </style>
 
 <section class="page-hero">
   <div class="page-hero-content">
     <img src="/assets/images/eosc-ie-tre-workshop-2026.png" alt="EOSC Ireland Trusted Research Environments Workshop, Friday 27 November, in person at Asiera, Dublin 1" style="max-width: 640px; width: 100%; height: auto; margin-bottom: 1.25rem; border-radius: 8px;" />
     <h1>Trusted Research Environments Workshop</h1>
-    <p class="lead">Friday 27 November 2026, 10:30&ndash;16:00 (Irish time)<br />
-      Asiera, Dublin 1 &middot; In person, by invitation</p>
+    <p class="lead"><strong>Friday 27 November 2026, 10:30&ndash;16:00 (Irish time)</strong><br />
+      Asiera, Dublin 1</p>
   </div>
 </section>
 
@@ -26,11 +52,11 @@ description: An in-person EOSC Ireland workshop on Trusted Research Environments
   <div class="container">
     <article style="max-width: 980px; margin: 0 auto;">
 
-      <!-- Attendance -->
+      <!-- Registration -->
       <div class="eosc-register" style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);">
         <div style="padding: 2rem 2.5rem; text-align: center; background: linear-gradient(135deg, rgba(33,92,46,0.05), rgba(181,211,59,0.12)); border-radius: 12px;">
-          <h2 style="margin: 0 0 0.5rem; color: #215c2e; font-size: 1.4rem;">Attendance is by invitation</h2>
-          <p style="margin: 0 0 0.75rem; color: #444;">In-person places are limited by venue capacity, so attendance on the day is by invitation only.</p>
+          <h2 style="margin: 0 0 0.5rem; color: #215c2e; font-size: 1.4rem;">Registration information</h2>
+          <p style="margin: 0 0 0.75rem; color: #444;">In-person attendance is by invitation only due to venue capacity constraints.</p>
           <p style="margin: 0 0 1.5rem; color: #444;">The talks will be streamed online. This is not a full hybrid event, but we will make a best effort to stream as much of the relevant programme as we can. If you would like to follow online, email <a href="mailto:gavin.farrell@ul.ie" style="color: #0d47a1;">gavin.farrell@ul.ie</a> to register your interest.</p>
           <span class="btn btn-primary eosc-soon" aria-disabled="true">Online registration: coming soon</span>
         </div>
@@ -40,52 +66,78 @@ description: An in-person EOSC Ireland workshop on Trusted Research Environments
       <div style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); margin-top: 2.5rem;">
         <div style="padding: 2rem 2.5rem;">
 
+          <h2 style="margin-top: 0; color: #023452; font-size: 1.3rem;">About the workshop</h2>
+
           <!-- Key facts -->
-          <dl style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 0 0 2rem;">
-            <div style="background: #f7fafc; border: 1px solid #e1e8ed; border-radius: 10px; padding: 1rem 1.1rem;">
-              <dt style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #5a6b7a; margin-bottom: 0.4rem;">Date</dt>
-              <dd style="margin: 0; color: #023452; font-weight: 600; line-height: 1.45;">Friday 27 November 2026</dd>
+          <dl class="tre-facts">
+            <div class="tre-fact">
+              <span class="tre-fact__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg></span>
+              <div>
+                <dt class="tre-fact__label">Date</dt>
+                <dd class="tre-fact__value">Friday 27 November 2026</dd>
+              </div>
             </div>
-            <div style="background: #f7fafc; border: 1px solid #e1e8ed; border-radius: 10px; padding: 1rem 1.1rem;">
-              <dt style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #5a6b7a; margin-bottom: 0.4rem;">Time</dt>
-              <dd style="margin: 0; color: #023452; font-weight: 600; line-height: 1.45;">10:30&ndash;16:00 (Irish time)</dd>
+            <div class="tre-fact">
+              <span class="tre-fact__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+              <div>
+                <dt class="tre-fact__label">Time</dt>
+                <dd class="tre-fact__value">10:30&ndash;16:00<span class="tre-fact__note">Irish time</span></dd>
+              </div>
             </div>
-            <div style="background: #f7fafc; border: 1px solid #e1e8ed; border-radius: 10px; padding: 1rem 1.1rem;">
-              <dt style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #5a6b7a; margin-bottom: 0.4rem;">Venue</dt>
-              <dd style="margin: 0; color: #023452; font-weight: 600; line-height: 1.45;">Asiera offices, North Dock 2, Dublin 1</dd>
+            <div class="tre-fact tre-fact--wide">
+              <span class="tre-fact__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s-7-6.2-7-11.5a7 7 0 0 1 14 0c0 5.3-7 11.5-7 11.5z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+              <div>
+                <dt class="tre-fact__label">Venue</dt>
+                <dd class="tre-fact__value">Asiera offices, Dublin 1<span class="tre-fact__note">3rd Floor, North Dock 2, 93/94 North Wall Quay, D01 V8Y6</span></dd>
+              </div>
             </div>
-            <div style="background: #f7fafc; border: 1px solid #e1e8ed; border-radius: 10px; padding: 1rem 1.1rem;">
-              <dt style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #5a6b7a; margin-bottom: 0.4rem;">Attendance</dt>
-              <dd style="margin: 0; color: #023452; font-weight: 600; line-height: 1.45;">In person, by invitation; talks streamed online</dd>
+            <div class="tre-fact">
+              <span class="tre-fact__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20.5c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/><path d="M16 4.8a3.5 3.5 0 0 1 0 6.4M18.5 14.5c1.8.9 3 2.8 3 6"/></svg></span>
+              <div>
+                <dt class="tre-fact__label">Attendance</dt>
+                <dd class="tre-fact__value">In person, by invitation<span class="tre-fact__note">Talks streamed online</span></dd>
+              </div>
             </div>
-            <div style="background: #f7fafc; border: 1px solid #e1e8ed; border-radius: 10px; padding: 1rem 1.1rem;">
-              <dt style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #5a6b7a; margin-bottom: 0.4rem;">Catering</dt>
-              <dd style="margin: 0; color: #023452; font-weight: 600; line-height: 1.45;">Lunch and coffee provided</dd>
+            <div class="tre-fact">
+              <span class="tre-fact__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v5a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6V9z"/><path d="M17 10.5h1.5a2.5 2.5 0 0 1 0 5H17M8 2.5v3M12 2.5v3"/></svg></span>
+              <div>
+                <dt class="tre-fact__label">Catering</dt>
+                <dd class="tre-fact__value">Lunch and coffee provided</dd>
+              </div>
             </div>
           </dl>
 
-          <h2 style="margin-top: 0; color: #023452; font-size: 1.3rem;">About the workshop</h2>
           <p>This EOSC Ireland workshop sets out to identify the way forward towards a roadmap for sensitive data infrastructure in EOSC Ireland, with a focus on Trusted Research Environments (TREs) and Secure Processing Environments (SPEs).</p>
 
           <p>The day combines talks with active discussion and planning sessions. It covers sensitive data access, login and authentication mechanisms (AAI via <a href="https://lifescience-ri.eu/ls-login/" target="_blank" rel="noopener">LS Login</a>), and experience from the teams leading European TRE and SPE solutions. Key use cases and stakeholders from EOSC Ireland and across research domains are being invited to take part.</p>
 
           <h2 style="margin-top: 2.5rem; color: #023452; font-size: 1.3rem; border-top: 2px solid #e9ecef; padding-top: 1.5rem;">Agenda</h2>
-          <p>Coming soon. The full agenda will be posted on this page.</p>
-
-          <h2 style="margin-top: 2.5rem; color: #023452; font-size: 1.3rem; border-top: 2px solid #e9ecef; padding-top: 1.5rem;">Venue</h2>
-          <p>Asiera, 3rd Floor, North Dock 2, 93/94 North Wall Quay, Dublin 1, D01 V8Y6 (<a href="https://www.google.com/maps/search/?api=1&amp;query=North+Dock+2%2C+93%2F94+North+Wall+Quay%2C+Dublin+1%2C+D01+V8Y6" target="_blank" rel="noopener">map</a>). Lunch and coffee are provided for in-person attendees.</p>
-
-          <h2 style="margin-top: 2.5rem; color: #023452; font-size: 1.3rem; border-top: 2px solid #e9ecef; padding-top: 1.5rem;">Contact</h2>
-
-          <div style="background: #f0f4f8; border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1rem 0;">
-            <p style="margin: 0; font-size: 1rem;"><strong>Workshop and online streaming queries</strong><br/>
-            Gavin Farrell, <a href="mailto:gavin.farrell@ul.ie" style="color: #0d47a1;">gavin.farrell@ul.ie</a></p>
+          <div class="tre-soon">
+            <span class="tre-soon__chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Coming soon</span>
+            <p>The full agenda will be published on this page.</p>
           </div>
 
-          <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid #e9ecef;">
-            <img src="/assets/images/EOSC.ie-logo.jpg" alt="EOSC.ie" style="height: 40px; width: auto; margin-bottom: 0.75rem;" />
-            <p style="font-size: 0.9rem; color: #666; margin: 0 0 0.5rem;">Organised by the EOSC Ireland project, funded by the Department of Further and Higher Education, Research, Innovation and Science. Project lead: Asiera. Project website: <a href="https://eosc.ie/" target="_blank" rel="noopener" style="color: #0d47a1;">eosc.ie</a></p>
-            <p style="font-size: 0.85rem; color: #777; margin: 0;">ELIXIR Ireland co-supports the workshop by supporting the participation of international speakers.</p>
+          <h2 style="margin-top: 2.5rem; color: #023452; font-size: 1.3rem; border-top: 2px solid #e9ecef; padding-top: 1.5rem;">Venue</h2>
+          <address class="tre-address">Asiera<br />
+            3rd Floor, North Dock 2<br />
+            93/94 North Wall Quay<br />
+            Dublin 1, D01 V8Y6</address>
+          <p><a href="https://www.google.com/maps/search/?api=1&amp;query=North+Dock+2%2C+93%2F94+North+Wall+Quay%2C+Dublin+1%2C+D01+V8Y6" target="_blank" rel="noopener">View on Google Maps &rarr;</a></p>
+
+          <p style="margin-top: 1.25rem;">Lunch and coffee are provided for in-person attendees.</p>
+
+          <h2 style="margin-top: 2.5rem; color: #023452; font-size: 1.3rem; border-top: 2px solid #e9ecef; padding-top: 1.5rem;">Workshop participation queries</h2>
+
+          <div style="background: #f0f4f8; border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1rem 0;">
+            <p style="margin: 0; font-size: 1rem;"><strong>Contact:</strong> Gavin Farrell (<a href="mailto:gavin.farrell@ul.ie" style="color: #0d47a1;">gavin.farrell@ul.ie</a>)</p>
+          </div>
+
+          <div class="tre-credits">
+            <img src="/assets/images/EOSC.ie-logo.jpg" alt="EOSC.ie" />
+            <p>Organised by the EOSC Ireland project, funded by the Department of Further and Higher Education, Research, Innovation and Science.</p>
+            <p><strong>Project lead:</strong> Asiera<br />
+              <strong>Project website:</strong> <a href="https://eosc.ie/" target="_blank" rel="noopener" style="color: #0d47a1;">eosc.ie</a></p>
+            <p>ELIXIR Ireland is co-supporting this workshop by enabling the participation of international speakers.</p>
           </div>
 
           <div class="eosc-actions" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
