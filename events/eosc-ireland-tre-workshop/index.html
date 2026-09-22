@@ -14,16 +14,20 @@ description: An in-person EOSC Ireland workshop on Trusted Research Environments
   /* .lead is light, so <strong> alone only reaches regular weight */
   .page-hero .lead strong { font-weight: 700; }
 
-  /* Key facts */
-  .tre-facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.25rem 0 2rem; }
-  .tre-fact { display: flex; align-items: flex-start; gap: 1rem; background: #f7fafc; border: 1px solid #e1e8ed; border-left: 4px solid #215c2e; border-radius: 12px; padding: 1.25rem 1.4rem; }
-  .tre-fact--wide { grid-column: 1 / -1; }
-  .tre-fact__icon { flex: none; width: 46px; height: 46px; border-radius: 50%; background: rgba(181, 211, 59, 0.28); color: #215c2e; display: flex; align-items: center; justify-content: center; }
-  .tre-fact__icon svg { width: 24px; height: 24px; }
-  .tre-fact__label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #5a6b7a; margin: 0 0 0.3rem; }
-  .tre-fact__value { margin: 0; font-size: 1.15rem; font-weight: 600; color: #023452; line-height: 1.4; }
-  .tre-fact__note { display: block; margin-top: 0.2rem; font-size: 0.95rem; font-weight: 400; color: #5a6b7a; }
-  @media (max-width: 640px) { .tre-facts { grid-template-columns: 1fr; } }
+  /* Key facts: one compact panel; the 1px grid gap over a grey
+     background draws the dividers. 3 columns x 2 rows, Venue spans 2. */
+  .tre-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #e1e8ed; border: 1px solid #e1e8ed; border-radius: 12px; overflow: hidden; margin: 1rem 0 1.75rem; }
+  .tre-fact { display: flex; align-items: center; gap: 0.8rem; background: #f7fafc; padding: 0.85rem 1.1rem; }
+  .tre-fact--wide { grid-column: span 2; }
+  .tre-fact__icon { flex: none; width: 36px; height: 36px; border-radius: 50%; background: rgba(181, 211, 59, 0.28); color: #215c2e; display: flex; align-items: center; justify-content: center; }
+  .tre-fact__icon svg { width: 19px; height: 19px; }
+  .tre-fact__label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #5a6b7a; margin: 0 0 0.1rem; }
+  .tre-fact__value { margin: 0; font-size: 1rem; font-weight: 600; color: #023452; line-height: 1.35; }
+  .tre-fact__note { font-weight: 400; color: #5a6b7a; }
+  @media (max-width: 720px) {
+    .tre-facts { grid-template-columns: 1fr; }
+    .tre-fact--wide { grid-column: auto; }
+  }
 
   /* Agenda placeholder */
   .tre-soon { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; background: #fff6ee; border: 1px solid #fcd9bd; border-left: 4px solid #f47920; border-radius: 12px; padding: 1.1rem 1.4rem; margin: 1rem 0; }
@@ -81,21 +85,21 @@ description: An in-person EOSC Ireland workshop on Trusted Research Environments
               <span class="tre-fact__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
               <div>
                 <dt class="tre-fact__label">Time</dt>
-                <dd class="tre-fact__value">10:30&ndash;16:00<span class="tre-fact__note">Irish time</span></dd>
-              </div>
-            </div>
-            <div class="tre-fact tre-fact--wide">
-              <span class="tre-fact__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s-7-6.2-7-11.5a7 7 0 0 1 14 0c0 5.3-7 11.5-7 11.5z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-              <div>
-                <dt class="tre-fact__label">Venue</dt>
-                <dd class="tre-fact__value">Asiera offices, Dublin 1<span class="tre-fact__note">3rd Floor, North Dock 2, 93/94 North Wall Quay, D01 V8Y6</span></dd>
+                <dd class="tre-fact__value">10:30&ndash;16:00 <span class="tre-fact__note">(Irish time)</span></dd>
               </div>
             </div>
             <div class="tre-fact">
               <span class="tre-fact__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20.5c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/><path d="M16 4.8a3.5 3.5 0 0 1 0 6.4M18.5 14.5c1.8.9 3 2.8 3 6"/></svg></span>
               <div>
                 <dt class="tre-fact__label">Attendance</dt>
-                <dd class="tre-fact__value">In person, by invitation<span class="tre-fact__note">Talks streamed online</span></dd>
+                <dd class="tre-fact__value">In person, by invitation</dd>
+              </div>
+            </div>
+            <div class="tre-fact tre-fact--wide">
+              <span class="tre-fact__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s-7-6.2-7-11.5a7 7 0 0 1 14 0c0 5.3-7 11.5-7 11.5z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+              <div>
+                <dt class="tre-fact__label">Venue</dt>
+                <dd class="tre-fact__value">Asiera, North Dock 2, 93/94 North Wall Quay, Dublin 1</dd>
               </div>
             </div>
             <div class="tre-fact">
