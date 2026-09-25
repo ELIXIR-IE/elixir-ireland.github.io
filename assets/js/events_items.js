@@ -107,8 +107,8 @@ const eventsItems = [
   {
     title: "VIBE 2025",
     date: "2025-12-08",
-    location: "Trinity College Dublin",
-    summary: "Annual conference bringing together bioinformatics researchers across Ireland, featuring presentations, networking, and an early career researcher event.",
+    location: "Trinity College Dublin, Dublin, Ireland",
+    summary: "The annual meeting of the Virtual Institute of Bioinformatics and Evolution, hosted by Trinity College Dublin on Monday 8 December 2025 and organised by Dr. Máire Ní Leathlobhair (TCD). The 25th anniversary edition brought together bioinformatics researchers across Ireland for presentations, poster sessions, networking, and an early career researcher event.",
     image: "/assets/images/vibe25.webp",
     link: "https://www.gen.tcd.ie/vibe/",
     registrationLink: "https://app.oxfordabstracts.com/register/event/76071"
