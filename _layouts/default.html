@@ -35,7 +35,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css?v=16" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css?v=17" />
     {% if page.css_file %}
     <link rel="stylesheet" type="text/css" href="{{ page.css_file }}" />
     {% endif %}
@@ -56,6 +56,7 @@
     <!-- Load scripts in correct order -->
     <script src="/assets/js/ei.js"></script>
     <script src="/assets/js/ui.js"></script>
+    <script src="/assets/js/side-nav.js?v=1"></script>
 
     <!-- Page specific scripts -->
     {% assign asset_bust = site.time | date: '%s' %}
