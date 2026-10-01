@@ -1,5 +1,14 @@
 const eventsItems = [
   {
+    title: "3rd All-Island Cancer Data Forum",
+    date: "2027-01-18",
+    location: "Kemmy Business School, University of Limerick, Ireland",
+    summary: "The eHealth-Hub for Cancer hosts its third All-Island Cancer Data Forum on 18–19 January 2027, themed Connecting Data, Research and Innovation for Better Cancer Outcomes. Sessions cover cancer data infrastructure, precision oncology, genomics, imaging and AI, national and European data collaboration, and innovation in clinical trials, alongside an OHDSI Ireland session and posters. Registration is open.",
+    image: "/assets/images/all-island-cancer-data-forum-2027.webp",
+    link: "https://www.eventbrite.com/e/3rd-all-island-cancer-data-forum-tickets-2002052913157",
+    registrationLink: "https://www.eventbrite.com/e/3rd-all-island-cancer-data-forum-tickets-2002052913157"
+  },
+  {
     title: "VIBE 2026",
     date: "2026-12-03",
     location: "DCU Glasnevin Campus, Dublin, Ireland",
