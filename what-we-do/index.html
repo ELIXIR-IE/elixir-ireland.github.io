@@ -13,6 +13,23 @@ description: ELIXIR Ireland services, projects, and activities supporting the li
   </div>
 </section>
 
+<!-- Section side-nav: a sticky rail on desktop, a horizontal pill bar on narrow screens.
+     side-nav.js sets aria-current on the link for the section in view. -->
+<div class="side-layout">
+  <nav class="side-nav" aria-labelledby="side-nav-title">
+    <p class="side-nav__title" id="side-nav-title">On this page</p>
+    <ul class="side-nav__list">
+      <li><a class="side-nav__link" href="#services"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg><span>Services</span></a></li>
+      <li><a class="side-nav__link" href="#projects"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg><span>Projects</span></a></li>
+      <li><a class="side-nav__link" href="#training"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 9l-10-5-10 5 10 5 10-5z"></path><path d="M22 9v6"></path><path d="M6 12.5V17c0 .8.6 1.5 1.4 1.8L12 21l4.6-1.8c.8-.3 1.4-1 1.4-1.8V12.5"></path></svg><span>Training</span></a></li>
+      <li><a class="side-nav__link" href="#research-data-software-management"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg><span>Data &amp; Software</span></a></li>
+      <li><a class="side-nav__link" href="#international-working-groups"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><span>Working Groups</span></a></li>
+      <li><a class="side-nav__link" href="#travel-grants"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>Travel Grants</span></a></li>
+    </ul>
+  </nav>
+
+  <div class="side-layout__content">
+
 <!-- Services Section -->
 <section class="content-section" id="services">
   <div class="container">
@@ -316,7 +333,7 @@ description: ELIXIR Ireland services, projects, and activities supporting the li
 </section>
 
 <!-- Engagement and Project Support Section -->
-<section class="content-section">
+<section class="content-section" id="travel-grants">
   <div class="container">
     <div class="section-header">
       <div class="icon-circle">
@@ -340,3 +357,6 @@ description: ELIXIR Ireland services, projects, and activities supporting the li
     </div>
   </div>
 </section>
+
+  </div>
+</div>

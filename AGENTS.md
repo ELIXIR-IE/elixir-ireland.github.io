@@ -49,6 +49,16 @@ it first. Test locally (see "Local dev" below) before pushing.
   (e.g. `{% if page.url contains '/vibe/' %}`). Adding a new
   page-specific JS file means adding its conditional `<script>` tag there
   too — it won't be picked up automatically.
+- **Section side-nav** (About, Our work, VIBE): one shared component.
+  Styles are the `.side-layout` / `.side-nav` block at the end of
+  `styles.css`; behaviour is `assets/js/side-nav.js`, loaded on every page
+  and re-initialised on `navigationComplete`. The links are hand-written
+  per page, so **adding, renaming or removing a section on one of these
+  pages means updating that page's `<nav class="side-nav">`** (each link's
+  `href` is the section's `id`, its icon a 16px copy of the section's
+  `icon-circle` SVG). The current link is marked with `aria-current`,
+  never `.active`: `navigation.js` adds `.active` to every `nav a` on the
+  current path, which is all of them.
 - **FOUC prevention**: `_layouts/default.html` sets `body{opacity:0}`
   inline, then an inline `<script>` at the end of `<body>` adds a
   `.ready` class that transitions it to `opacity:1`. If you're
@@ -60,7 +70,8 @@ it first. Test locally (see "Local dev" below) before pushing.
   when you edit these:
   - `styles.css?v=14` — bump `v` when you edit `assets/css/styles.css` or
     `assets/css/vibe.css`, or returning visitors may keep the stale CSS.
-  - `navigation.js?v=4`, `services.js?v=2` — same, bump on edit.
+  - `navigation.js?v=4`, `services.js?v=2`, `side-nav.js?v=1` — same,
+    bump on edit.
   - `news_items.js` / `news.js` / `events_items.js` / `events.js` already
     auto-bust via `{{ site.time | date: '%s' }}` — no action needed.
   - `ei.js`, `ui.js`, `vibe.js`, `home.js` have **no** cache-busting at
