@@ -3,9 +3,10 @@ const eventsItems = [
     title: "VIBE 2026",
     date: "2026-12-03",
     location: "DCU Glasnevin Campus, Dublin, Ireland",
-    summary: "The annual meeting of the Virtual Institute of Bioinformatics and Evolution, hosted by Dublin City University on Thursday 3 December 2026. Abstracts of up to 250 words are invited for talk and poster presentations, closing 3 November 2026. Registration details to follow.",
+    summary: "The annual meeting of the Virtual Institute of Bioinformatics and Evolution, hosted by Dublin City University on Thursday 3 December 2026. Abstracts of up to 250 words are invited for talk and poster presentations, closing 3 November 2026. Registration is open.",
     image: "/assets/images/vibe26logo.webp",
-    link: "https://elixir-ie.github.io/vibe-2026/"
+    link: "https://elixir-ie.github.io/vibe-2026/",
+    registrationLink: "https://app.oxfordabstracts.com/register/event/77953?preview=false"
   },
   {
     title: "EOSC Ireland Trusted Research Environments (TRE) Workshop",
