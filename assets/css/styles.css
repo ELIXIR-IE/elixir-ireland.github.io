@@ -1408,23 +1408,10 @@ section {
   line-height: 1.4;
 }
 
-/* Lead institute: the list is alphabetical, so the lead is marked by an
-   orange frame and a labelled pill rather than by position */
-.institute-card--lead {
-  border-color: #f47920;
-  background: #fff7f0;
-}
-
-.institute-card .institute-badge {
-  display: inline-block;
-  padding: 2px 10px;
-  border-radius: 20px;
-  background: #f47920;
-  color: #023452;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+/* Lead institute: same card as the rest, only its label is in brand orange */
+.institute-card--lead p {
+  color: #f47920;
+  font-weight: 600;
 }
 
 /* Leadership Grid */
