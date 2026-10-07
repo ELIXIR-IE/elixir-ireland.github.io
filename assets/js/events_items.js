@@ -21,9 +21,10 @@ const eventsItems = [
     title: "EOSC Ireland Trusted Research Environments (TRE) Workshop",
     date: "2026-11-27",
     location: "Asiera, North Dock 2, 93/94 North Wall Quay, Dublin 1, Ireland",
-    summary: "An in-person EOSC Ireland workshop on Friday 27 November 2026, working towards a roadmap for sensitive data infrastructure with a focus on Trusted Research Environments (TREs) and Secure Processing Environments (SPEs). Attendance is by invitation due to venue capacity, with best-effort online streaming of the talks. Agenda coming soon.",
+    summary: "An in-person EOSC Ireland workshop on Friday 27 November 2026, working towards a roadmap for sensitive data infrastructure with a focus on Trusted Research Environments (TREs) and Secure Processing Environments (SPEs). In-person attendance is by invitation due to venue capacity, with best-effort online streaming of the talks. Online registration is open, with an option to request an in-person place. Agenda coming soon.",
     image: "/assets/images/eosc-ie-tre-workshop-2026.webp?v=3",
-    link: "/events/eosc-ireland-tre-workshop/"
+    link: "/events/eosc-ireland-tre-workshop/",
+    registrationLink: "https://forms.cloud.microsoft/e/Wx4L2sQWBw"
   },
   {
     title: "All-Island Biobank Symposium",
