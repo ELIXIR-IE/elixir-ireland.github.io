@@ -180,26 +180,41 @@ main.navigated {
   outline-offset: 2px;
 }
 
+/* Bars are placed by percentage of the button so the X stays centred at
+   every button size (a fixed px offset crossed lopsided on small screens) */
 .burger-line {
-  width: 100%;
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  top: 50%;
   height: 3px;
   background-color: #ffffff;
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transform: translateY(-50%);
   transform-origin: center;
+  transition: top 0.3s ease, transform 0.3s ease, opacity 0.2s ease;
+}
+
+.burger-line:nth-child(1) {
+  top: 30%;
+}
+
+.burger-line:nth-child(3) {
+  top: 70%;
 }
 
 .burger-menu.active .burger-line:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
 }
 
 .burger-menu.active .burger-line:nth-child(2) {
   opacity: 0;
-  transform: translateX(-20px);
 }
 
 .burger-menu.active .burger-line:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
 }
 
 .header-nav {
