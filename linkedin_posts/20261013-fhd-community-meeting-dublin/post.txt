@@ -2,9 +2,9 @@
 
 The 2026 𝗘𝗟𝗜𝗫𝗜𝗥 𝗙𝗲𝗱𝗲𝗿𝗮𝘁𝗲𝗱 𝗛𝘂𝗺𝗮𝗻 𝗗𝗮𝘁𝗮 𝗖𝗼𝗺𝗺𝘂𝗻𝗶𝘁𝘆 meeting (8–9 October) brought colleagues from across Europe together, in person and online, to discuss Federated EGA, compliance in light of Genome EDIC, and funding opportunities.
 
-🤝 This was a real joint effort from two ELIXIR Ireland institutions. Huge thanks to our local host 𝗗𝗿 𝗠á𝗶𝗿𝗲 𝗡í 𝗟𝗲𝗮𝘁𝗵𝗹𝗼𝗯𝗵𝗮𝗶𝗿 (Trinity College Dublin), newly on the ELIXIR Ireland Management Board, and to 𝗞𝗮𝘁𝗶𝗲 𝗖𝗿𝗲𝗺𝗶𝗻 and 𝗧𝗿𝗶𝗰𝗶𝗮 [𝗦𝗨𝗥𝗡𝗔𝗠𝗘] in Prof Aedín Culhane's lab at the University of Limerick, who looked after the organisation.
+🤝 Huge thanks to our local host 𝗗𝗿 𝗠á𝗶𝗿𝗲 𝗡í 𝗟𝗲𝗮𝘁𝗵𝗹𝗼𝗯𝗵𝗮𝗶𝗿 (Trinity College Dublin), newly on the ELIXIR Ireland Management Board, who led the meeting on the ground from venue to bookings.
 
-Thanks also to ELIXIR Europe and the FHD Community co-leads Dylan Spalding, Jordi Rambla and Thomas Keane for bringing the meeting to Ireland.
+Thanks also to 𝗞𝗮𝘁𝗶𝗲 𝗖𝗿𝗲𝗺𝗶𝗻 and 𝗧𝗿𝗶𝗰𝗶𝗮 𝗘𝗻𝗴𝗹𝗶𝘀𝗵 in Prof Aedín Culhane's lab at the University of Limerick for their coordination support, and to the ELIXIR Hub and the FHD Community co-leads Dylan Spalding, Jordi Rambla and Thomas Keane. It took all of you to make it a success.
 
 It capped a big week for genomic data in Dublin, alongside the final GDI General Assembly and the new Federated EGA white paper, all during Ireland's EU Presidency.
 

@@ -2,7 +2,7 @@ const newsItems = [
   {
     title: "ELIXIR Federated Human Data Community meets in Dublin",
     date: "2026-10-13",
-    summary: "Trinity College Dublin hosted the 2026 ELIXIR Federated Human Data Community meeting on 8–9 October, with Máire Ní Leathlobhair (TCD) as local host and the Culhane lab at the University of Limerick supporting the organisation. It took place in the same week as the final GDI General Assembly in Dublin.",
+    summary: "Trinity College Dublin hosted the 2026 ELIXIR Federated Human Data Community meeting on 8–9 October, with Máire Ní Leathlobhair (TCD) as local host and support from ELIXIR Ireland colleagues at the University of Limerick (UL) and the ELIXIR Hub. It took place in the same week as the final GDI General Assembly in Dublin.",
     image: "/assets/images/fhd-community-meeting-dublin-2026.jpg",
     link: "/news/fhd-community-meeting-dublin-2026/"
   },
