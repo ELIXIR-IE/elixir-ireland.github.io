@@ -1,5 +1,12 @@
 const newsItems = [
   {
+    title: "ELIXIR Federated Human Data Community meets in Dublin",
+    date: "2026-10-13",
+    summary: "Trinity College Dublin hosted the 2026 ELIXIR Federated Human Data Community meeting on 8–9 October, with Máire Ní Leathlobhair (TCD) as local host and the Culhane lab at the University of Limerick supporting the organisation. It took place in the same week as the final GDI General Assembly in Dublin.",
+    image: "/assets/images/fhd-community-meeting-dublin-2026.jpg",
+    link: "/news/fhd-community-meeting-dublin-2026/"
+  },
+  {
     title: "Building EOSC Ireland: Lessons from European EOSC Nodes",
     date: "2026-09-07",
     summary: "A new EOSC Ireland report captures lessons from visits to six established European EOSC Nodes: the EOSC EU Node, EOSC Poland, SURF (Netherlands), EOSC Finland, PaNOSC and LS Connect. It covers architecture and AAI, service catalogues, governance, funding and sustainability, sensitive data, and community engagement. ELIXIR Ireland contributed to the report through involved project members.",
