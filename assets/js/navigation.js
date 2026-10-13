@@ -23,6 +23,10 @@
   // Map of basePath -> <link> element, so we can remove them when navigating away.
   const pageSpecificStylesheets = new Map();
 
+  // Base paths of page-specific stylesheets the incoming page does not need,
+  // removed only after the main content has been swapped.
+  const staleStylesheetPaths = new Set();
+
   /**
    * Scroll to a hash target element, or to top if no hash
    */
@@ -95,6 +99,22 @@
   }
 
   /**
+   * Remove page-specific stylesheets marked stale by loadPageStyles().
+   * Call only after the outgoing page's content has left the DOM.
+   */
+  function removeStaleStylesheets() {
+    staleStylesheetPaths.forEach(basePath => {
+      const linkEl = pageSpecificStylesheets.get(basePath);
+      if (linkEl) {
+        linkEl.remove();
+        pageSpecificStylesheets.delete(basePath);
+        console.log(`♻ Removed page-specific stylesheet: ${basePath}`);
+      }
+    });
+    staleStylesheetPaths.clear();
+  }
+
+  /**
    * Load page-specific stylesheets.
    *
    * Core rule: stylesheets present on initial page load (coreStylesheetPaths)
@@ -117,12 +137,16 @@
       if (href) neededBasePaths.add(href.split('?')[0]);
     });
 
-    // Remove any page-specific stylesheets not needed by the new page
+    // Mark page-specific stylesheets not needed by the new page as stale.
+    // They are NOT removed here: the outgoing page's content is still in
+    // <main> until replaceMainContent() runs, and dropping its stylesheet
+    // first leaves that content unstyled for a moment (e.g. the centred VIBE
+    // logo jumping to the left edge). removeStaleStylesheets() removes them
+    // once the new content is in place.
+    staleStylesheetPaths.clear();
     pageSpecificStylesheets.forEach((linkEl, basePath) => {
       if (!neededBasePaths.has(basePath)) {
-        linkEl.remove();
-        pageSpecificStylesheets.delete(basePath);
-        console.log(`♻ Removed page-specific stylesheet: ${basePath}`);
+        staleStylesheetPaths.add(basePath);
       }
     });
 
@@ -366,6 +390,7 @@
         if (content && content.trim().length > 0) {
           contentCache[cacheKey] = content;
           replaceMainContent(content);
+          removeStaleStylesheets();
           updatePageTitle(html);
 
           // Scroll to hash anchor if present, otherwise top

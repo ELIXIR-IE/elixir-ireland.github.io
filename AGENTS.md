@@ -70,7 +70,7 @@ it first. Test locally (see "Local dev" below) before pushing.
   when you edit these:
   - `styles.css?v=14` — bump `v` when you edit `assets/css/styles.css` or
     `assets/css/vibe.css`, or returning visitors may keep the stale CSS.
-  - `navigation.js?v=4`, `services.js?v=2`, `side-nav.js?v=1` — same,
+  - `navigation.js?v=5`, `services.js?v=2`, `side-nav.js?v=1` — same,
     bump on edit.
   - `news_items.js` / `news.js` / `events_items.js` / `events.js` already
     auto-bust via `{{ site.time | date: '%s' }}` — no action needed.
