@@ -1,5 +1,13 @@
 const eventsItems = [
   {
+    title: "ELIXIR Ireland Onboarding Session",
+    date: "2026-10-22",
+    location: "Online via Microsoft Teams",
+    summary: "A free one-hour introduction to ELIXIR and ELIXIR Ireland on Thursday 22 October, 14:00–15:00 IST, open to everyone at our 10 member institutes: students, researchers, lecturers, technical professionals and data managers. It covers the Node, onboarding support, and opportunities across the ELIXIR network. No registration needed.",
+    image: "/assets/images/elixir-ie-onboarding-2026.webp",
+    link: "/events/elixir-ireland-onboarding-session/"
+  },
+  {
     title: "3rd All-Island Cancer Data Forum",
     date: "2027-01-18",
     location: "Kemmy Business School, University of Limerick, Ireland",
