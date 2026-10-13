@@ -9,7 +9,7 @@ const newsItems = [
   {
     title: "Final GDI General Assembly held in Dublin",
     date: "2026-10-12",
-    summary: "The European Genomic Data Infrastructure (GDI) project held its final General Assembly in Dublin, demonstrating national deployment and connectivity of the 1+ Million Genomes infrastructure. Ireland takes part through GDI Ireland, co-led by RCSI and UCD with the University of Limerick (UL) and Maynooth University.",
+    summary: "The European Genomic Data Infrastructure (GDI) project held its final General Assembly in Dublin. Partners reflected on the past year, the 1+ Million Genomes infrastructure deployment pillar demonstrated national deployment and connectivity, and each node country presented its progress and aims to March 2027.",
     image: "/assets/images/gdi-general-assembly-dublin-2026.jpg",
     link: "/news/gdi-final-general-assembly-dublin-2026/"
   },
