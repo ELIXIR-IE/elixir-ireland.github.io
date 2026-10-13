@@ -6,7 +6,7 @@ The 2026 𝗘𝗟𝗜𝗫𝗜𝗥 𝗙𝗲𝗱𝗲𝗿𝗮𝘁𝗲𝗱 𝗛𝘂�
 
 Thanks also to 𝗞𝗮𝘁𝗶𝗲 𝗖𝗿𝗲𝗺𝗶𝗻 and 𝗧𝗿𝗶𝗰𝗶𝗮 𝗘𝗻𝗴𝗹𝗶𝘀𝗵 in Prof Aedín Culhane's lab at the University of Limerick for their coordination support, and to the ELIXIR Hub and the FHD Community co-leads Dylan Spalding, Jordi Rambla and Thomas Keane. It took all of you to make it a success.
 
-It capped a big week for genomic data in Dublin, alongside the final GDI General Assembly and the new Federated EGA white paper, all during Ireland's EU Presidency.
+It capped a big week for genomic data in Dublin, alongside the new Federated EGA white paper and the final GDI General Assembly, during Ireland's EU Presidency.
 
 🔗 Read more:
 https://elixir-ireland.ie/news/fhd-community-meeting-dublin-2026/

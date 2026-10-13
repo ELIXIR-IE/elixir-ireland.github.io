@@ -7,6 +7,13 @@ const newsItems = [
     link: "/news/fhd-community-meeting-dublin-2026/"
   },
   {
+    title: "Final GDI General Assembly held in Dublin",
+    date: "2026-10-12",
+    summary: "The European Genomic Data Infrastructure (GDI) project held its final General Assembly in Dublin, demonstrating national deployment and connectivity of the 1+ Million Genomes infrastructure. Ireland takes part through GDI Ireland, including the Culhane lab at the University of Limerick (UL).",
+    image: "/assets/images/gdi-general-assembly-dublin-2026.jpg",
+    link: "/news/gdi-final-general-assembly-dublin-2026/"
+  },
+  {
     title: "Building EOSC Ireland: Lessons from European EOSC Nodes",
     date: "2026-09-07",
     summary: "A new EOSC Ireland report captures lessons from visits to six established European EOSC Nodes: the EOSC EU Node, EOSC Poland, SURF (Netherlands), EOSC Finland, PaNOSC and LS Connect. It covers architecture and AAI, service catalogues, governance, funding and sustainability, sensitive data, and community engagement. ELIXIR Ireland contributed to the report through involved project members.",
