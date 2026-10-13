@@ -4,7 +4,9 @@ The 2026 𝗘𝗟𝗜𝗫𝗜𝗥 𝗙𝗲𝗱𝗲𝗿𝗮𝘁𝗲𝗱 𝗛𝘂�
 
 🤝 Huge thanks to our local host 𝗗𝗿 𝗠á𝗶𝗿𝗲 𝗡í 𝗟𝗲𝗮𝘁𝗵𝗹𝗼𝗯𝗵𝗮𝗶𝗿 (Trinity College Dublin), newly on the ELIXIR Ireland Management Board, who led the meeting on the ground from venue to bookings.
 
-Thanks also to 𝗞𝗮𝘁𝗶𝗲 𝗖𝗿𝗲𝗺𝗶𝗻 and 𝗧𝗿𝗶𝗰𝗶𝗮 𝗘𝗻𝗴𝗹𝗶𝘀𝗵 in 𝗣𝗿𝗼𝗳 𝗔𝗲𝗱í𝗻 𝗖𝘂𝗹𝗵𝗮𝗻𝗲's lab at the University of Limerick for their coordination support, and to the ELIXIR Hub and the FHD Community co-leads Dylan Spalding, Jordi Rambla and Thomas Keane. It took all of you to make it a success.
+Thanks also to 𝗞𝗮𝘁𝗶𝗲 𝗖𝗿𝗲𝗺𝗶𝗻 and 𝗧𝗿𝗶𝗰𝗶𝗮 𝗘𝗻𝗴𝗹𝗶𝘀𝗵 in 𝗣𝗿𝗼𝗳 𝗔𝗲𝗱í𝗻 𝗖𝘂𝗹𝗵𝗮𝗻𝗲's lab at the University of Limerick for their coordination support.
+
+And to the FHD Community co-leads 𝗝𝗼𝗿𝗱𝗶 𝗥𝗮𝗺𝗯𝗹𝗮 (CRG), 𝗚𝗮𝗯𝗿𝗶𝗲𝗹𝗲 𝗥𝗶𝗻𝗰𝗸 (EMBL-EBI) and 𝗗𝘆𝗹𝗮𝗻 𝗦𝗽𝗮𝗹𝗱𝗶𝗻𝗴 (CSC), and to 𝗦𝗲𝗿𝗲𝗻𝗮 𝗦𝗰𝗼𝗹𝗹𝗲𝗻, 𝗠𝗮𝗴𝗱𝗮 𝗖𝗵𝗲𝗴𝗸𝗮𝘇𝗶 and the Human Genomics and Translational Data team at the ELIXIR Hub. It took all of you to make it a success.
 
 It capped a big week for genomic data in Dublin, alongside the new Federated EGA white paper and the final GDI General Assembly, during Ireland's EU Presidency.
 
