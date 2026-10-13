@@ -7,6 +7,13 @@ const newsItems = [
     link: "/news/fhd-community-meeting-dublin-2026/"
   },
   {
+    title: "Watch: a new introduction to ELIXIR",
+    date: "2026-10-12",
+    summary: "ELIXIR Europe has released a new short video introducing Europe's life science data infrastructure. People from across ELIXIR explain how it connects data, resources and expertise to accelerate research and cross-border collaboration.",
+    image: "/assets/images/elixir-intro-video-2026.jpg",
+    link: "/news/elixir-introduction-video-2026/"
+  },
+  {
     title: "Final GDI General Assembly held in Dublin",
     date: "2026-10-12",
     summary: "The European Genomic Data Infrastructure (GDI) project held its final General Assembly in Dublin. Partners reflected on the past year, the 1+ Million Genomes infrastructure deployment pillar demonstrated national deployment and connectivity, and each node country presented its progress and aims to March 2027.",
