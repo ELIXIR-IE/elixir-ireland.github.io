@@ -9,7 +9,7 @@ const newsItems = [
   {
     title: "Final GDI General Assembly held in Dublin",
     date: "2026-10-12",
-    summary: "The European Genomic Data Infrastructure (GDI) project held its final General Assembly in Dublin, demonstrating national deployment and connectivity of the 1+ Million Genomes infrastructure. Ireland takes part through GDI Ireland, including the Culhane lab at the University of Limerick (UL).",
+    summary: "The European Genomic Data Infrastructure (GDI) project held its final General Assembly in Dublin, demonstrating national deployment and connectivity of the 1+ Million Genomes infrastructure. Ireland takes part through GDI Ireland, co-led by RCSI and UCD with the University of Limerick (UL) and Maynooth University.",
     image: "/assets/images/gdi-general-assembly-dublin-2026.jpg",
     link: "/news/gdi-final-general-assembly-dublin-2026/"
   },
