@@ -5,7 +5,8 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:onboarding-session-20261022@elixir-ireland.ie
-DTSTAMP:20261014T120000Z
+DTSTAMP:20261014T130000Z
+SEQUENCE:1
 DTSTART:20261022T130000Z
 DTEND:20261022T140000Z
 SUMMARY:ELIXIR Ireland Onboarding Session
@@ -14,10 +15,9 @@ URL:https://teams.microsoft.com/meet/3616614106152?p=p3ChSRUEwerrzjDmaZ
 DESCRIPTION:ELIXIR Ireland Onboarding Session\, open to everyone at ELIXIR 
  Ireland member institutes.\n\nJoin on Microsoft Teams: https://teams.micro
  soft.com/meet/3616614106152?p=p3ChSRUEwerrzjDmaZ\nMeeting ID: 361 661 410 
- 615 2\nPasscode: j6Vs3u4N\n\nAgenda (indicative):\n14:00 Welcome and intro
- ductions\n14:10 What is ELIXIR?\n14:20 ELIXIR Ireland\n14:30 Opportunities
-  in the network\n14:50 Questions\, discussion and next steps\n\nDetails: h
- ttps://elixir-ireland.ie/events/elixir-ireland-onboarding-session/
+ 615 2\nPasscode: j6Vs3u4N\n\nAgenda:\n14:00 Welcome\n14:10 Onboarding pres
+ entation and discussion\n14:50 Wrap-up\n\nDetails: https://elixir-ireland.
+ ie/events/elixir-ireland-onboarding-session/
 STATUS:CONFIRMED
 BEGIN:VALARM
 ACTION:DISPLAY
