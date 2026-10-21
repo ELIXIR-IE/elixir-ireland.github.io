@@ -32,3 +32,4 @@ exclude:
   - AGENTS.md
   - Dockerfile
   - docker-compose.yml
+  - mailerlite-newsletter/
