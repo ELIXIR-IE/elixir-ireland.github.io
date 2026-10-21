@@ -307,6 +307,9 @@
     } else if (pathname.includes('/services/')) {
       if (typeof window.resetServices === 'function') window.resetServices();
       if (typeof window.initializeServices === 'function') window.initializeServices();
+    } else if (pathname.includes('/participate/')) {
+      if (typeof window.resetParticipate === 'function') window.resetParticipate();
+      if (typeof window.initializeParticipate === 'function') window.initializeParticipate();
     } else if (pathname.includes('/vibe/')) {
       if (typeof window.resetVibe === 'function') window.resetVibe();
       if (typeof window.initializeVibe === 'function') window.initializeVibe();
@@ -445,7 +448,7 @@
     if (link.hasAttribute('data-no-ajax')) return;
 
     // Ignore links to assets or non-html resources roughly
-    if (url.pathname.match(/\.(pdf|zip|jpg|png|gif|svg)$/i)) return;
+    if (url.pathname.match(/\.(pdf|zip|jpg|png|gif|svg|ics|docx?|xlsx?|pptx?)$/i)) return;
 
     // Same-page hash navigation — just scroll, no reload
     if (url.pathname === window.location.pathname && url.hash) {

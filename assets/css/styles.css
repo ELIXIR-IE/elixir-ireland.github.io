@@ -3259,3 +3259,580 @@ body:has(.side-layout) {
     background-color: #f47920;
   }
 }
+
+/* ===========================
+   PARTICIPATE / ONBOARDING WALKTHROUGHS
+   Used by /participate/ and its sub-pages; behaviour in participate.js
+   =========================== */
+
+.onb-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.onb-intro {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #495057;
+  margin: 0 0 1.5rem;
+}
+
+/* Compact button size for step actions */
+.btn.onb-btn {
+  font-family: inherit;
+  padding: 10px 22px;
+  font-size: 1rem;
+  border-radius: 6px;
+}
+
+.onb-btn--ghost {
+  background: #ffffff;
+  color: #023452;
+  border: 2px solid #c9d4dd;
+}
+
+.onb-btn--ghost:hover {
+  border-color: #023452;
+  color: #023452;
+  text-decoration: none;
+}
+
+/* Hub path cards */
+.onb-paths {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.onb-path {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-top: 4px solid #023452;
+  border-radius: 12px;
+  padding: 1.75rem;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.onb-path:hover {
+  transform: translateY(-3px);
+  border-top-color: #f47920;
+  box-shadow: 0 8px 24px rgba(2, 52, 82, 0.12);
+  text-decoration: none;
+}
+
+.onb-path__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #023452, #034a73);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+
+.onb-path h3 {
+  margin: 0 0 0.5rem;
+  color: #023452;
+  font-size: 1.25rem;
+}
+
+.onb-path p {
+  margin: 0 0 1.25rem;
+  color: #495057;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.onb-path__cta {
+  color: #f47920;
+  font-weight: 700;
+}
+
+/* Progress bar */
+.onb-progress {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.onb-progress__label {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-weight: 600;
+  color: #023452;
+  margin-bottom: 0.5rem;
+}
+
+.onb-progress__reset {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: #5a6b7a;
+  font: inherit;
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.onb-progress__track {
+  height: 8px;
+  background: #e8eaed;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.onb-progress__bar {
+  height: 100%;
+  width: 0;
+  background: #f47920;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+/* Steps */
+.onb-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: onb-step;
+}
+
+.onb-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 1.1rem;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  scroll-margin-top: 90px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.onb-step__num {
+  counter-increment: onb-step;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #023452;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.onb-step__num::before {
+  content: counter(onb-step);
+}
+
+.onb-step__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.onb-step__title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.45rem 0 0.4rem;
+  font-size: 1.2rem;
+  color: #023452;
+}
+
+.onb-step__title svg {
+  flex: 0 0 auto;
+  color: #f47920;
+}
+
+.onb-step__body p {
+  margin: 0 0 0.6rem;
+  color: #495057;
+  line-height: 1.65;
+}
+
+.onb-step__note {
+  font-size: 0.92rem;
+  color: #5a6b7a;
+}
+
+.onb-step__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+}
+
+.onb-step__done {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #ffffff;
+  border: 2px solid #c9d4dd;
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #5a6b7a;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.onb-step__done:hover {
+  border-color: #023452;
+  color: #023452;
+}
+
+.onb-step__done:focus-visible {
+  outline: 2px solid #023452;
+  outline-offset: 2px;
+}
+
+.onb-step__done svg {
+  display: none;
+}
+
+.onb-step--done {
+  border-color: #f47920;
+  background: #fffaf5;
+}
+
+.onb-step--done .onb-step__num {
+  background: #f47920;
+}
+
+.onb-step--done .onb-step__num::before {
+  content: "\2713";
+}
+
+.onb-step--done .onb-step__done {
+  border-color: #f47920;
+  background: #f47920;
+  color: #ffffff;
+}
+
+.onb-step--done .onb-step__done svg {
+  display: inline;
+}
+
+/* Forms (newsletter, access request, expression of interest) */
+.onb-form {
+  background: #f4f7fa;
+  border: 1px solid #e1e8ed;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-top: 0.9rem;
+}
+
+.onb-form__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+
+.onb-form label,
+.onb-form legend {
+  display: block;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #023452;
+  margin-bottom: 0.3rem;
+}
+
+.onb-form input[type="text"],
+.onb-form input[type="email"],
+.onb-form select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #c9d4dd;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 1rem;
+  background: #ffffff;
+  color: #333333;
+}
+
+.onb-form input:focus,
+.onb-form select:focus {
+  outline: 2px solid #023452;
+  outline-offset: 1px;
+  border-color: #023452;
+}
+
+.onb-form fieldset {
+  border: 0;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.onb-check {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-weight: 400 !important;
+  color: #333333 !important;
+  font-size: 0.97rem !important;
+  line-height: 1.45;
+  margin: 0 0 0.55rem !important;
+  cursor: pointer;
+}
+
+.onb-check input {
+  margin-top: 0.2rem;
+  accent-color: #f47920;
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: 0 0 auto;
+}
+
+.onb-check small {
+  display: block;
+  color: #5a6b7a;
+}
+
+.onb-form__msg {
+  margin: 0.8rem 0 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.onb-form__msg:empty {
+  display: none;
+}
+
+.onb-form__msg--error {
+  color: #b42318;
+}
+
+.onb-form__msg--ok {
+  color: #023452;
+}
+
+/* Callouts */
+.onb-callout {
+  background: #f8f9fa;
+  border-left: 4px solid #f47920;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+  color: #333333;
+  line-height: 1.65;
+}
+
+.onb-callout p {
+  margin: 0;
+}
+
+.onb-callout p + p {
+  margin-top: 0.5rem;
+}
+
+/* Contact cards */
+.onb-people {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.onb-person {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+}
+
+.onb-person__name {
+  margin: 0;
+  font-weight: 700;
+  color: #023452;
+}
+
+.onb-person__role {
+  margin: 0.15rem 0 0.4rem;
+  font-size: 0.92rem;
+  color: #5a6b7a;
+}
+
+.onb-person a {
+  font-size: 0.92rem;
+  color: #023452;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+/* Simple two-column table for board reps and mailboxes */
+.onb-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 0.97rem;
+  margin-top: 1rem;
+}
+
+.onb-table th,
+.onb-table td {
+  text-align: left;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid #e8eaed;
+  vertical-align: top;
+}
+
+.onb-table th {
+  background: #023452;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.onb-table tr:last-child td {
+  border-bottom: 0;
+}
+
+/* ELIXIR Europe groups */
+.onb-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.onb-tab {
+  background: #ffffff;
+  border: 2px solid #c9d4dd;
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  color: #023452;
+  cursor: pointer;
+}
+
+.onb-tab:hover {
+  border-color: #023452;
+}
+
+.onb-tab[aria-selected="true"] {
+  background: #023452;
+  border-color: #023452;
+  color: #ffffff;
+}
+
+.onb-tab:focus-visible {
+  outline: 2px solid #f47920;
+  outline-offset: 2px;
+}
+
+.onb-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 0.9rem;
+}
+
+.onb-groups[hidden] {
+  display: none;
+}
+
+.onb-group {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.onb-group:hover {
+  border-color: #f47920;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.onb-group img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.onb-group__name {
+  display: block;
+  font-weight: 700;
+  color: #023452;
+  line-height: 1.3;
+}
+
+.onb-group__desc {
+  display: block;
+  font-size: 0.9rem;
+  color: #5a6b7a;
+  line-height: 1.45;
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 640px) {
+  .onb-step {
+    grid-template-columns: 32px 1fr;
+    gap: 0.75rem;
+    padding: 1.1rem;
+  }
+
+  .onb-step__num {
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+  }
+
+  .onb-step__title {
+    margin-top: 0.15rem;
+    font-size: 1.1rem;
+  }
+
+  .onb-step__head {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .onb-step__actions .btn {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .onb-table {
+    font-size: 0.92rem;
+  }
+
+  .onb-table th,
+  .onb-table td {
+    padding: 0.6rem 0.7rem;
+  }
+}
