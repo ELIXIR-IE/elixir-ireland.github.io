@@ -3358,17 +3358,7 @@ a.onb-path__cta:hover {
   text-decoration: underline;
 }
 
-/* Newsletter links on the Participate hub */
-.onb-newsletters {
-  margin: 2rem 0 0;
-}
-
-.onb-newsletters h3 {
-  margin: 0 0 0.75rem;
-  color: #023452;
-  font-size: 1.15rem;
-}
-
+/* Newsletter cards on the Participate hub */
 .onb-newsletters__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -3392,6 +3382,18 @@ a.onb-path__cta:hover {
   border-color: #f47920;
   transform: translateY(-2px);
   text-decoration: none;
+}
+
+.onb-newsletter__logo {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  margin-bottom: 0.5rem;
+}
+
+.onb-newsletter__logo img {
+  height: 80px;
+  width: auto;
 }
 
 .onb-newsletter__name {
