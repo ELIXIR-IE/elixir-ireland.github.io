@@ -17,7 +17,7 @@
   // While empty, sign-ups open a pre-filled email to CONTACT instead.
   const MAILERLITE = {
     member: 'https://assets.mailerlite.com/jsonp/2732019/forms/201986291520242908/subscribe',
-    pending: ''
+    pending: 'https://assets.mailerlite.com/jsonp/2732019/forms/201986229959394818/subscribe'
   };
 
   // Email domains of ELIXIR Ireland member institutes (staff and student
