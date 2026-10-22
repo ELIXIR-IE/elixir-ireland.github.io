@@ -22,8 +22,8 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:vibe-elixir-ireland-monthly-call@elixir-ireland.ie
-DTSTAMP:20261022T150000Z
-SEQUENCE:2
+DTSTAMP:20261022T180000Z
+SEQUENCE:3
 DTSTART;TZID=Europe/Dublin:20261126T140000
 DTEND;TZID=Europe/Dublin:20261126T150000
 RRULE:FREQ=MONTHLY;BYDAY=4TH
@@ -36,7 +36,7 @@ DESCRIPTION:Monthly call for the VIBE and ELIXIR Ireland community: news\,
  .microsoft.com/meet/3616614106152?p=p3ChSRUEwerrzjDmaZ\n\nAgenda and minut
  es: https://docs.google.com/document/d/17WzINZ4JsOpXHSSmgFrkr2hsphxuCfM0kC
  Xs_PHW-JQ/edit?tab=t.0\n\nGetting started: https://elixir-ireland.ie/parti
- cipate/members/
+ cipate/elixir-ie-members/
 STATUS:CONFIRMED
 BEGIN:VALARM
 ACTION:DISPLAY
