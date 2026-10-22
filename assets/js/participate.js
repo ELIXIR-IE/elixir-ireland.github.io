@@ -10,13 +10,14 @@
 
   const CONTACT = 'elixir@ul.ie';
 
-  // MailerLite embedded-form settings. Until these are filled in, newsletter
-  // sign-ups open a pre-filled email to CONTACT instead.
-  // action: the form's subscribe URL from the MailerLite embed code
-  // groups: MailerLite group IDs for each route
+  // MailerLite embedded forms, one per group. Each form adds people to its
+  // own group: member institute emails to "ELIXIR Ireland members", other
+  // academic/work emails to "Pending approval". Paste each form's action URL
+  // from its embed code (https://assets.mailerlite.com/jsonp/.../subscribe).
+  // While empty, sign-ups open a pre-filled email to CONTACT instead.
   const MAILERLITE = {
-    action: '',
-    groups: { member: '', pending: '' }
+    member: '',
+    pending: ''
   };
 
   // Email domains of ELIXIR Ireland member institutes (staff and student
@@ -134,7 +135,7 @@
   function autoComplete(link) {
     const step = link.closest('.onb-step[data-step]');
     const list = link.closest('.onb-steps[data-progress-key]');
-    if (!step || !list || !link.hasAttribute('data-completes')) return;
+    if (!step || !list || !(link.hasAttribute('data-completes') || link.matches('form'))) return;
     const key = list.getAttribute('data-progress-key');
     const done = storageGet(key);
     if (done.indexOf(step.getAttribute('data-step')) === -1) {
@@ -213,17 +214,16 @@
 
     const instituteName = institute && institute.value ? institute.value : '';
 
-    if (MAILERLITE.action) {
+    const action = MAILERLITE[route === 'member' ? 'member' : 'pending'];
+    if (action) {
       const data = new FormData();
       data.append('fields[name]', name);
       data.append('fields[email]', email);
       if (instituteName) data.append('fields[company]', instituteName);
-      const group = MAILERLITE.groups[route === 'member' ? 'member' : 'pending'];
-      if (group) data.append('groups[]', group);
       data.append('ml-submit', '1');
       data.append('anticsrf', 'true');
       setMessage(form, 'Sending…', 'ok');
-      fetch(MAILERLITE.action, { method: 'POST', body: data, mode: 'no-cors' })
+      fetch(action, { method: 'POST', body: data, mode: 'no-cors' })
         .then(function () {
           setMessage(form, route === 'member'
             ? 'Thanks. Check your inbox and click the link to confirm your subscription.'
@@ -247,6 +247,32 @@
     ].filter(function (l, i, arr) { return l !== '' || arr[i - 1] !== ''; }).join('\n');
     setMessage(form, 'Your email app should open with the request ready to send.', 'ok');
     openMail(CONTACT, 'Newsletter sign-up: ' + name, body);
+  }
+
+  // VIBE list: LISTSERV subscribes from a one-line email command
+  function submitListserv(form) {
+    const name = form.querySelector('[name="name"]').value.trim();
+    if (!name) {
+      setMessage(form, 'Please enter your full name.', 'error');
+      return;
+    }
+    setMessage(form, 'Your email app should open with the sign-up email ready to send.', 'ok');
+    openMail('LISTSERV@LISTSERV.HEANET.IE', 'Subscribe', 'SUBSCRIBE BIOINFORMATICS ' + name);
+    autoComplete(form);
+  }
+
+  function copyText(btn) {
+    const text = btn.getAttribute('data-copy');
+    const label = btn.textContent;
+    const done = function () {
+      btn.textContent = 'Copied';
+      setTimeout(function () { btn.textContent = label; }, 2000);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { window.prompt('Copy this link:', text); });
+    } else {
+      window.prompt('Copy this link:', text);
+    }
   }
 
   // ---- Group tabs ----
@@ -274,6 +300,9 @@
     const tab = e.target.closest('.onb-tab');
     if (tab) { selectTab(tab); return; }
 
+    const copyBtn = e.target.closest('[data-copy]');
+    if (copyBtn) { copyText(copyBtn); return; }
+
     const link = e.target.closest('a[data-completes]');
     if (link) autoComplete(link);
   });
@@ -292,6 +321,9 @@
     if (form.matches('form[data-onb-newsletter]')) {
       e.preventDefault();
       submitNewsletter(form);
+    } else if (form.matches('form[data-onb-listserv]')) {
+      e.preventDefault();
+      submitListserv(form);
     } else if (form.matches('form[data-onb-request]')) {
       e.preventDefault();
       submitRequest(form);
