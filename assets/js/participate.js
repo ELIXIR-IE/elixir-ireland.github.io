@@ -33,7 +33,7 @@
     'tudublin.ie', 'mytudublin.ie', 'dit.ie', 'mydit.ie', 'itb.ie',
     'it-tallaght.ie', 'ittdublin.ie',
     'mtu.ie', 'mymtu.ie', 'cit.ie', 'mycit.ie', 'ittralee.ie',
-    'setu.ie', 'wit.ie', 'itcarlow.ie',
+    'setu.ie', 'wit.ie', 'itcarlow.ie', 'waltoninstitute.ie',
     'atu.ie', 'gmit.ie', 'lyit.ie', 'itsligo.ie',
     'tus.ie', 'ait.ie', 'lit.ie',
     // Other higher education institutions
