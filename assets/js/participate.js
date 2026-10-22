@@ -250,7 +250,7 @@
         .then(function () {
           setMessage(form, route === 'member'
             ? 'Thanks. Check your inbox and click the link to confirm your subscription.'
-            : 'Thanks. Check your inbox to confirm, then we will review your subscription because your email is not from an Irish higher education institution.', 'ok');
+            : 'Thanks. Check your inbox to confirm, then we will review your subscription because your email is not from an Irish higher education or research institution.', 'ok');
           form.reset();
         })
         .catch(function () {
