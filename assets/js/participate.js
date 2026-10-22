@@ -21,8 +21,9 @@
   };
 
   // Email domains that go straight to the members group: Irish higher
-  // education institutions (current and pre-merger domains), ICHEC, Asiera
-  // and Teagasc. Subdomains match too, so student mail such as
+  // education institutions (current and pre-merger domains), research
+  // centres, national research institutes, funders and the HSE. Subdomains
+  // match too, so student mail such as
   // studentmail.ul.ie, umail.ucc.ie or student.tus.ie needs no entry.
   const MEMBER_DOMAINS = [
     // Universities
@@ -38,8 +39,16 @@
     'tus.ie', 'ait.ie', 'lit.ie',
     // Other higher education institutions
     'dkit.ie', 'iadt.ie', 'ncirl.ie', 'ncad.ie', 'mie.ie', 'riam.ie', 'dias.ie',
-    // Partners and research bodies
-    'ichec.ie', 'asiera.ie', 'teagasc.ie'
+    // Research Ireland centres
+    'insight-centre.org', 'adaptcentre.ie', 'lero.ie', 'connectcentre.ie',
+    'ambercentre.ie', 'sspc.ie', 'i-form.ie', 'icrag-centre.org', 'vistamilk.ie',
+    'biorbic.com', 'curamdevices.ie', 'ipic.ie', 'ceadar.ie',
+    // National research institutes and infrastructure
+    'ichec.ie', 'asiera.ie', 'teagasc.ie', 'tyndall.ie', 'marine.ie', 'nibrt.ie',
+    'hrb.ie', 'ncri.ie', 'epa.ie', 'biodiversityireland.ie', 'met.ie', 'gsi.ie',
+    'heanet.ie', 'dri.ie',
+    // Funders, government and health service
+    'researchireland.ie', 'sfi.ie', 'research.ie', 'dfheris.gov.ie', 'hse.ie'
   ];
 
   // Personal webmail is refused everywhere
