@@ -1,5 +1,12 @@
 const newsItems = [
   {
+    title: "Abstract submissions open for the 2027 All-Island Cancer Data Forum",
+    date: "2026-10-22",
+    summary: "Abstract submissions are open for oral and poster presentations at the 3rd All-Island Cancer Data Forum, 18–19 January 2027 at the University of Limerick (UL). Researchers, clinicians, data scientists, policymakers and patient advocates are invited to submit on health data and interoperability, EHDS/OMOP readiness, precision oncology, AI and real-world evidence, clinical research and patient-centred cancer care. Deadline: 2 December 2026.",
+    image: "/assets/images/all-island-cancer-data-forum-2027.webp",
+    link: "https://app.oxfordabstracts.com/stages/77261/submitter"
+  },
+  {
     title: "ELIXIR Federated Human Data Community meets in Dublin",
     date: "2026-10-13",
     summary: "Trinity College Dublin hosted the 2026 ELIXIR Federated Human Data Community meeting on 8–9 October, with Máire Ní Leathlobhair (TCD) as local host and support from ELIXIR Ireland colleagues at the University of Limerick (UL) and the ELIXIR Hub. It took place in the same week as the final GDI General Assembly in Dublin.",
