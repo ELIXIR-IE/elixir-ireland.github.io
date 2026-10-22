@@ -16,7 +16,7 @@
   // from its embed code (https://assets.mailerlite.com/jsonp/.../subscribe).
   // While empty, sign-ups open a pre-filled email to CONTACT instead.
   const MAILERLITE = {
-    member: '',
+    member: 'https://assets.mailerlite.com/jsonp/2732019/forms/201986291520242908/subscribe',
     pending: ''
   };
 
