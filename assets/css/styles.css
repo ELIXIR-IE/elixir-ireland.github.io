@@ -3808,20 +3808,109 @@ a.onb-path__cta:hover {
   font-size: 1.2rem;
 }
 
-/* Info icon in a hero title, linking to an explanation */
-.onb-info {
+/* "Is my institute a member?" link under a hero subtitle */
+.onb-check-member {
   display: inline-flex;
-  vertical-align: super;
-  margin: 0 0.15em 0 0.1em;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid #c9d4dd;
+  border-radius: 999px;
+  background: #ffffff;
   color: #023452;
-  opacity: 0.75;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.onb-check-member:hover,
+.onb-check-member:focus-visible {
+  border-color: #f47920;
+  color: #f47920;
   text-decoration: none;
 }
 
-.onb-info:hover,
-.onb-info:focus-visible {
-  opacity: 1;
+/* Breadcrumb at the top of Participate sub-pages */
+.onb-breadcrumb {
+  max-width: 1140px;
+  margin: 0 auto 1.25rem;
+  text-align: left;
+}
+
+.onb-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.95rem;
+  color: #5a6b7a;
+}
+
+.onb-breadcrumb li + li::before {
+  content: "/";
+  margin: 0 0.6rem;
+  color: #a3b1bd;
+}
+
+.onb-breadcrumb a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #023452;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.onb-breadcrumb a:hover {
   color: #f47920;
+  text-decoration: underline;
+}
+
+/* Previous / next between Participate sub-pages */
+.onb-pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.onb-pager__link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  color: #023452;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.onb-pager__link:hover {
+  border-color: #f47920;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.onb-pager__link--next {
+  text-align: right;
+}
+
+.onb-pager__dir {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f47920;
+}
+
+@media (max-width: 640px) {
+  .onb-pager {
+    grid-template-columns: 1fr;
+  }
 }
 
 .onb-step__body code {

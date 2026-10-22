@@ -87,13 +87,19 @@
 
     document.querySelectorAll('nav a').forEach(link => {
       const linkPath = new URL(link.href, window.location.origin).pathname;
-
-      if (linkPath === targetPath ||
+      const exact = linkPath === targetPath ||
         (linkPath === '/' && targetPath.startsWith('/index.html')) ||
-        (linkPath.endsWith('/home.html') && (targetPath === '/' || targetPath.endsWith('/index.html')))) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
+        (linkPath.endsWith('/home.html') && (targetPath === '/' || targetPath.endsWith('/index.html')));
+      // Header links also stay highlighted on their sub-pages, e.g.
+      // Participate on /participate/elixir-europe/
+      const inSection = !exact && linkPath !== '/' && linkPath.endsWith('/') &&
+        targetPath.startsWith(linkPath) && !!link.closest('.header-nav');
+
+      link.classList.toggle('active', exact || inSection);
+      if (link.closest('.header-nav')) {
+        if (exact) link.setAttribute('aria-current', 'page');
+        else if (inSection) link.setAttribute('aria-current', 'true');
+        else link.removeAttribute('aria-current');
       }
     });
   }
