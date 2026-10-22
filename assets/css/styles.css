@@ -3739,10 +3739,26 @@ a.onb-path__cta:hover {
   border-radius: 50%;
   object-fit: cover;
   background: #e8eaed;
+  border: 2px solid #e0e6ec;
 }
 
 .onb-person__body {
   min-width: 0;
+}
+
+.onb-person__photo--icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #023452, #034a73);
+  color: #ffffff;
+}
+
+.onb-person__groups {
+  margin: 0 0 0.4rem;
+  font-size: 0.85rem;
+  color: #495057;
+  line-height: 1.4;
 }
 
 .onb-person__name {
