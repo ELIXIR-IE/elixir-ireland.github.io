@@ -11,7 +11,7 @@
   const CONTACT = 'elixir@ul.ie';
 
   // MailerLite embedded forms, one per group. Each form adds people to its
-  // own group: member institute emails to "ELIXIR Ireland members", other
+  // own group: Irish HEI and partner emails to "ELIXIR Ireland members", other
   // academic/work emails to "Pending approval". Paste each form's action URL
   // from its embed code (https://assets.mailerlite.com/jsonp/.../subscribe).
   // While empty, sign-ups open a pre-filled email to CONTACT instead.
@@ -20,12 +20,26 @@
     pending: 'https://assets.mailerlite.com/jsonp/2732019/forms/201986229959394818/subscribe'
   };
 
-  // Email domains of ELIXIR Ireland member institutes (staff and student
-  // mail). Subdomains match too, e.g. studentmail.ul.ie.
+  // Email domains that go straight to the members group: Irish higher
+  // education institutions (current and pre-merger domains), ICHEC, Asiera
+  // and Teagasc. Subdomains match too, so student mail such as
+  // studentmail.ul.ie, umail.ucc.ie or student.tus.ie needs no entry.
   const MEMBER_DOMAINS = [
-    'ul.ie', 'ucd.ie', 'ucdconnect.ie', 'universityofgalway.ie', 'nuigalway.ie',
-    'rcsi.ie', 'rcsi.com', 'ucc.ie', 'dcu.ie', 'mtu.ie', 'mymtu.ie', 'tcd.ie',
-    'setu.ie', 'tudublin.ie', 'mytudublin.ie', 'ichec.ie'
+    // Universities
+    'tcd.ie', 'ucd.ie', 'ucdconnect.ie', 'ucc.ie', 'universityofgalway.ie',
+    'nuigalway.ie', 'mu.ie', 'mumail.ie', 'nuim.ie', 'ul.ie', 'dcu.ie',
+    'rcsi.ie', 'rcsi.com',
+    // Technological universities, with the institutes they merged from
+    'tudublin.ie', 'mytudublin.ie', 'dit.ie', 'mydit.ie', 'itb.ie',
+    'it-tallaght.ie', 'ittdublin.ie',
+    'mtu.ie', 'mymtu.ie', 'cit.ie', 'mycit.ie', 'ittralee.ie',
+    'setu.ie', 'wit.ie', 'itcarlow.ie',
+    'atu.ie', 'gmit.ie', 'lyit.ie', 'itsligo.ie',
+    'tus.ie', 'ait.ie', 'lit.ie',
+    // Other higher education institutions
+    'dkit.ie', 'iadt.ie', 'ncirl.ie', 'ncad.ie', 'mie.ie', 'riam.ie', 'dias.ie',
+    // Partners and research bodies
+    'ichec.ie', 'asiera.ie', 'teagasc.ie'
   ];
 
   // Personal webmail is refused everywhere
@@ -227,7 +241,7 @@
         .then(function () {
           setMessage(form, route === 'member'
             ? 'Thanks. Check your inbox and click the link to confirm your subscription.'
-            : 'Thanks. Check your inbox to confirm, then we will review your subscription because your email is not from a member institute.', 'ok');
+            : 'Thanks. Check your inbox to confirm, then we will review your subscription because your email is not from an Irish higher education institution.', 'ok');
           form.reset();
         })
         .catch(function () {
