@@ -9,7 +9,7 @@
     'Dublin City University':       'DCU',
     'Maynooth University':          'Maynooth',
     'Munster Technological University': 'MTU',
-    'Queens University Belfast':    'QUB',
+    "Queen's University Belfast":  'QUB',
     'RCSI':                         'RCSI',
     'Teagasc':                      'Teagasc',
     'Technological University Dublin': 'TU Dublin',
