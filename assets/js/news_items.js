@@ -1,8 +1,8 @@
 const newsItems = [
   {
-    title: "ELIXIR Ireland welcomes five new member institutes",
+    title: "Watch: ELIXIR Ireland onboarding session, welcoming five new member institutes",
     date: "2026-10-25",
-    summary: "Dublin City University (DCU), Munster Technological University (MTU), South East Technological University (SETU), Trinity College Dublin (TCD) and Technological University Dublin (TU Dublin) join ELIXIR Ireland, which grows to ten member institutes. Meet the new Management Board members and watch the recording of our 22 October onboarding session.",
+    summary: "The recording of our 22 October onboarding session is online: an introduction to VIBE, ELIXIR Europe and ELIXIR Ireland. It also welcomes Dublin City University (DCU), Munster Technological University (MTU), South East Technological University (SETU), Trinity College Dublin (TCD) and Technological University Dublin (TU Dublin), as ELIXIR Ireland grows to ten member institutes. Meet the new Management Board members.",
     image: "/assets/images/new-member-institutes-2026.webp",
     link: "/news/new-member-institutes-management-board-2026/"
   },
