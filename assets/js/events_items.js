@@ -3,7 +3,7 @@ const eventsItems = [
     title: "ELIXIR Ireland Onboarding Session",
     date: "2026-10-22",
     location: "Online via Microsoft Teams",
-    summary: "A free one-hour introduction to ELIXIR and ELIXIR Ireland on Thursday 22 October, 14:00–15:00 IST, open to everyone at our 10 member institutes: students, researchers, lecturers, technical professionals and data managers. It covers the Node, onboarding support, and opportunities across the ELIXIR network. No registration needed.",
+    summary: "A one-hour introduction to ELIXIR and ELIXIR Ireland for everyone at our 10 member institutes, held online on Thursday 22 October, with a welcome to our five new member institutes. It covered the Node, onboarding support, and opportunities across the ELIXIR network. The recording is now available.",
     image: "/assets/images/elixir-ie-onboarding-2026.webp",
     link: "/events/elixir-ireland-onboarding-session/"
   },

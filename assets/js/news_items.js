@@ -1,5 +1,12 @@
 const newsItems = [
   {
+    title: "ELIXIR Ireland welcomes five new member institutes",
+    date: "2026-10-25",
+    summary: "Dublin City University (DCU), Munster Technological University (MTU), South East Technological University (SETU), Trinity College Dublin (TCD) and Technological University Dublin (TU Dublin) join ELIXIR Ireland, which grows to ten member institutes. Meet the new Management Board members and watch the recording of our 22 October onboarding session.",
+    image: "/assets/images/new-member-institutes-2026.webp",
+    link: "/news/new-member-institutes-management-board-2026/"
+  },
+  {
     title: "Abstract submissions open for the 2027 All-Island Cancer Data Forum",
     date: "2026-10-22",
     summary: "Abstract submissions are open for oral and poster presentations at the 3rd All-Island Cancer Data Forum, 18–19 January 2027 at the University of Limerick (UL). Researchers, clinicians, data scientists, policymakers and patient advocates are invited to submit on health data and interoperability, EHDS/OMOP readiness, precision oncology, AI and real-world evidence, clinical research and patient-centred cancer care. Deadline: 2 December 2026.",
