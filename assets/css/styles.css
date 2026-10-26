@@ -4073,3 +4073,62 @@ a.onb-path__cta:hover {
     padding: 0.6rem 0.7rem;
   }
 }
+
+/* Onboarding session video card (participate pages) */
+.onb-video {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-top: 4px solid #f47920;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 0 0 1.75rem;
+  scroll-margin-top: 1.5rem;
+}
+
+.onb-video__kicker {
+  margin: 0 0 0.35rem;
+  color: #f47920;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.onb-video__title {
+  margin: 0 0 0.6rem;
+  color: #023452;
+  font-size: 1.3rem;
+}
+
+.onb-video__player {
+  position: relative;
+  padding-bottom: 45%; /* recording is 2400x1080 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #000000;
+  margin: 1rem 0;
+}
+
+.onb-video__player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.onb-video__chapters {
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  columns: 2 240px;
+  column-gap: 2rem;
+  line-height: 1.85;
+  color: #495057;
+}
+
+.onb-video__chapters strong {
+  color: #023452;
+  font-variant-numeric: tabular-nums;
+}
